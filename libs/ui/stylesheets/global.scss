@@ -1,0 +1,25 @@
+@use '@angular/material' as mat;
+@use 'variables' as store;
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 1rem;
+  margin: 0;
+  color: #212121;
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, Lucida Grande, sans-serif;
+}
