@@ -1,7 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@typescript-eslint", "prettier", "simple-import-sort", "import", "jsdoc", "@nrwl/nx"],
+  "plugins": ["@typescript-eslint", "prettier", "simple-import-sort", "import", "jsdoc", "ngrx", "@nrwl/nx"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -23,7 +23,7 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nrwl/nx/typescript", "plugin:@nrwl/nx/angular", "plugin:import/recommended"],
+      "extends": ["plugin:@nrwl/nx/typescript", "plugin:@nrwl/nx/angular", "plugin:import/recommended", "plugin:ngrx/recommended"],
       "rules": {
         "@typescript-eslint/naming-convention": [
           "error",
@@ -103,6 +103,10 @@
     {
       "files": ["*.component.ts"],
       "extends": ["plugin:@angular-eslint/template/process-inline-templates"]
+    },
+    {
+      "files": ["*.ts"],
+      "extends": ["plugin:ngrx/recommended"]
     }
   ]
 }
