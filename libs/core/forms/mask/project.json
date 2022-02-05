@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/core/forms/mask",
+  "sourceRoot": "libs/core/forms/mask/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/core/forms/mask"],
+      "options": {
+        "jestConfig": "libs/core/forms/mask/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/core/forms/mask/src/**/*.ts", "libs/core/forms/mask/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

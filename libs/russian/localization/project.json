@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/russian/localization",
+  "sourceRoot": "libs/russian/localization/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/russian/localization"],
+      "options": {
+        "jestConfig": "libs/russian/localization/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/russian/localization/src/**/*.ts", "libs/russian/localization/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
