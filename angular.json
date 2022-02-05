@@ -4,6 +4,7 @@
     "core-forms-mask": "libs/core/forms/mask",
     "russian-localization": "libs/russian/localization",
     "store": "apps/store",
-    "store-e2e": "apps/store-e2e"
+    "store-e2e": "apps/store-e2e",
+    "ui-layout": "libs/ui/layout"
   }
 }
