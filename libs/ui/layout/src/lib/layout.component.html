@@ -1,1 +1,20 @@
-<router-outlet></router-outlet>
+<ng-container [ngSwitch]="layoutType">
+  <ng-container *ngSwitchCase="breakpoints.Web">
+    <banshop-header></banshop-header>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+    <banshop-footer></banshop-footer>
+  </ng-container>
+  <ng-container *ngSwitchCase="breakpoints.Tablet">
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </ng-container>
+  <ng-container *ngSwitchDefault>
+    <banshop-header></banshop-header>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </ng-container>
+</ng-container>

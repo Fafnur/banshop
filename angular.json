@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "core-forms-mask": "libs/core/forms/mask",
+    "core-utils-destoy": "libs/core/utils/destoy",
     "russian-localization": "libs/russian/localization",
     "store": "apps/store",
     "store-e2e": "apps/store-e2e",

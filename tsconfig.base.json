@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@banshop/core/forms/mask": ["libs/core/forms/mask/src/index.ts"],
+      "@banshop/core/utils/destoy": ["libs/core/utils/destoy/src/index.ts"],
       "@banshop/russian/localization": ["libs/russian/localization/src/index.ts"],
       "@banshop/ui/layout": ["libs/ui/layout/src/index.ts"]
     }
