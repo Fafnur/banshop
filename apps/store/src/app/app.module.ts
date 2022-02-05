@@ -6,10 +6,9 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { AppCoreModule } from './app-core.module';
-import { NxWelcomeComponent } from './nx-welcome.component';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
+  declarations: [AppComponent],
   imports: [BrowserModule, BrowserAnimationsModule, AppCoreModule, StoreModule.forRoot({}, {}), EffectsModule.forRoot([])],
   providers: [],
   bootstrap: [AppComponent],

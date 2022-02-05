@@ -62,7 +62,7 @@
         "simple-import-sort/imports": [
           "error",
           {
-            "groups": [["^\\u0000"], ["^@?(?!banx)\\w"], ["^@banx?\\w"], ["^\\w"], ["^[^.]"], ["^\\."]]
+            "groups": [["^\\u0000"], ["^@?(?!banshop)\\w"], ["^@banshop?\\w"], ["^\\w"], ["^[^.]"], ["^\\."]]
           }
         ],
         "sort-imports": "off",
@@ -103,10 +103,6 @@
     {
       "files": ["*.component.ts"],
       "extends": ["plugin:@angular-eslint/template/process-inline-templates"]
-    },
-    {
-      "files": ["*.ts"],
-      "extends": ["plugin:ngrx/recommended"]
     }
   ]
 }
