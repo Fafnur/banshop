@@ -7,5 +7,6 @@ import { AppCoreModule } from './app-core.module';
 @NgModule({
   imports: [BrowserModule.withServerTransition({ appId: 'serverApp' }), AppCoreModule],
   declarations: [AppComponent],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

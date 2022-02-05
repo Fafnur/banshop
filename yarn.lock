@@ -2810,6 +2810,14 @@ ajv@^6.10.0, ajv@^6.12.2, ajv@^6.12.4, ajv@^6.12.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
+angular-imask@^6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/angular-imask/-/angular-imask-6.4.0.tgz#1c8805b078fccb03f5e35c1ebffabe0aeebf5a7c"
+  integrity sha512-88tExTWSmrA4gtunlef6sgwh8cekbpVQAyD7P6+qTPNyzmn/l1UeOhl/IO+xj3zYCvPEmyfKexMCcjgcJuHr5A==
+  dependencies:
+    imask "^6.4.0"
+    tslib "^2.3.1"
+
 ansi-colors@4.1.1, ansi-colors@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-4.1.1.tgz#cbb9ae256bf750af1eab344f229aa27fe94ba348"
@@ -5980,6 +5988,11 @@ image-size@~0.5.0:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
   integrity sha1-Cd/Uq50g4p6xw+gLiZA3jfnjy5w=
+
+imask@^6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/imask/-/imask-6.4.0.tgz#76e48e6bbf5306f7de058f8a1b90fd2282d446bc"
+  integrity sha512-iXXgSQA6TJX/RSKivKoTYYoCc4ZmVseMcoDIxMrlW1JPpc8LU9FtCp3f80vg1eUQvmVfEQbh+vybFVDRt2o9TQ==
 
 immutable@^3:
   version "3.8.2"

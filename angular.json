@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
+    "core-forms-mask": "libs/core/forms/mask",
+    "russian-localization": "libs/russian/localization",
     "store": "apps/store",
     "store-e2e": "apps/store-e2e"
   }
