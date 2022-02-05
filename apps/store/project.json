@@ -8,9 +8,9 @@
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/store",
+        "outputPath": "dist/store/browser",
         "index": "apps/store/src/index.html",
-        "main": "apps/store/src/main.ts",
+        "main": "apps/store/src/main.browser.ts",
         "polyfills": "apps/store/src/polyfills.ts",
         "tsConfig": "apps/store/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
@@ -24,7 +24,7 @@
             {
               "type": "initial",
               "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumError": "2mb"
             },
             {
               "type": "anyComponentStyle",
@@ -72,10 +72,7 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/store/src/**/*.ts",
-          "apps/store/src/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/store/src/**/*.ts", "apps/store/src/**/*.html"]
       }
     },
     "test": {
@@ -85,6 +82,63 @@
         "jestConfig": "apps/store/jest.config.js",
         "passWithNoTests": true
       }
+    },
+    "server": {
+      "executor": "@angular-devkit/build-angular:server",
+      "options": {
+        "outputPath": "dist/store/server",
+        "main": "apps/store/server.ts",
+        "tsConfig": "apps/store/tsconfig.server.json",
+        "inlineStyleLanguage": "scss"
+      },
+      "configurations": {
+        "production": {
+          "outputHashing": "media",
+          "fileReplacements": [
+            {
+              "replace": "apps/store/src/environments/environment.ts",
+              "with": "apps/store/src/environments/environment.prod.ts"
+            }
+          ]
+        },
+        "development": {
+          "optimization": false,
+          "sourceMap": true,
+          "extractLicenses": false
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve-ssr": {
+      "executor": "@nguniversal/builders:ssr-dev-server",
+      "configurations": {
+        "development": {
+          "browserTarget": "store:build:development",
+          "serverTarget": "store:server:development"
+        },
+        "production": {
+          "browserTarget": "store:build:production",
+          "serverTarget": "store:server:production"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "prerender": {
+      "executor": "@nguniversal/builders:prerender",
+      "options": {
+        "routes": ["/"]
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "store:build:production",
+          "serverTarget": "store:server:production"
+        },
+        "development": {
+          "browserTarget": "store:build:development",
+          "serverTarget": "store:server:development"
+        }
+      },
+      "defaultConfiguration": "production"
     }
   },
   "tags": []

@@ -5,7 +5,8 @@
     "types": [],
     "target": "ES2017"
   },
-  "files": ["src/main.ts", "src/polyfills.ts"],
+  "files": [
+    "src/main.browser.ts", "src/polyfills.ts"],
   "include": ["src/**/*.d.ts"],
   "exclude": ["**/*.test.ts", "**/*.spec.ts"]
 }

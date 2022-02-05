@@ -17,12 +17,18 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/store-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": [
+          "apps/store-e2e/**/*.{js,ts}"
+        ]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": ["store"]
+  "implicitDependencies": [
+    "store"
+  ]
 }
