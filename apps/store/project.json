@@ -14,7 +14,13 @@
         "polyfills": "apps/store/src/polyfills.ts",
         "tsConfig": "apps/store/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/store/src/favicon.ico", "apps/store/src/assets"],
+        "assets": [
+          "apps/store/src/browserconfig.xml",
+          "apps/store/src/site.webmanifest",
+          "apps/store/src/favicon.ico",
+          "apps/store/src/robots.txt",
+          "apps/store/src/assets"
+        ],
         "styles": ["apps/store/src/styles.scss"],
         "scripts": []
       },

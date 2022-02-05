@@ -1,0 +1,6 @@
+User-agent: *
+Host: https://banshop.fafn.ru
+Sitemap: https://banshop.fafn.ru/sitemap.xml
+
+User-agent: Yandex
+Clean-param: bonus&utm_source&utm_medium&utm_campaign&utm_term&utm_content&click_id *
