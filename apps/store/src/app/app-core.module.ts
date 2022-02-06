@@ -4,6 +4,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
+import { ENVIRONMENTS } from '@banshop/core/environments/service';
 import { LocalizationModule } from '@banshop/russian/localization';
 
 import { environment } from '../environments/environment';
@@ -11,11 +12,16 @@ import { environment } from '../environments/environment';
 @NgModule({
   imports: [
     HttpClientModule,
-    !environment.production ? StoreDevtoolsModule.instrument({ logOnly: environment.production }) : [],
+    LocalizationModule,
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
-    LocalizationModule,
+    !environment.production ? StoreDevtoolsModule.instrument({ logOnly: environment.production }) : [],
   ],
-  providers: [],
+  providers: [
+    {
+      provide: ENVIRONMENTS,
+      useValue: environment,
+    },
+  ],
 })
 export class AppCoreModule {}

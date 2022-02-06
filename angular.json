@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "core-environments-service": "libs/core/environments/service",
     "core-forms-mask": "libs/core/forms/mask",
     "core-utils-destoy": "libs/core/utils/destoy",
     "russian-localization": "libs/russian/localization",
