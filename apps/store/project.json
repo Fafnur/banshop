@@ -5,9 +5,12 @@
   "prefix": "banshop",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@angular-builders/custom-webpack:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "customWebpackConfig": {
+          "path": "apps/store/webpack-dev.config.ts"
+        },
         "outputPath": "dist/store/browser",
         "index": "apps/store/src/index.html",
         "main": "apps/store/src/main.browser.ts",

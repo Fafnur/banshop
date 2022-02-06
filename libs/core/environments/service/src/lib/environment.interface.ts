@@ -5,7 +5,8 @@ export interface Environments {
   brand: string;
   google?: {
     id: string;
-    products: string;
+    name: string;
+    key: string;
   };
 }
 

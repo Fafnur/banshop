@@ -5,6 +5,6 @@ export const environment: Environments = {
   brand: 'Banshop',
   google: {
     id: '1digiEWEZVFKaljOZDLmyY_aKO3Our26eWWZd2ET56oo',
-    products: 'products',
+    name: 'products',
   },
 };
