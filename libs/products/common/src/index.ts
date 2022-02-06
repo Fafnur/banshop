@@ -1,1 +1,2 @@
-export * from './lib/products-common.module';
+export * from './lib/product.interface';
+export * from './lib/product.stub';
