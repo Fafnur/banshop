@@ -19,6 +19,9 @@
       "@banshop/core/environments/service": ["libs/core/environments/service/src/index.ts"],
       "@banshop/core/forms/mask": ["libs/core/forms/mask/src/index.ts"],
       "@banshop/core/utils/destoy": ["libs/core/utils/destoy/src/index.ts"],
+      "@banshop/products/api": ["libs/products/api/src/index.ts"],
+      "@banshop/products/common": ["libs/products/common/src/index.ts"],
+      "@banshop/products/state": ["libs/products/state/src/index.ts"],
       "@banshop/russian/localization": ["libs/russian/localization/src/index.ts"],
       "@banshop/ui/layout": ["libs/ui/layout/src/index.ts"]
     }
