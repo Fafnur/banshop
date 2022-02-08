@@ -8,6 +8,7 @@ export const PRODUCTS_RESPONSE_STUB: ProductsResponse = {
 
 /* eslint-disable max-len */
 export const PRODUCT_STUB: Product = {
+  id: 1,
   title: 'Reebok Lite 3',
   subtitle: 'Легкие стильные кроссовки для бега',
   description:

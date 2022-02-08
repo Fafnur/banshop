@@ -2,7 +2,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { takeUntil, tap } from 'rxjs';
 
-import { DestroyService } from '@banshop/core/utils/destoy';
+import { DestroyService } from '@banshop/core/utils/destroy';
 
 export const BREAKPOINT_TYPES = {
   [Breakpoints.Handset]: Breakpoints.Handset,

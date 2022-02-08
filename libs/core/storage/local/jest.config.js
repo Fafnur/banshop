@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'core-utils-destoy',
+  displayName: 'core-storage-local',
   preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../../coverage/libs/core/utils/destoy',
+  coverageDirectory: '../../../../coverage/libs/core/storage/local',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

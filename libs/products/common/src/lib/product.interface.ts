@@ -1,4 +1,9 @@
+export enum ProductKeys {
+  Products = 'products',
+}
+
 export interface Product {
+  id: number;
   title: string;
   subtitle: string;
   price: number;

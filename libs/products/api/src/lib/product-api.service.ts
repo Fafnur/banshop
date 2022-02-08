@@ -22,18 +22,17 @@ export class ProductApiService {
     }
 
     return this.apiService.get<ProductsResponse>(PRODUCT_API_ROUTES.load(this.environmentService.environments.google)).pipe(
-      map((response: ProductsResponse) => {
-        return response.values.map(
-          ([title, subtitle, price, sizes, description, photos]: [string, string, string, string, string, string]) => ({
-            title: title.trim(),
-            subtitle: subtitle.trim(),
-            price: Number(price.trim()),
-            sizes: sizes.split('\n').map((size) => Number(size.trim())),
-            description: description.trim(),
-            photos: photos.split('\n').map((photo) => photo.trim()),
-          })
-        );
-      })
+      map((response: ProductsResponse) =>
+        response.values.map(([title, subtitle, price, sizes, description, photos], index) => ({
+          id: index + 1,
+          title: title.trim(),
+          subtitle: subtitle.trim(),
+          price: Number(price.trim()),
+          sizes: sizes.split('\n').map((size) => Number(size.trim())),
+          description: description.trim(),
+          photos: photos.split('\n').map((photo) => photo.trim()),
+        }))
+      )
     );
   }
 }
