@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { readFirst } from '@nrwl/angular/testing';
-import { hot } from 'jasmine-marbles';
+import { of } from 'rxjs';
 import { anything, mock, when } from 'ts-mockito';
 
 import { LocalAsyncStorage } from '@banshop/core/storage/local';
@@ -43,7 +43,7 @@ describe('ProductFacade', () => {
       class RootModule {}
       TestBed.configureTestingModule({ imports: [RootModule] });
 
-      when(localAsyncStorageMock.getItem(anything())).thenReturn(hot('a', { a: null }));
+      when(localAsyncStorageMock.getItem(anything())).thenReturn(of(null));
 
       facade = TestBed.inject(ProductFacade);
     });
@@ -55,15 +55,15 @@ describe('ProductFacade', () => {
       expect(products.length).toBe(0);
       expect(isLoaded).toBeFalsy();
 
-      when(productApiServiceMock.load()).thenReturn(hot('a', { a: PRODUCTS_STUB }));
+      when(productApiServiceMock.load()).thenReturn(of(PRODUCTS_STUB));
 
       facade.load();
 
       products = await readFirst(facade.products$);
       isLoaded = await readFirst(facade.loaded$);
 
+      expect(isLoaded).toBeTruthy();
       expect(products.length).toBe(1);
-      expect(isLoaded).toBe(true);
     });
   });
 });

@@ -17,8 +17,9 @@ export class ProductEffects implements OnInitEffects {
       ofType(ProductActions.init),
       concatLatestFrom(() => this.localAsyncStorage.getItem<Product[] | null>(ProductKeys.Products).pipe(take(1))),
       fetch({
+        id: (action, products) => 'init-products',
         run: (action, products) => ProductActions.restore({ products: products ?? [] }),
-        onError: (action, error) => console.error(`Error: ${action.type}`, error),
+        onError: (action, error) => console.error(`Error: ${action.type}\n`, error),
       })
     );
   });
@@ -27,9 +28,10 @@ export class ProductEffects implements OnInitEffects {
     return this.actions$.pipe(
       ofType(ProductActions.load),
       fetch({
+        id: () => 'load-products',
         run: () => this.productApiService.load().pipe(map((products) => ProductActions.loadSuccess({ products }))),
         onError: (action, error) => {
-          console.error(`Error: ${action.type}`, error);
+          console.error(`Error: ${action.type}\n`, error);
 
           return ProductActions.loadFailure({ error });
         },
