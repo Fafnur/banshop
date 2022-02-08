@@ -1,0 +1,10 @@
+<banshop-error-card color="danger" automation-id="card">
+  <banshop-error-code automation-id="code">500</banshop-error-code>
+  <banshop-error-title automation-id="title">Внутренняя ошибка сервера</banshop-error-title>
+  <banshop-error-description automation-id="description">
+    Извините, что-то пошло не так. Обратитесь в <a banshop-link [routerLink]="paths.support | path">службу поддержки</a>.
+  </banshop-error-description>
+  <banshop-error-links automation-id="links">
+    <a mat-raised-button color="warn" [routerLink]="paths.home | path">Перейти на главную</a>
+  </banshop-error-links>
+</banshop-error-card>

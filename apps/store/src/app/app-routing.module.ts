@@ -12,6 +12,10 @@ const routes: Routes = [
         path: '',
         loadChildren: () => import('@banshop/russian/home/page').then((modules) => modules.HomePageModule),
       },
+      {
+        path: '',
+        loadChildren: () => import('@banshop/russian/errors/pages').then((modules) => modules.ErrorsPagesModule),
+      },
     ],
   },
 ];

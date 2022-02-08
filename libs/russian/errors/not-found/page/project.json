@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/russian/errors/not-found/page",
+  "sourceRoot": "libs/russian/errors/not-found/page/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/russian/errors/not-found/page"],
+      "options": {
+        "jestConfig": "libs/russian/errors/not-found/page/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/russian/errors/not-found/page/src/**/*.ts", "libs/russian/errors/not-found/page/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

@@ -7,10 +7,6 @@ import { Environments } from '@banshop/core/environments/service';
 export const environment: Environments = {
   production: false,
   brand: 'Banshop',
-  google: {
-    id: '1digiEWEZVFKaljOZDLmyY_aKO3Our26eWWZd2ET56oo',
-    name: 'products',
-  },
 };
 
 /*

@@ -1,0 +1,23 @@
+@use 'libs/ui/stylesheets/variables' as store;
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+:host {
+  padding: 30% 2rem;
+  display: block;
+  position: relative;
+
+  @include store-mixins.media-tablet() {
+    padding: 15% 2rem;
+  }
+
+  @include store-mixins.media-web() {
+    padding: 3rem 2rem;
+  }
+}
+
+.error-content {
+  color: store.$color-default;
+  z-index: 1;
+  line-height: 1.1;
+  text-align: center;
+}

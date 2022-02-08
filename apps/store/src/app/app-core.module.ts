@@ -5,6 +5,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { ENVIRONMENTS } from '@banshop/core/environments/service';
+import { NAVIGATION_PATHS, PATHS } from '@banshop/core/navigation/common';
 import { LocalizationModule } from '@banshop/russian/localization';
 
 import { environment } from '../environments/environment';
@@ -21,6 +22,10 @@ import { environment } from '../environments/environment';
     {
       provide: ENVIRONMENTS,
       useValue: environment,
+    },
+    {
+      provide: PATHS,
+      useValue: NAVIGATION_PATHS,
     },
   ],
 })
