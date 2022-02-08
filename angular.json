@@ -14,6 +14,7 @@
     "products-api": "libs/products/api",
     "products-common": "libs/products/common",
     "products-state": "libs/products/state",
+    "russian-home-page": "libs/russian/home/page",
     "russian-localization": "libs/russian/localization",
     "store": "apps/store",
     "store-e2e": "apps/store-e2e",

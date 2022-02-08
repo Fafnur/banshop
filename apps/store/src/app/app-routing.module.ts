@@ -7,7 +7,12 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    children: [],
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('@banshop/russian/home/page').then((modules) => modules.HomePageModule),
+      },
+    ],
   },
 ];
 
