@@ -28,9 +28,9 @@ export class ProductApiService {
           title: title.trim(),
           subtitle: subtitle.trim(),
           price: Number(price.trim()),
-          sizes: sizes.split('\n').map((size) => Number(size.trim())),
+          sizes: sizes.split(',').map((size) => Number(size.trim())),
           description: description.trim(),
-          photos: photos.split('\n').map((photo) => photo.trim()),
+          photos: photos.split(',').map((photo) => photo.trim()),
         }))
       )
     );

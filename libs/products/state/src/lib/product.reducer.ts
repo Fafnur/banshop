@@ -26,13 +26,6 @@ export const productInitialState: ProductState = productAdapter.getInitialState(
 const productReducer = createReducer(
   productInitialState,
   on(
-    ProductActions.init,
-    (state): ProductState => ({
-      ...state,
-      loaded: false,
-    })
-  ),
-  on(
     ProductActions.restore,
     (state, { products }): ProductState =>
       productAdapter.setAll(products, {
@@ -52,7 +45,7 @@ const productReducer = createReducer(
     ProductActions.loadFailure,
     (state): ProductState => ({
       ...state,
-      loaded: false,
+      loaded: true,
     })
   )
 );
