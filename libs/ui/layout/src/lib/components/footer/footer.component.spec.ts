@@ -1,4 +1,8 @@
+import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockModule } from 'ng-mocks';
+
+import { ContainerModule } from '@banshop/ui/container';
 
 import { FooterComponent } from './footer.component';
 
@@ -8,6 +12,7 @@ describe('FooterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [CommonModule, MockModule(ContainerModule)],
       declarations: [FooterComponent],
     }).compileComponents();
   });

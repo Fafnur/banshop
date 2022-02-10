@@ -25,6 +25,7 @@
     "russian-localization": "libs/russian/localization",
     "store": "apps/store",
     "store-e2e": "apps/store-e2e",
+    "ui-container": "libs/ui/container",
     "ui-layout": "libs/ui/layout",
     "ui-link": "libs/ui/link"
   }
