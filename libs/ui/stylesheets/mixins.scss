@@ -3,6 +3,11 @@
     @content;
   }
 }
+@mixin media-handset-up() {
+  @media (min-width: 0) and (orientation: portrait), (min-width: 0) and (orientation: landscape) {
+    @content;
+  }
+}
 
 @mixin media-handset-portrait() {
   @media (max-width: 599.98px) and (orientation: portrait) {
@@ -23,6 +28,12 @@
   }
 }
 
+@mixin media-tablet-up() {
+  @media (min-width: 600px) and (orientation: portrait), (min-width: 960px) and (orientation: landscape) {
+    @content;
+  }
+}
+
 @mixin media-tablet-landscape() {
   @media (min-width: 960px) and (max-width: 1279.98px) and (orientation: landscape) {
     @content;
@@ -36,6 +47,12 @@
 }
 
 @mixin media-web() {
+  @media (min-width: 840px) and (orientation: portrait), (min-width: 1280px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin media-web-up() {
   @media (min-width: 840px) and (orientation: portrait), (min-width: 1280px) and (orientation: landscape) {
     @content;
   }

@@ -38,6 +38,7 @@
       "@banshop/russian/home/page": ["libs/russian/home/page/src/index.ts"],
       "@banshop/russian/localization": ["libs/russian/localization/src/index.ts"],
       "@banshop/ui/container": ["libs/ui/container/src/index.ts"],
+      "@banshop/ui/grid": ["libs/ui/grid/src/index.ts"],
       "@banshop/ui/layout": ["libs/ui/layout/src/index.ts"],
       "@banshop/ui/link": ["libs/ui/link/src/index.ts"]
     }
