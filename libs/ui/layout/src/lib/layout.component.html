@@ -1,4 +1,4 @@
-<ng-container [ngSwitch]="layoutType">
+<ng-container [ngSwitch]="layoutType$ | async">
   <ng-container *ngSwitchCase="breakpoints.Web">
     <banshop-header class="header"></banshop-header>
     <main class="main">
