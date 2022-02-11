@@ -2,18 +2,17 @@
 @use 'sass:math' as math;
 
 @mixin make-row($breakpoint) {
-  &.row-#{$breakpoint} {
+  &[#{$breakpoint}] {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     height: 100%;
     margin-left: -1rem;
     margin-right: -1rem;
-
-    &.no-padding {
-      margin-left: 0;
-      margin-right: 0;
-    }
+  }
+  &[#{$breakpoint}].no-padding {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 

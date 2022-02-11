@@ -1,32 +1,30 @@
 @use 'sass:math';
 @use 'libs/ui/stylesheets/mixins' as store-mixins;
 
-@mixin make-columns($breakpoint: 1rem) {
-  &.column-#{$breakpoint} {
+@mixin make-columns($mode) {
+  &[#{$mode}] {
     flex: 1 0 0;
     padding: 0 1rem;
   }
 
-  &[class*='column-#{$breakpoint}'] {
-    padding: 0 1rem;
-  }
-
-  &[class*='column-#{$breakpoint}-'] {
+  &[#{$mode}]:not([#{$mode}='']) {
     flex: 0 0 auto;
   }
 
-  :host-context(.row.no-padding) &[class*='column-#{$breakpoint}'] {
+  :host-context(banshop-row.no-padding) &[#{$mode}] {
     padding: 0;
   }
 
   @for $column from 1 through 12 {
-    &.column-#{$breakpoint}-#{$column} {
+    &[#{$mode}='#{$column}'] {
       width: math.percentage(math.div($column, 12));
     }
   }
 }
 
 :host {
+  display: block;
+
   @include store-mixins.media-handset-up() {
     @include make-columns(handset);
   }

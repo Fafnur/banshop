@@ -1,16 +1,13 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { GridMode } from '../grid.util';
 import { ColumnComponent } from './column.component';
 import { ColumnComponentPo } from './column.component.po';
 
 @Component({
-  template: `<banshop-column automation-id="column" [modes]="modes"></banshop-column>`,
+  template: `<banshop-column automation-id="column"></banshop-column>`,
 })
-export class WrapperComponent {
-  modes: Partial<Record<GridMode, number>> = { [GridMode.Handset]: 4, [GridMode.Tablet]: 3 };
-}
+export class WrapperComponent {}
 
 describe('ColumnComponent', () => {
   let pageObject: ColumnComponentPo;
@@ -33,12 +30,5 @@ describe('ColumnComponent', () => {
     fixtureWrapper.detectChanges();
 
     expect(fixtureWrapper.componentInstance).toBeTruthy();
-  });
-
-  it('should create', () => {
-    fixtureWrapper.detectChanges();
-
-    expect(pageObject.hasColumnClass('column-handset-4')).toBeTruthy();
-    expect(pageObject.hasColumnClass('column-tablet-3')).toBeTruthy();
   });
 });

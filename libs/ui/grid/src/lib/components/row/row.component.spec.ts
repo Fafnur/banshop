@@ -1,16 +1,13 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { GridMode } from '../grid.util';
 import { RowComponent } from './row.component';
 import { RowComponentPo } from './row.component.po';
 
 @Component({
-  template: `<banshop-row automation-id="row" [mode]="mode"></banshop-row>`,
+  template: `<banshop-row automation-id="row"></banshop-row>`,
 })
-class WrapperComponent {
-  mode = GridMode.Handset;
-}
+class WrapperComponent {}
 
 describe('RowComponent', () => {
   let pageObject: RowComponentPo;
@@ -33,11 +30,5 @@ describe('RowComponent', () => {
     fixture.detectChanges();
 
     expect(fixture.componentInstance).toBeTruthy();
-  });
-
-  it('should set class row-xs', () => {
-    fixture.detectChanges();
-
-    expect(pageObject.hasRowClass(`row-${GridMode.Handset}`)).toBeTruthy();
   });
 });

@@ -2,7 +2,7 @@ import { DebugElement } from '@angular/core';
 
 import { PageObject } from '@banshop/core/testing';
 
-import { GridMode } from '../grid.util';
+import { GridMode } from '../../grid.util';
 
 enum ColumnAutomation {
   Column = 'column',
