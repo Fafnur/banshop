@@ -14,7 +14,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        loadChildren: () => import('@banshop/russian/errors/pages').then((modules) => modules.ErrorsPagesModule),
+        loadChildren: () => import('@banshop/errors/pages').then((modules) => modules.ErrorsPagesModule),
       },
     ],
   },
