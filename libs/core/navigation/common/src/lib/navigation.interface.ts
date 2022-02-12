@@ -3,6 +3,8 @@ import { InjectionToken } from '@angular/core';
 export interface NavigationPaths {
   home: string;
   support: string;
+  cart: string;
+  contacts: string;
 
   product: string;
 
@@ -14,6 +16,8 @@ export interface NavigationPaths {
 export const NAVIGATION_PATHS: NavigationPaths = {
   home: '',
   support: 'support',
+  cart: 'cart',
+  contacts: 'contacts',
 
   product: 'product/:slug',
 
