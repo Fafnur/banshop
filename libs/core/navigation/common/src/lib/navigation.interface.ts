@@ -5,6 +5,7 @@ export interface NavigationPaths {
   support: string;
   cart: string;
   contacts: string;
+  terms: string;
 
   product: string;
 
@@ -18,6 +19,7 @@ export const NAVIGATION_PATHS: NavigationPaths = {
   support: 'support',
   cart: 'cart',
   contacts: 'contacts',
+  terms: 'terms',
 
   product: 'product/:slug',
 

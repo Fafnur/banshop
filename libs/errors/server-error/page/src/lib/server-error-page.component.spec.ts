@@ -49,8 +49,11 @@ describe('ServerErrorPageComponent', () => {
 
     expect(pageObject.card).toBeTruthy();
     expect(pageObject.codeText).toBe('500');
-    expect(pageObject.titleText).toBe('Внутренняя ошибка сервера');
-    expect(pageObject.descriptionText).toBe('Извините, что-то пошло не так. Обратитесь в службу поддержки.');
+    expect(pageObject.titleText).toBe('Internal server error');
+    expect(pageObject.descriptionText).toBe(
+      // eslint-disable-next-line max-len
+      'If you’re facing some issues while using our service you’re unable to solve yourself, please contact our customer service department by sending a message to support. We’ll try to do our best as soon as we’ll consider your appeal.'
+    );
     expect(pageObject.links).toBeTruthy();
   });
 });

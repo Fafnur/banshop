@@ -56,6 +56,16 @@
         <note priority="1" from="description">Description</note>
         <note priority="1" from="meaning">Error server error</note>
       </trans-unit>
+      <trans-unit id="3b1e1015b8cdca5ca18d43f1b90efef7c8e0a88f" datatype="html">
+        <source>Terms of sale</source>
+        <target state="translated">Условия продажи</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ui/layout/src/lib/components/footer/components/terms/terms.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Terms link</note>
+        <note priority="1" from="meaning">Layout</note>
+      </trans-unit>
     </body>
   </file>
 </xliff>

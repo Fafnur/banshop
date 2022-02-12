@@ -47,8 +47,8 @@ describe('NotFoundComponent', () => {
 
     expect(pageObject.card).toBeTruthy();
     expect(pageObject.codeText).toBe('404');
-    expect(pageObject.titleText).toBe('Страница не найдена');
-    expect(pageObject.descriptionText).toBe('Извините, запрашиваемая страница не найдена.');
+    expect(pageObject.titleText).toBe('Page not found');
+    expect(pageObject.descriptionText).toBe('Sorry, the requested page was not found.');
     expect(pageObject.links).toBeTruthy();
   });
 });
