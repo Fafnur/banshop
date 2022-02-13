@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { PATHS_STUB } from '@banshop/core/navigation/common';
+
 import { NavComponent } from './nav.component';
 
 describe('NavComponent', () => {
@@ -8,9 +10,9 @@ describe('NavComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavComponent ]
-    })
-    .compileComponents();
+      declarations: [NavComponent],
+      providers: [PATHS_STUB],
+    }).compileComponents();
   });
 
   beforeEach(() => {

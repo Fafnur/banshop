@@ -7,6 +7,5 @@
   @include store-mixins.media-handset() {
     display: block;
     background-color: mat.get-color-from-palette(mat.$gray-palette, 200);
-    padding: 1rem 0;
   }
 }
