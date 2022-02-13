@@ -1,11 +1,22 @@
+@use '@angular/material' as mat;
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
 :host {
   display: flex;
   min-height: 100%;
   flex-direction: column;
   width: 100%;
+
+  @include store-mixins.media-tablet() {
+    flex-direction: row;
+  }
+
+  @include store-mixins.media-web() {
+    flex-direction: column;
+  }
 }
 
-.main {
+main {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -17,6 +28,7 @@
 }
 
 .header,
-.footer {
+.footer,
+.sidebar {
   flex-shrink: 0;
 }
