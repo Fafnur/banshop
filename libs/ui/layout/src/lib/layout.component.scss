@@ -25,6 +25,21 @@ main {
   & > * {
     width: 100%;
   }
+
+  &.tablet {
+    overflow-y: auto;
+    height: 100vh;
+  }
+
+  &.handset {
+    overflow-y: auto;
+    height: calc(100vh - 8rem);
+  }
+
+  banshop-container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }
 
 banshop-header,

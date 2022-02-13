@@ -6,6 +6,7 @@
 
   @include store-mixins.media-handset() {
     display: block;
+    height: 4rem;
     background-color: mat.get-color-from-palette(mat.$gray-palette, 200);
   }
 }

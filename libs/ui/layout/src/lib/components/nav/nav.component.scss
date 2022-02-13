@@ -15,7 +15,7 @@
 banshop-nav-link {
   a {
     display: block;
-    padding: 1rem 0;
+    padding: 0.8rem 0;
     width: 100%;
     border-radius: 0;
 
@@ -26,5 +26,31 @@ banshop-nav-link {
     &.is-active {
       color: store.$color-primary;
     }
+  }
+
+  mat-icon {
+    font-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  @include store-mixins.media-tablet() {
+    a {
+      padding: 1rem 0;
+    }
+
+    mat-icon {
+      font-size: 1.75rem;
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+  }
+}
+
+.phone {
+  display: none;
+
+  @include store-mixins.media-tablet() {
+    display: block;
   }
 }

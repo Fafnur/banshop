@@ -1,12 +1,45 @@
-a {
+@use '@angular/material' as mat;
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+:host {
   display: flex;
+  flex-direction: row;
   text-decoration: none;
-  max-width: 40px;
-  justify-content: center;
   align-items: center;
+  user-select: none;
+  padding: 1rem 0;
+
+  @include store-mixins.media-tablet() {
+    padding: 1rem 1rem 0.5rem 1rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @include store-mixins.media-web() {
+    flex-direction: row;
+    padding: 1rem 0;
+  }
 }
 
 img {
-  max-width: 100%;
+  max-width: 2rem;
   width: 100%;
+}
+
+span {
+  padding-left: 0.5rem;
+  color: #d01931;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+
+  @include store-mixins.media-tablet() {
+    font-size: 0.9rem;
+    padding-top: 0.5rem;
+    padding-left: 0;
+  }
+
+  @include store-mixins.media-web() {
+    padding-left: 0.5rem;
+    font-size: 2rem;
+  }
 }

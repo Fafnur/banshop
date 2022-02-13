@@ -1,16 +1,30 @@
 <ng-container [ngSwitch]="layoutType$ | async">
   <ng-container *ngSwitchCase="breakpoints.Web">
     <banshop-header></banshop-header>
-    <main><router-outlet></router-outlet></main>
+    <main>
+      <banshop-container>
+        <router-outlet></router-outlet>
+      </banshop-container>
+    </main>
     <banshop-footer></banshop-footer>
   </ng-container>
   <ng-container *ngSwitchCase="breakpoints.Tablet">
     <banshop-sidebar></banshop-sidebar>
-    <main><router-outlet></router-outlet></main>
+    <main class="tablet">
+      <banshop-container mode="fluid">
+        <router-outlet></router-outlet>
+      </banshop-container>
+    </main>
   </ng-container>
   <ng-container *ngSwitchDefault>
-    <banshop-header></banshop-header>
-    <main><router-outlet></router-outlet></main>
+    <div>
+      <banshop-header></banshop-header>
+      <main class="handset">
+        <banshop-container mode="fluid">
+          <router-outlet></router-outlet>
+        </banshop-container>
+      </main>
+    </div>
     <banshop-menu></banshop-menu>
   </ng-container>
 </ng-container>

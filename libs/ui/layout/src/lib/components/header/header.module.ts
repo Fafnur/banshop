@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { ContainerModule } from '@banshop/ui/container';
 
+import { LogoModule } from '../logo/logo.module';
 import { HeaderComponent } from './header.component';
+import { PhoneModule } from './phone/phone.module';
 
 @NgModule({
-  imports: [CommonModule, ContainerModule],
+  imports: [CommonModule, ContainerModule, LogoModule, PhoneModule],
   declarations: [HeaderComponent],
   exports: [HeaderComponent],
 })

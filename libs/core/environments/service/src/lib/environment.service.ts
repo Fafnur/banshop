@@ -5,6 +5,7 @@ import { ENVIRONMENTS, Environments } from './environment.interface';
 export const ENVIRONMENTS_DEFAULT: Environments = {
   production: false,
   brand: 'Banshop',
+  phone: '88002000000',
 };
 
 @Injectable({

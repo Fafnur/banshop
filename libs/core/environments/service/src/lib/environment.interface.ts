@@ -3,6 +3,7 @@ import { InjectionToken } from '@angular/core';
 export interface Environments {
   production: boolean;
   brand: string;
+  phone: string;
   google?: {
     id: string;
     name: string;
