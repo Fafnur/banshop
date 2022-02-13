@@ -9,5 +9,5 @@ import { NavigationPaths, PATHS } from '@banshop/core/navigation/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LogoComponent {
-  constructor(@Inject(PATHS) private readonly paths: NavigationPaths) {}
+  constructor(@Inject(PATHS) public readonly paths: NavigationPaths) {}
 }
