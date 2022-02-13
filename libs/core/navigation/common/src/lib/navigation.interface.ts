@@ -31,6 +31,7 @@ export interface NavigationLink {
   route: string;
   label: string;
   params?: Record<string, string>;
+  routerLinkActiveOptions?: { exact: boolean };
 }
 
 export const PATHS = new InjectionToken<Record<string, string>>('NAVIGATION_PATHS');

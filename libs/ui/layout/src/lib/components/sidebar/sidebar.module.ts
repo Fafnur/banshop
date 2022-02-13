@@ -1,10 +1,11 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { LogoModule } from '../logo/logo.module';
+import { NavModule } from '../nav/nav.module';
 import { SidebarComponent } from './sidebar.component';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [LogoModule, NavModule],
   declarations: [SidebarComponent],
   exports: [SidebarComponent],
 })

@@ -1,28 +1,12 @@
-<banshop-nav-link>
+<banshop-nav-link *ngFor="let link of links">
   <a
     mat-button
-    #home="routerLinkActive"
+    #rla="routerLinkActive"
     routerLinkActive
-    [class.is-active]="home.isActive"
-    [routerLinkActiveOptions]="{ exact: true }"
-    [routerLink]="paths.home | path"
+    [class.is-active]="rla.isActive"
+    [routerLinkActiveOptions]="link.routerLinkActiveOptions || { exact: false }"
+    [routerLink]="link.route | path"
   >
-    <mat-icon>home</mat-icon>
-  </a>
-</banshop-nav-link>
-<banshop-nav-link>
-  <a mat-button #card="routerLinkActive" routerLinkActive [class.is-active]="card.isActive" [routerLink]="paths.cart | path">
-    <mat-icon>shopping_basket</mat-icon>
-  </a>
-</banshop-nav-link>
-<banshop-nav-link>
-  <a mat-button #chat="routerLinkActive" routerLinkActive [class.is-active]="chat.isActive" [routerLink]="paths.support | path">
-    <mat-icon>chat</mat-icon>
-  </a>
-</banshop-nav-link>
-
-<banshop-nav-link>
-  <a mat-button #terms="routerLinkActive" routerLinkActive [class.is-active]="terms.isActive" [routerLink]="paths.terms | path">
-    <mat-icon>help</mat-icon>
+    <mat-icon>{{ link.label }}</mat-icon>
   </a>
 </banshop-nav-link>
