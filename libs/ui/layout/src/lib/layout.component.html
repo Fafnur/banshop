@@ -1,7 +1,7 @@
 <ng-container [ngSwitch]="layoutType$ | async">
   <ng-container *ngSwitchCase="breakpoints.Web">
     <banshop-header></banshop-header>
-    <main>
+    <main class="web" automation-id="web">
       <banshop-container>
         <router-outlet></router-outlet>
       </banshop-container>
@@ -10,7 +10,7 @@
   </ng-container>
   <ng-container *ngSwitchCase="breakpoints.Tablet">
     <banshop-sidebar></banshop-sidebar>
-    <main class="tablet">
+    <main class="tablet" automation-id="tablet">
       <banshop-container mode="fluid">
         <router-outlet></router-outlet>
       </banshop-container>
@@ -19,7 +19,7 @@
   <ng-container *ngSwitchDefault>
     <div>
       <banshop-header></banshop-header>
-      <main class="handset">
+      <main class="handset" automation-id="handset">
         <banshop-container mode="fluid">
           <router-outlet></router-outlet>
         </banshop-container>

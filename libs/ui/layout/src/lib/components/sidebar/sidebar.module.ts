@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { LogoModule } from '../logo/logo.module';
@@ -6,7 +7,7 @@ import { CopyrightModule } from './copyright/copyright.module';
 import { SidebarComponent } from './sidebar.component';
 
 @NgModule({
-  imports: [LogoModule, NavModule, CopyrightModule],
+  imports: [CommonModule, LogoModule, NavModule, CopyrightModule],
   declarations: [SidebarComponent],
   exports: [SidebarComponent],
 })

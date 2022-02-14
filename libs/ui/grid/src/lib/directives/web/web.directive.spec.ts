@@ -1,6 +1,6 @@
 import { WebDirective } from './web.directive';
 
-describe('HandsetDirective', () => {
+describe('WebDirective', () => {
   it('should create an instance', () => {
     const directive = new WebDirective();
     expect(directive).toBeTruthy();

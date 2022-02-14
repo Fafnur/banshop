@@ -2,13 +2,13 @@ import { DebugElement } from '@angular/core';
 
 import { PageObject } from '@banshop/core/testing';
 
-enum ContainerAutomation {
+enum Automation {
   Container = 'container',
 }
 
 export class ContainerComponentPo extends PageObject {
   get container(): DebugElement | null {
-    return this.getByAutomationId(ContainerAutomation.Container);
+    return this.getByAutomationId(Automation.Container);
   }
 
   hasContainerClass(className: string): boolean {

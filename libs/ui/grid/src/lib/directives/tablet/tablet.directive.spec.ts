@@ -1,6 +1,6 @@
 import { TabletDirective } from './tablet.directive';
 
-describe('HandsetDirective', () => {
+describe('TabletDirective', () => {
   it('should create an instance', () => {
     const directive = new TabletDirective();
     expect(directive).toBeTruthy();

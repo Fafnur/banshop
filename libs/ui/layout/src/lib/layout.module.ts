@@ -7,12 +7,11 @@ import { ContainerModule } from '@banshop/ui/container';
 import { FooterModule } from './components/footer/footer.module';
 import { HeaderModule } from './components/header/header.module';
 import { MenuModule } from './components/menu/menu.module';
-import { NavModule } from './components/nav/nav.module';
 import { SidebarModule } from './components/sidebar/sidebar.module';
 import { LayoutComponent } from './layout.component';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, HeaderModule, FooterModule, SidebarModule, NavModule, MenuModule, ContainerModule],
+  imports: [CommonModule, RouterModule, HeaderModule, FooterModule, SidebarModule, MenuModule, ContainerModule],
   declarations: [LayoutComponent],
   exports: [LayoutComponent],
 })

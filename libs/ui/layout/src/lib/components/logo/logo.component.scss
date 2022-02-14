@@ -1,7 +1,7 @@
 @use '@angular/material' as mat;
 @use 'libs/ui/stylesheets/mixins' as store-mixins;
 
-:host {
+a {
   display: flex;
   flex-direction: row;
   text-decoration: none;

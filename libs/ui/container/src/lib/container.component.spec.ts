@@ -5,7 +5,7 @@ import { ContainerComponent } from './container.component';
 import { ContainerComponentPo } from './container.component.po';
 
 @Component({
-  template: `<banx-ui-container automation-id="container" [mode]="mode" [height]="height"></banx-ui-container>`,
+  template: `<banshop-container automation-id="container" [mode]="mode" [height]="height"></banshop-container>`,
 })
 export class WrapperComponent {
   mode: 'flex' | 'flex-row' | 'fluid' | null = 'flex';

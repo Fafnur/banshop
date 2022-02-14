@@ -10,10 +10,11 @@ import { PATHS_STUB } from '@banshop/core/navigation/common';
 import { NavigationPipesModule } from '@banshop/core/navigation/ui/pipes';
 
 import { NavComponent } from './nav.component';
+import { NavComponentPo } from './nav.component.po';
 import { NavLinkModule } from './nav-link/nav-link.module';
 
 describe('NavComponent', () => {
-  let component: NavComponent;
+  let pageObject: NavComponentPo;
   let fixture: ComponentFixture<NavComponent>;
 
   beforeEach(async () => {
@@ -34,12 +35,18 @@ describe('NavComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NavComponent);
-    component = fixture.componentInstance;
+    pageObject = new NavComponentPo(fixture);
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-
     fixture.detectChanges();
+
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('should show', () => {
+    fixture.detectChanges();
+
+    expect(pageObject.navLinks.length).toBe(5);
   });
 });
