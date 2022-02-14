@@ -3,25 +3,29 @@
 :host {
   banshop-row {
     align-items: stretch;
-
-    @include store-mixins.media-tablet() {
-      margin: 0 -0.5rem;
-    }
-
-    @include store-mixins.media-web() {
-      margin: 0 -1rem;
-    }
   }
 
   banshop-column {
     margin-bottom: 1rem;
+  }
 
-    @include store-mixins.media-tablet() {
+  @include store-mixins.media-tablet() {
+    banshop-row {
+      margin: 0 -0.5rem;
+    }
+
+    banshop-column {
       padding: 0 0.5rem;
       margin-bottom: 1.5rem;
     }
+  }
 
-    @include store-mixins.media-web() {
+  @include store-mixins.media-web() {
+    banshop-row {
+      margin: 0 -1rem;
+    }
+
+    banshop-column {
       margin-bottom: 2rem;
     }
   }
