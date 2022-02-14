@@ -28,9 +28,9 @@ const productReducer = createReducer(
   on(
     ProductActions.restore,
     (state, { products }): ProductState =>
-      productAdapter.setAll(products, {
+      productAdapter.upsertMany(products, {
         ...state,
-        loaded: products.length > 0,
+        loaded: true,
       })
   ),
   on(

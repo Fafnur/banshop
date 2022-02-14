@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 
 import { LocalizationModule } from '@banshop/russian/localization';
 
@@ -8,7 +8,13 @@ import { AppCoreModule } from './app.core.module';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  imports: [BrowserModule.withServerTransition({ appId: 'banshop' }), LocalizationModule, AppRoutingModule, AppCoreModule],
+  imports: [
+    BrowserModule.withServerTransition({ appId: 'banshop' }),
+    LocalizationModule,
+    AppRoutingModule,
+    AppCoreModule,
+    BrowserTransferStateModule,
+  ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
 })
