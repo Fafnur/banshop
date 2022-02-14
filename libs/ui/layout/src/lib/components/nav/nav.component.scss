@@ -1,0 +1,56 @@
+@use '@angular/material' as mat;
+@use 'libs/ui/stylesheets/variables' as store;
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+:host {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  @include store-mixins.media-tablet() {
+    flex-direction: column;
+  }
+}
+
+banshop-nav-link {
+  a {
+    display: block;
+    padding: 0.8rem 0;
+    width: 100%;
+    border-radius: 0;
+
+    &:hover {
+      color: mat.get-color-from-palette(mat.$indigo-palette, 700);
+    }
+
+    &.is-active {
+      color: store.$color-primary;
+    }
+  }
+
+  mat-icon {
+    font-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  @include store-mixins.media-tablet() {
+    a {
+      padding: 1rem 0;
+    }
+
+    mat-icon {
+      font-size: 1.75rem;
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+  }
+}
+
+.phone {
+  display: none;
+
+  @include store-mixins.media-tablet() {
+    display: block;
+  }
+}

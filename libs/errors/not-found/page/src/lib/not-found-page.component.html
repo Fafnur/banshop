@@ -1,0 +1,10 @@
+<banshop-error-card color="primary" automation-id="card">
+  <banshop-error-code automation-id="code">404</banshop-error-code>
+  <banshop-error-title automation-id="title" i18n="Error not found|Title">Page not found</banshop-error-title>
+  <banshop-error-description automation-id="description" i18n="Error not found|Description">
+    Sorry, the requested page was not found.
+  </banshop-error-description>
+  <banshop-error-links automation-id="links">
+    <a mat-raised-button color="primary" [routerLink]="paths.home | path" i18n="Error page|Link home">Go to the home page</a>
+  </banshop-error-links>
+</banshop-error-card>

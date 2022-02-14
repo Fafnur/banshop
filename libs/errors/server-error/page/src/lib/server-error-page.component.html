@@ -1,0 +1,12 @@
+<banshop-error-card color="danger" automation-id="card">
+  <banshop-error-code automation-id="code">500</banshop-error-code>
+  <banshop-error-title automation-id="title" i18n="Error server error|Title">Internal server error</banshop-error-title>
+  <banshop-error-description automation-id="description" i18n="Error server error|Description">
+    If you’re facing some issues while using our service you’re unable to solve yourself, please contact our customer service department by
+    sending a message to <a banshop-link [routerLink]="paths.support | path">support</a>. We’ll try to do our best as soon as we’ll consider
+    your appeal.
+  </banshop-error-description>
+  <banshop-error-links automation-id="links">
+    <a mat-raised-button color="warn" [routerLink]="paths.home | path" i18n="Error page|Link home">Go to the home page</a>
+  </banshop-error-links>
+</banshop-error-card>

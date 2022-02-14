@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/core/utils/destroy",
+  "sourceRoot": "libs/core/utils/destroy/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/core/utils/destroy"],
+      "options": {
+        "jestConfig": "libs/core/utils/destroy/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/core/utils/destroy/src/**/*.ts", "libs/core/utils/destroy/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

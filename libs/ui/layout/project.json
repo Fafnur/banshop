@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/ui/layout",
+  "sourceRoot": "libs/ui/layout/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ui/layout"],
+      "options": {
+        "jestConfig": "libs/ui/layout/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/ui/layout/src/**/*.ts", "libs/ui/layout/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

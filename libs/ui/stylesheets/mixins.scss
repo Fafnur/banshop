@@ -1,0 +1,71 @@
+@mixin media-handset() {
+  @media (max-width: 599.98px) and (orientation: portrait), (max-width: 959.98px) and (orientation: landscape) {
+    @content;
+  }
+}
+@mixin media-handset-up() {
+  @media (min-width: 0) and (orientation: portrait), (min-width: 0) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin media-handset-portrait() {
+  @media (max-width: 599.98px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin media-handset-landscape() {
+  @media (max-width: 959.98px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin media-tablet() {
+  @media (min-width: 600px) and (max-width: 839.98px) and (orientation: portrait),
+    (min-width: 960px) and (max-width: 1279.98px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin media-tablet-up() {
+  @media (min-width: 600px) and (orientation: portrait), (min-width: 960px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin media-tablet-landscape() {
+  @media (min-width: 960px) and (max-width: 1279.98px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin media-tablet-portrait() {
+  @media (min-width: 600px) and (max-width: 839.98px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin media-web() {
+  @media (min-width: 840px) and (orientation: portrait), (min-width: 1280px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin media-web-up() {
+  @media (min-width: 840px) and (orientation: portrait), (min-width: 1280px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin media-web-portrait() {
+  @media (min-width: 840px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin media-web-landscape() {
+  @media (min-width: 1280px) and (orientation: landscape) {
+    @content;
+  }
+}

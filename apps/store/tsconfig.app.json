@@ -2,11 +2,10 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": [],
+    "types": ["node"],
     "target": "ES2017"
   },
-  "files": [
-    "src/main.browser.ts", "src/polyfills.ts"],
+  "files": ["src/main.browser.ts", "src/polyfills.ts"],
   "include": ["src/**/*.d.ts"],
   "exclude": ["**/*.test.ts", "**/*.spec.ts"]
 }

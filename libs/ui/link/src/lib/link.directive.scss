@@ -1,0 +1,11 @@
+@use '@angular/material' as mat;
+@use 'libs/ui/stylesheets/variables' as store;
+
+[banshop-link],
+[banshopLink] {
+  color: store.$color-primary;
+
+  &:hover {
+    color: mat.get-color-from-palette(mat.$indigo-palette, 700);
+  }
+}

@@ -1,0 +1,12 @@
+@use '@angular/material' as mat;
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+:host {
+  display: none;
+
+  @include store-mixins.media-handset() {
+    display: block;
+    height: 4rem;
+    background-color: mat.get-color-from-palette(mat.$gray-palette, 200);
+  }
+}

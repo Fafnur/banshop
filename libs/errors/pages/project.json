@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/errors/pages",
+  "sourceRoot": "libs/errors/pages/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/errors/pages"],
+      "options": {
+        "jestConfig": "libs/errors/pages/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/errors/pages/src/**/*.ts", "libs/errors/pages/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

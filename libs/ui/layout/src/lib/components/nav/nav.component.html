@@ -1,0 +1,17 @@
+<banshop-nav-link automation-id="nav-link" *ngFor="let link of links">
+  <a
+    mat-button
+    #rla="routerLinkActive"
+    routerLinkActive
+    [class.is-active]="rla.isActive"
+    [routerLinkActiveOptions]="link.routerLinkActiveOptions || { exact: false }"
+    [routerLink]="link.route | path"
+  >
+    <mat-icon>{{ link.label }}</mat-icon>
+  </a>
+</banshop-nav-link>
+<banshop-nav-link class="phone" automation-id="nav-link">
+  <a mat-button href="tel:">
+    <mat-icon>phone</mat-icon>
+  </a>
+</banshop-nav-link>

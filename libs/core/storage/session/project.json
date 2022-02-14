@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/core/storage/session",
+  "sourceRoot": "libs/core/storage/session/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/core/storage/session"],
+      "options": {
+        "jestConfig": "libs/core/storage/session/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/core/storage/session/src/**/*.ts", "libs/core/storage/session/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

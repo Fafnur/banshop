@@ -1,0 +1,27 @@
+@use 'libs/ui/stylesheets/variables' as store;
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+:host {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+
+  :host-context(.error-primary) {
+    color: store.$color-primary;
+  }
+  :host-context(.error-warning) {
+    color: store.$color-warning;
+  }
+  :host-context(.error-danger) {
+    color: store.$color-danger;
+  }
+
+  @include store-mixins.media-tablet() {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  @include store-mixins.media-web() {
+    font-size: 3rem;
+  }
+}

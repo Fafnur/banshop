@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/errors/ui/card",
+  "sourceRoot": "libs/errors/ui/card/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/errors/ui/card"],
+      "options": {
+        "jestConfig": "libs/errors/ui/card/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/errors/ui/card/src/**/*.ts", "libs/errors/ui/card/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

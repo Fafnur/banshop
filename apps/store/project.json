@@ -3,23 +3,45 @@
   "root": "apps/store",
   "sourceRoot": "apps/store/src",
   "prefix": "banshop",
+  "i18n": {
+    "sourceLocale": "en-US",
+    "locales": {
+      "ru-RU": {
+        "translation": "libs/russian/localization/src/lib/messages.xlf",
+        "baseHref": ""
+      }
+    }
+  },
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@angular-builders/custom-webpack:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "customWebpackConfig": {
+          "path": "apps/store/webpack-dev.config.ts"
+        },
         "outputPath": "dist/store/browser",
         "index": "apps/store/src/index.html",
         "main": "apps/store/src/main.browser.ts",
         "polyfills": "apps/store/src/polyfills.ts",
         "tsConfig": "apps/store/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/store/src/favicon.ico", "apps/store/src/assets"],
+        "localize": ["ru-RU"],
+        "assets": [
+          "apps/store/src/browserconfig.xml",
+          "apps/store/src/site.webmanifest",
+          "apps/store/src/favicon.ico",
+          "apps/store/src/robots.txt",
+          "apps/store/src/assets"
+        ],
         "styles": ["apps/store/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
         "production": {
+          "customWebpackConfig": {
+            "path": "apps/store/webpack-prod.config.ts"
+          },
           "budgets": [
             {
               "type": "initial",
@@ -52,7 +74,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@angular-builders/custom-webpack:dev-server",
       "configurations": {
         "production": {
           "browserTarget": "store:build:production"
@@ -89,19 +111,28 @@
         "outputPath": "dist/store/server",
         "main": "apps/store/server.ts",
         "tsConfig": "apps/store/tsconfig.server.json",
-        "inlineStyleLanguage": "scss"
+        "inlineStyleLanguage": "scss",
+        "localize": false
       },
       "configurations": {
         "production": {
+          "localize": ["ru-RU"],
           "outputHashing": "media",
           "fileReplacements": [
             {
               "replace": "apps/store/src/environments/environment.ts",
               "with": "apps/store/src/environments/environment.prod.ts"
             }
-          ]
+          ],
+          "bundleDependencies": true
         },
         "development": {
+          "localize": ["ru-RU"],
+          "optimization": false,
+          "sourceMap": true,
+          "extractLicenses": false
+        },
+        "ru": {
           "optimization": false,
           "sourceMap": true,
           "extractLicenses": false
@@ -114,7 +145,7 @@
       "configurations": {
         "development": {
           "browserTarget": "store:build:development",
-          "serverTarget": "store:server:development"
+          "serverTarget": "store:server:ru"
         },
         "production": {
           "browserTarget": "store:build:production",

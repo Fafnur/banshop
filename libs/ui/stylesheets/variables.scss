@@ -1,25 +1,7 @@
 @use '@angular/material' as mat;
 
-$grid-breakpoints: (
-  xs: 0,
-  nm: 320px,
-  im: 360px,
-  mkm: 400px,
-  mm: 480px,
-  sm: 550px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  hg: 1400px,
-  xh: 1600px,
-);
-
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1160px,
-  hg: 1360px,
-);
-
 $color-default: mat.get-color-from-palette(mat.$gray-palette, 900);
+$color-primary: mat.get-color-from-palette(mat.$indigo-palette, 500);
+$color-accent: mat.get-color-from-palette(mat.$pink-palette, A200);
+$color-warning: mat.get-color-from-palette(mat.$amber-palette, 500);
+$color-danger: mat.get-color-from-palette(mat.$red-palette, 900);

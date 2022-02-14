@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/core/storage/memory",
+  "sourceRoot": "libs/core/storage/memory/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/core/storage/memory"],
+      "options": {
+        "jestConfig": "libs/core/storage/memory/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/core/storage/memory/src/**/*.ts", "libs/core/storage/memory/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

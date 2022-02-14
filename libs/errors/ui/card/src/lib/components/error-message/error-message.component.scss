@@ -1,0 +1,17 @@
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+:host {
+  display: block;
+  font-size: 1.125rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  @include store-mixins.media-tablet() {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  @include store-mixins.media-web() {
+    font-size: 3rem;
+  }
+}

@@ -1,0 +1,39 @@
+@use 'sass:math';
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+@mixin make-columns($mode) {
+  &[#{$mode}] {
+    flex: 1 0 0;
+    padding: 0 1rem;
+  }
+
+  &[#{$mode}]:not([#{$mode}='']) {
+    flex: 0 0 auto;
+  }
+
+  :host-context(banshop-row.no-padding) &[#{$mode}] {
+    padding: 0;
+  }
+
+  @for $column from 1 through 12 {
+    &[#{$mode}='#{$column}'] {
+      width: math.percentage(math.div($column, 12));
+    }
+  }
+}
+
+:host {
+  display: block;
+
+  @include store-mixins.media-handset-up() {
+    @include make-columns(handset);
+  }
+
+  @include store-mixins.media-tablet-up() {
+    @include make-columns(tablet);
+  }
+
+  @include store-mixins.media-web-up() {
+    @include make-columns(web);
+  }
+}

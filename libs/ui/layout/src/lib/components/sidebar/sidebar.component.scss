@@ -1,0 +1,16 @@
+@use '@angular/material' as mat;
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+:host {
+  display: none;
+
+  @include store-mixins.media-tablet() {
+    display: flex;
+    flex-direction: column;
+    background-color: mat.get-color-from-palette(mat.$gray-palette, 200);
+  }
+}
+
+.nav {
+  flex: 1;
+}

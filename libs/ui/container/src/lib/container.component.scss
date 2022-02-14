@@ -1,0 +1,70 @@
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+:host {
+  display: block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+  &.is-flex {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  &.is-flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  &.is-flex-row-space {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &.is-fluid {
+    max-width: 100%;
+  }
+
+  &.is-max-height {
+    height: 100%;
+  }
+
+  @include store-mixins.media-tablet-portrait() {
+    max-width: 540px;
+
+    &.is-fluid {
+      max-width: 100%;
+    }
+  }
+
+  @include store-mixins.media-tablet-landscape() {
+    max-width: 900px;
+
+    &.is-fluid {
+      max-width: 100%;
+    }
+  }
+
+  @include store-mixins.media-web-portrait() {
+    max-width: 790px;
+
+    &.is-fluid {
+      max-width: 100%;
+    }
+  }
+
+  @include store-mixins.media-web-landscape() {
+    max-width: 1200px;
+
+    &.is-fluid {
+      max-width: 100%;
+    }
+  }
+}

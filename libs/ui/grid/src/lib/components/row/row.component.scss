@@ -1,0 +1,31 @@
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+@use 'sass:math' as math;
+
+@mixin make-row($breakpoint) {
+  &[#{$breakpoint}] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+  &[#{$breakpoint}].no-padding {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+:host {
+  @include store-mixins.media-handset-up() {
+    @include make-row(handset);
+  }
+
+  @include store-mixins.media-tablet-up() {
+    @include make-row(tablet);
+  }
+
+  @include store-mixins.media-web-up() {
+    @include make-row(web);
+  }
+}
