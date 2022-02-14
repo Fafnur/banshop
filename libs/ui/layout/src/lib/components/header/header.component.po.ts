@@ -5,7 +5,7 @@ import { PageObject } from '@banshop/core/testing';
 enum Automation {
   Container = 'container',
   Logo = 'logo',
-  Phone = 'phone',
+  Actions = 'actions',
 }
 
 export class HeaderComponentPo extends PageObject {
@@ -17,7 +17,7 @@ export class HeaderComponentPo extends PageObject {
     return this.getByAutomationId(Automation.Logo);
   }
 
-  get phone(): DebugElement | null {
-    return this.getByAutomationId(Automation.Phone);
+  get actions(): DebugElement | null {
+    return this.getByAutomationId(Automation.Actions);
   }
 }

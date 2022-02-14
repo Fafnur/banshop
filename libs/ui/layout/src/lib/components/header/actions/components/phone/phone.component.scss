@@ -14,4 +14,8 @@
 a {
   text-decoration: none;
   color: store.$color-default;
+
+  &:hover {
+    color: mat.get-color-from-palette(mat.$indigo-palette, 700);
+  }
 }

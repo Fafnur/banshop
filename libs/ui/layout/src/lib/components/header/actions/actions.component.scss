@@ -1,0 +1,24 @@
+@use '@angular/material' as mat;
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+:host {
+  @include store-mixins.media-web() {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 -0.5rem;
+
+    & > * {
+      margin: 0 0.5rem;
+    }
+  }
+}
+
+banshop-cart,
+banshop-support {
+  display: none;
+
+  @include store-mixins.media-web() {
+    display: block;
+  }
+}

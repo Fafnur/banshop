@@ -5,9 +5,9 @@ import { MockModule } from 'ng-mocks';
 import { ContainerModule } from '@banshop/ui/container';
 
 import { LogoModule } from '../logo/logo.module';
+import { ActionsModule } from './actions/actions.module';
 import { HeaderComponent } from './header.component';
 import { HeaderComponentPo } from './header.component.po';
-import { PhoneModule } from './phone/phone.module';
 
 describe('HeaderComponent', () => {
   let pageObject: HeaderComponentPo;
@@ -15,7 +15,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CommonModule, MockModule(ContainerModule), MockModule(LogoModule), MockModule(PhoneModule)],
+      imports: [CommonModule, MockModule(ContainerModule), MockModule(LogoModule), MockModule(ActionsModule)],
       declarations: [HeaderComponent],
     }).compileComponents();
   });
@@ -36,6 +36,6 @@ describe('HeaderComponent', () => {
 
     expect(pageObject.container).toBeTruthy();
     expect(pageObject.logo).toBeTruthy();
-    expect(pageObject.phone).toBeTruthy();
+    expect(pageObject.actions).toBeTruthy();
   });
 });

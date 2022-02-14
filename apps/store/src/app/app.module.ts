@@ -8,7 +8,7 @@ import { AppCoreModule } from './app.core.module';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  imports: [BrowserModule.withServerTransition({ appId: 'serverApp' }), LocalizationModule, AppRoutingModule, AppCoreModule],
+  imports: [BrowserModule.withServerTransition({ appId: 'banshop' }), LocalizationModule, AppRoutingModule, AppCoreModule],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
 })
