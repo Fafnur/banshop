@@ -28,6 +28,7 @@
       "@banshop/core/storage/session": ["libs/core/storage/session/src/index.ts"],
       "@banshop/core/testing": ["libs/core/testing/src/index.ts"],
       "@banshop/core/utils/destroy": ["libs/core/utils/destroy/src/index.ts"],
+      "@banshop/core/utils/operators": ["libs/core/utils/operators/src/index.ts"],
       "@banshop/errors/not-found/page": ["libs/errors/not-found/page/src/index.ts"],
       "@banshop/errors/pages": ["libs/errors/pages/src/index.ts"],
       "@banshop/errors/server-error/page": ["libs/errors/server-error/page/src/index.ts"],

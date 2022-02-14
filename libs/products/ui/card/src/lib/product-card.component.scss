@@ -1,0 +1,35 @@
+@use '@angular/material' as mat;
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+:host {
+  mat-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: mat.get-color-from-palette(mat.$gray-palette, 100);
+  }
+
+  mat-card-content {
+    flex: 1;
+  }
+
+  mat-card-header {
+    height: 6rem;
+  }
+
+  ::ng-deep .mat-card-header-text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  ::ng-deep mat-card-title,
+  ::ng-deep mat-card-subtitle {
+    margin: auto;
+    text-align: center;
+  }
+
+  ::ng-deep mat-card-header .mat-card-subtitle:not(:first-child) {
+    margin-top: 0;
+  }
+}

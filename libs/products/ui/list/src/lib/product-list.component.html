@@ -1,1 +1,5 @@
-<p>product-list works!</p>
+<banshop-row tablet *ngIf="products$ | async as products">
+  <banshop-column tablet="6" web="4" *ngFor="let product of products; trackBy: trackByFn">
+    <banshop-product-card [product]="product"></banshop-product-card>
+  </banshop-column>
+</banshop-row>
