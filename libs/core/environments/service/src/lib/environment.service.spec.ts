@@ -12,6 +12,13 @@ describe('EnvironmentService', () => {
   });
 
   it('should return getEnvironments', () => {
-    expect(service.environments).toEqual(ENVIRONMENTS_DEFAULT);
+    expect(service.environments).toEqual({
+      ...ENVIRONMENTS_DEFAULT,
+      google: {
+        key: '',
+        id: '',
+        name: '',
+      },
+    });
   });
 });
