@@ -39,6 +39,7 @@
       },
       "configurations": {
         "production": {
+          "indexTransform": "apps/store/index.transform.ts",
           "customWebpackConfig": {
             "path": "apps/store/webpack-prod.config.ts"
           },
