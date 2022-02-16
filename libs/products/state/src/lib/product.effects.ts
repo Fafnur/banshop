@@ -40,7 +40,7 @@ export class ProductEffects implements OnInitEffects {
             map((products) => {
               this.localAsyncStorage.setItem(ProductKeys.Products, products);
 
-              if (this.platformService.isServer) {
+              if (this.platformService.isServer && products.length) {
                 this.transferState.set<Product[]>(PRODUCTS_META, products);
               }
               return ProductActions.loadSuccess({ products });
