@@ -18,6 +18,7 @@
       "@banshop/core/api/service": ["libs/core/api/service/src/index.ts"],
       "@banshop/core/environments/service": ["libs/core/environments/service/src/index.ts"],
       "@banshop/core/forms/mask": ["libs/core/forms/mask/src/index.ts"],
+      "@banshop/core/hammer": ["libs/core/hammer/src/index.ts"],
       "@banshop/core/navigation/common": ["libs/core/navigation/common/src/index.ts"],
       "@banshop/core/navigation/service": ["libs/core/navigation/service/src/index.ts"],
       "@banshop/core/navigation/ui/pipes": ["libs/core/navigation/ui/pipes/src/index.ts"],

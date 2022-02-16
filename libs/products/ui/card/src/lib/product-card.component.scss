@@ -13,10 +13,6 @@
     flex: 1;
   }
 
-  mat-card-header {
-    height: 6rem;
-  }
-
   ::ng-deep .mat-card-header-text {
     display: flex;
     flex-direction: column;
@@ -29,7 +25,21 @@
     text-align: center;
   }
 
+  ::ng-deep mat-card-subtitle {
+    margin-bottom: 1rem;
+  }
+
   ::ng-deep mat-card-header .mat-card-subtitle:not(:first-child) {
     margin-top: 0;
   }
+
+  @include store-mixins.media-tablet-up() {
+    mat-card-header {
+      height: 6rem;
+    }
+  }
+}
+
+banshop-carousel {
+  margin: 0 -1rem 1rem -1rem;
 }

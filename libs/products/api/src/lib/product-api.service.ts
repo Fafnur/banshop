@@ -30,7 +30,7 @@ export class ProductApiService {
           price: Number(price.trim()),
           sizes: sizes.split(',').map((size) => Number(size.trim())),
           description: description.trim(),
-          photos: photos.split(',').map((photo) => photo.trim()),
+          photos: photos.split('\n').map((photo) => photo.trim()),
         }))
       )
     );

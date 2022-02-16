@@ -4,6 +4,7 @@
     "core-api-service": "libs/core/api/service",
     "core-environments-service": "libs/core/environments/service",
     "core-forms-mask": "libs/core/forms/mask",
+    "core-hammer": "libs/core/hammer",
     "core-navigation-common": "libs/core/navigation/common",
     "core-navigation-service": "libs/core/navigation/service",
     "core-navigation-ui-pipes": "libs/core/navigation/ui/pipes",

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 
+import { HammerModule } from '@banshop/core/hammer';
 import { LocalizationModule } from '@banshop/russian/localization';
 
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
     LocalizationModule,
     AppRoutingModule,
     AppCoreModule,
+    HammerModule,
     BrowserTransferStateModule,
   ],
   declarations: [AppComponent],

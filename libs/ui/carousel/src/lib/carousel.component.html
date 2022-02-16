@@ -1,4 +1,5 @@
-<ng-container *ngIf="slides?.length">
+<div *ngIf="slides?.length" (swipeleft)="onNext()" (swiperight)="onPrev()">
+  <img class="image-mask" [src]="slides[0]" alt="" />
   <banshop-carousel-slide
     automation-id="carousel-slide"
     [image]="image"
@@ -14,4 +15,4 @@
     (selected)="onSelected($event)"
   ></banshop-carousel-dots>
   <banshop-carousel-navs automation-id="carousel-navs" (prev)="onPrev()" (next)="onNext()"></banshop-carousel-navs>
-</ng-container>
+</div>

@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/core/hammer",
+  "sourceRoot": "libs/core/hammer/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/core/hammer"],
+      "options": {
+        "jestConfig": "libs/core/hammer/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/core/hammer/src/**/*.ts", "libs/core/hammer/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

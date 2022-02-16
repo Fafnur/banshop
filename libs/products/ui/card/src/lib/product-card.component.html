@@ -3,7 +3,7 @@
     <mat-card-title>{{ product.title }}</mat-card-title>
     <mat-card-subtitle>{{ product.subtitle }}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" />
+  <banshop-carousel [images]="product.photos"></banshop-carousel>
   <mat-card-content>
     <p>{{ product.description }}</p>
   </mat-card-content>
