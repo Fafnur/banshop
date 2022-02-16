@@ -28,6 +28,7 @@
     "russian-localization": "libs/russian/localization",
     "store": "apps/store",
     "store-e2e": "apps/store-e2e",
+    "ui-carousel": "libs/ui/carousel",
     "ui-container": "libs/ui/container",
     "ui-grid": "libs/ui/grid",
     "ui-layout": "libs/ui/layout",
