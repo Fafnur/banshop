@@ -1,0 +1,13 @@
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+:host {
+  display: block;
+  position: relative;
+  width: 12rem;
+  height: 4rem;
+
+  @include store-mixins.media-tablet-up() {
+    width: 20rem;
+    height: 12rem;
+  }
+}

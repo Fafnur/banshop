@@ -43,6 +43,7 @@
       "@banshop/ui/carousel": ["libs/ui/carousel/src/index.ts"],
       "@banshop/ui/container": ["libs/ui/container/src/index.ts"],
       "@banshop/ui/grid": ["libs/ui/grid/src/index.ts"],
+      "@banshop/ui/image": ["libs/ui/image/src/index.ts"],
       "@banshop/ui/layout": ["libs/ui/layout/src/index.ts"],
       "@banshop/ui/link": ["libs/ui/link/src/index.ts"]
     }

@@ -31,6 +31,7 @@
     "ui-carousel": "libs/ui/carousel",
     "ui-container": "libs/ui/container",
     "ui-grid": "libs/ui/grid",
+    "ui-image": "libs/ui/image",
     "ui-layout": "libs/ui/layout",
     "ui-link": "libs/ui/link"
   }
