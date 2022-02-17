@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/core/utils/operators",
+  "sourceRoot": "libs/core/utils/operators/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/core/utils/operators"],
+      "options": {
+        "jestConfig": "libs/core/utils/operators/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/core/utils/operators/src/**/*.ts", "libs/core/utils/operators/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

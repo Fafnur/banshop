@@ -15,7 +15,7 @@ export class ProductApiService {
   constructor(private readonly apiService: ApiService, private readonly environmentService: EnvironmentService) {}
 
   load(): Observable<Product[]> {
-    if (!this.environmentService.environments.google) {
+    if (!this.environmentService.environments.google?.key) {
       console.warn('Google Sheet was not loaded. Check your envs.');
 
       return of([]);
@@ -30,7 +30,7 @@ export class ProductApiService {
           price: Number(price.trim()),
           sizes: sizes.split(',').map((size) => Number(size.trim())),
           description: description.trim(),
-          photos: photos.split(',').map((photo) => photo.trim()),
+          photos: photos.split('\n').map((photo) => photo.trim()),
         }))
       )
     );

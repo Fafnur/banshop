@@ -1,0 +1,32 @@
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+:host {
+  banshop-row {
+    align-items: stretch;
+  }
+
+  banshop-column {
+    margin-bottom: 1rem;
+  }
+
+  @include store-mixins.media-tablet() {
+    banshop-row {
+      margin: 0 -0.5rem;
+    }
+
+    banshop-column {
+      padding: 0 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  @include store-mixins.media-web() {
+    banshop-row {
+      margin: 0 -1rem;
+    }
+
+    banshop-column {
+      margin-bottom: 2rem;
+    }
+  }
+}

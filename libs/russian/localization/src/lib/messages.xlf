@@ -56,6 +56,26 @@
         <note priority="1" from="description">Description</note>
         <note priority="1" from="meaning">Error server error</note>
       </trans-unit>
+      <trans-unit id="312b2f48c1354f5a2b1176885e8e385cfaec7f03" datatype="html">
+        <source>Details</source>
+        <target state="translated">Подробнее</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/products/ui/card/src/lib/product-card.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">Details link</note>
+        <note priority="1" from="meaning">Product card</note>
+      </trans-unit>
+      <trans-unit id="2cb5b3179217062bde2197997f31a941863d8749" datatype="html">
+        <source>Buy</source>
+        <target state="translated">Купить</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/products/ui/card/src/lib/product-card.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">Buy link</note>
+        <note priority="1" from="meaning">Product card</note>
+      </trans-unit>
       <trans-unit id="3b1e1015b8cdca5ca18d43f1b90efef7c8e0a88f" datatype="html">
         <source>Terms of sale</source>
         <target state="translated">Условия продажи</target>

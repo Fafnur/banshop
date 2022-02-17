@@ -1,6 +1,10 @@
+import { makeStateKey } from '@angular/platform-browser';
+
 export enum ProductKeys {
   Products = 'products',
 }
+
+export const PRODUCTS_META = makeStateKey('products');
 
 export interface Product {
   id: number;

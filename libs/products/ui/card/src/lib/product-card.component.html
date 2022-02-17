@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ product.title }}</mat-card-title>
+    <mat-card-subtitle>{{ product.subtitle }}</mat-card-subtitle>
+  </mat-card-header>
+  <banshop-carousel [images]="product.photos"></banshop-carousel>
+  <mat-card-content>
+    <p class="product-price">{{ product.price | currency }}</p>
+    <p>{{ product.description }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button i18n="Product card|Details link">Details</button>
+    <button mat-button i18n="Product card|Buy link">Buy</button>
+  </mat-card-actions>
+</mat-card>

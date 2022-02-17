@@ -1,0 +1,43 @@
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+.carousel-nav {
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+
+  &:first-child {
+    left: 0.25rem;
+  }
+
+  &:last-child {
+    right: 0.25rem;
+  }
+
+  @include store-mixins.media-tablet() {
+    &:first-child {
+      left: 0.5rem;
+    }
+
+    &:last-child {
+      right: 0.5rem;
+    }
+  }
+
+  @include store-mixins.media-web() {
+    &:first-child {
+      left: 0.75rem;
+    }
+
+    &:last-child {
+      right: 0.75rem;
+    }
+  }
+}
+
+.carousel-nav-icon {
+  color: white;
+}

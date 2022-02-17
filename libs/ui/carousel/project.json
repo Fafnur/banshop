@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/ui/carousel",
+  "sourceRoot": "libs/ui/carousel/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ui/carousel"],
+      "options": {
+        "jestConfig": "libs/ui/carousel/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/ui/carousel/src/**/*.ts", "libs/ui/carousel/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

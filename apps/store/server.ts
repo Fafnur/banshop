@@ -38,7 +38,21 @@ export function app(): express.Express {
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
-    res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
+    const filePath = join(distFolder, req.path, 'index.html');
+    // For prerender, use exists file
+    if (existsSync(filePath)) {
+      res.sendFile(filePath);
+    } else {
+      res.render(indexHtml, {
+        req,
+        providers: [
+          {
+            provide: APP_BASE_HREF,
+            useValue: req.baseUrl,
+          },
+        ],
+      });
+    }
   });
 
   return server;

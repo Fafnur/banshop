@@ -1,0 +1,18 @@
+<div *ngIf="slides?.length" (swipeleft)="onNext()" (swiperight)="onPrev()">
+  <img class="image-mask" [src]="slides[0]" alt="" />
+  <banshop-carousel-slide
+    automation-id="carousel-slide"
+    [image]="image"
+    [active]="active === index"
+    *ngFor="let image of slides; let index = index"
+    (click)="onClick(index)"
+  ></banshop-carousel-slide>
+
+  <banshop-carousel-dots
+    automation-id="carousel-dots"
+    [counts]="slides.length"
+    [active]="active"
+    (selected)="onSelected($event)"
+  ></banshop-carousel-dots>
+  <banshop-carousel-navs automation-id="carousel-navs" (prev)="onPrev()" (next)="onNext()"></banshop-carousel-navs>
+</div>
