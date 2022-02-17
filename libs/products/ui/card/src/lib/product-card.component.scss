@@ -43,3 +43,21 @@
 banshop-carousel {
   margin: 0 -1rem 1rem -1rem;
 }
+
+mat-card-actions {
+  text-align: right;
+}
+
+.product-price {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+
+  @include store-mixins.media-tablet() {
+    font-size: 1.15rem;
+  }
+
+  @include store-mixins.media-web() {
+    font-size: 1.25rem;
+  }
+}
