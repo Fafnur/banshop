@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@banshop/cart/api": ["libs/cart/api/src/index.ts"],
+      "@banshop/cart/common": ["libs/cart/common/src/index.ts"],
+      "@banshop/cart/state": ["libs/cart/state/src/index.ts"],
       "@banshop/core/api/service": ["libs/core/api/service/src/index.ts"],
       "@banshop/core/environments/service": ["libs/core/environments/service/src/index.ts"],
       "@banshop/core/forms/mask": ["libs/core/forms/mask/src/index.ts"],
