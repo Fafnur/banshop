@@ -1,8 +1,25 @@
 @use 'libs/ui/stylesheets/mixins' as store-mixins;
 
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 :host {
   display: block;
   position: relative;
+
+  banshop-carousel-navs {
+    opacity: 0;
+  }
+
+  &:hover banshop-carousel-navs {
+    opacity: 1;
+  }
 }
 
 .image-mask {
