@@ -1,1 +1,2 @@
-export * from './lib/cart-common.module';
+export * from './lib/cart.interface';
+export * from './lib/cart.stub';

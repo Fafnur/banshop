@@ -4,6 +4,10 @@
   "overrides": [
     {
       "files": ["*.ts"],
+      "parserOptions": {
+        "project": "./tsconfig.*?.json",
+        "createDefaultProgram": true
+      },
       "extends": ["plugin:@nrwl/nx/angular", "plugin:@angular-eslint/template/process-inline-templates"],
       "rules": {
         "@angular-eslint/directive-selector": [

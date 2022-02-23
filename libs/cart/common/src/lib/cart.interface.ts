@@ -1,9 +1,9 @@
-export interface CartProduct {
-  id: number;
-  count: number;
-  size: number;
+export enum CartKeys {
+  Cart = 'cart',
 }
 
-export interface Cart {
-  products: CartProduct[];
+export interface CartProduct {
+  productId: number;
+  count: number;
+  size: number;
 }
