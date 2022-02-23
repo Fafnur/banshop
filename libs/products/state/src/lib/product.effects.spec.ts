@@ -1,4 +1,5 @@
 import { TestBed, waitForAsync } from '@angular/core/testing';
+import { TransferState } from '@angular/platform-browser';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Action } from '@ngrx/store';
 import { provideMockStore } from '@ngrx/store/testing';
@@ -20,10 +21,12 @@ describe('ProductEffects', () => {
   let effects: ProductEffects;
   let localAsyncStorageMock: LocalAsyncStorage;
   let productApiServiceMock: ProductApiService;
+  let transferStateMock: TransferState;
 
   beforeEach(() => {
     localAsyncStorageMock = mock(LocalAsyncStorage);
     productApiServiceMock = mock(ProductApiService);
+    transferStateMock = mock(TransferState);
 
     // skip errors
     console.error = jest.fn();
@@ -38,22 +41,13 @@ describe('ProductEffects', () => {
           provideMockStore(),
           providerOf(LocalAsyncStorage, localAsyncStorageMock),
           providerOf(ProductApiService, productApiServiceMock),
+          providerOf(TransferState, transferStateMock),
         ],
       });
     })
   );
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [
-        ProductEffects,
-        provideMockActions(() => actions),
-        provideMockStore(),
-        providerOf(LocalAsyncStorage, localAsyncStorageMock),
-        providerOf(ProductApiService, productApiServiceMock),
-      ],
-    });
-
     effects = TestBed.inject(ProductEffects);
   });
 

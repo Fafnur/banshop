@@ -43,6 +43,7 @@ export class ProductEffects implements OnInitEffects {
               if (this.platformService.isServer && products.length) {
                 this.transferState.set<Product[]>(PRODUCTS_META, products);
               }
+
               return ProductActions.loadSuccess({ products });
             })
           ),
