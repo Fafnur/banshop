@@ -24,6 +24,8 @@ export class ProductFacade {
 
   product$ = (id: number) => this.store.select(ProductSelectors.selectProduct(id));
 
+  productBySlug$ = (slug: string) => this.store.select(ProductSelectors.selectProductBySlug(slug));
+
   constructor(private readonly actions$: Actions, private readonly store: Store) {}
 
   load(): void {

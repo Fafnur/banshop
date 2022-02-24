@@ -14,10 +14,11 @@ export interface Product {
   sizes: number[];
   description: string;
   photos: string[];
+  slug: string;
 }
 
 export interface ProductsResponse {
   range: string;
   majorDimension: string;
-  values: [string, string, string, string, string, string][];
+  values: [string, string, string, string, string, string, string][];
 }

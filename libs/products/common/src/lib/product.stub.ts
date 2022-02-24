@@ -6,6 +6,7 @@ export const PRODUCTS_RESPONSE_STUB: ProductsResponse = {
   majorDimension: 'ROWS',
   values: [
     [
+      'reebook-smart',
       'Reebok Lite 3',
       'Легкие стильные кроссовки для бега',
       '3990',
@@ -18,6 +19,7 @@ export const PRODUCTS_RESPONSE_STUB: ProductsResponse = {
 
 export const PRODUCT_STUB: Product = {
   id: 1,
+  slug: 'reebook-smart',
   title: 'Reebok Lite 3',
   subtitle: 'Легкие стильные кроссовки для бега',
   description:

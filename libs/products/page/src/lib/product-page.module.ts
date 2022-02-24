@@ -5,14 +5,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 
-import { ProductPipesModule } from '@banshop/products/ui/pipes';
 import { CarouselModule } from '@banshop/ui/carousel';
 
-import { ProductCardComponent } from './product-card.component';
+import { ProductPageComponent } from './product-page.component';
+import { ProductPageRoutingModule } from './product-page-routing.module';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, MatCardModule, MatButtonModule, MatIconModule, CarouselModule, ProductPipesModule],
-  declarations: [ProductCardComponent],
-  exports: [ProductCardComponent],
+  imports: [CommonModule, ProductPageRoutingModule, RouterModule, MatCardModule, MatButtonModule, MatIconModule, CarouselModule],
+  declarations: [ProductPageComponent],
 })
-export class ProductCardModule {}
+export class ProductPageModule {}
