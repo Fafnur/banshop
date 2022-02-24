@@ -2,6 +2,28 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="3417209489472329026" datatype="html">
+        <source>Duplicate CartProduct</source>
+        <target state="translated">Дубликат товара</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/cart/state/src/lib/cart.effects.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <note priority="1" from="meaning">Cart State</note>
+      </trans-unit>
+      <trans-unit id="3712896390093771461" datatype="html">
+        <source>CartProduct was not found</source>
+        <target state="translated">Товар не найден</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/cart/state/src/lib/cart.effects.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/cart/state/src/lib/cart.effects.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+        <note priority="1" from="meaning">Cart State</note>
+      </trans-unit>
       <trans-unit id="c9be140e4b3e7fe071d29de65b243fb4e2a6bbba" datatype="html">
         <source>Page not found</source>
         <target state="translated">Страница не найдена</target>

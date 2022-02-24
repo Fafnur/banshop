@@ -30,7 +30,7 @@ export class CartEffects implements OnInitEffects {
         run: ({ cartProduct }, cartProducts) =>
           !cartProducts[selectCartProductId(cartProduct)]
             ? CartActions.addProductSuccess({ cartProduct })
-            : CartActions.addProductFailure({ error: 'Duplicate CartProduct', cartProduct }),
+            : CartActions.addProductFailure({ error: $localize`:Cart State|:Duplicate CartProduct`, cartProduct }),
         onError(action, error) {
           console.log(error);
         },
@@ -46,7 +46,7 @@ export class CartEffects implements OnInitEffects {
         run: ({ cartProduct }, cartProducts) =>
           cartProducts[selectCartProductId(cartProduct)]
             ? CartActions.removeProductSuccess({ cartProduct })
-            : CartActions.removeProductFailure({ error: 'CartProduct was not found', cartProduct }),
+            : CartActions.removeProductFailure({ error: $localize`:Cart State|:CartProduct was not found`, cartProduct }),
       })
     );
   });
@@ -59,7 +59,7 @@ export class CartEffects implements OnInitEffects {
         run: ({ cartProduct }, cartProducts) =>
           cartProducts[selectCartProductId(cartProduct)]
             ? CartActions.changeProductSuccess({ cartProduct })
-            : CartActions.changeProductFailure({ error: 'CartProduct was not found', cartProduct }),
+            : CartActions.changeProductFailure({ error: $localize`:Cart State|:CartProduct was not found`, cartProduct }),
       })
     );
   });
