@@ -3,6 +3,7 @@
   "projects": {
     "cart-api": "libs/cart/api",
     "cart-common": "libs/cart/common",
+    "cart-page": "libs/cart/page",
     "cart-state": "libs/cart/state",
     "core-api-service": "libs/core/api/service",
     "core-environments-service": "libs/core/environments/service",
