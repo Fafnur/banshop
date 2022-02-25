@@ -10,6 +10,6 @@
   </mat-card-content>
   <mat-card-actions>
     <a mat-button i18n="Product card|Details link" [routerLink]="product | productPath">Details</a>
-    <button mat-button i18n="Product card|Buy link">Buy</button>
+    <button mat-button i18n="Product card|Buy link" (click)="onAdd()">Buy</button>
   </mat-card-actions>
 </mat-card>
