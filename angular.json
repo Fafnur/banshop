@@ -5,6 +5,7 @@
     "cart-common": "libs/cart/common",
     "cart-page": "libs/cart/page",
     "cart-state": "libs/cart/state",
+    "cart-ui-add": "libs/cart/ui/add",
     "core-api-service": "libs/core/api/service",
     "core-environments-service": "libs/core/environments/service",
     "core-forms-mask": "libs/core/forms/mask",
