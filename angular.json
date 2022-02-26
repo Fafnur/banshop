@@ -6,6 +6,8 @@
     "cart-page": "libs/cart/page",
     "cart-state": "libs/cart/state",
     "cart-ui-add": "libs/cart/ui/add",
+    "cart-ui-card": "libs/cart/ui/card",
+    "cart-ui-list": "libs/cart/ui/list",
     "core-api-service": "libs/core/api/service",
     "core-environments-service": "libs/core/environments/service",
     "core-forms-extract": "libs/core/forms/extract",
