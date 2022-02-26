@@ -1,1 +1,8 @@
-<p>cart-list works!</p>
+<ng-container *ngIf="cartProducts$ | async; let cartProducts">
+  <ng-container *ngIf="cartProducts.length; else emptyCart">
+    <banshop-cart-card [cartProduct]="cartProduct" *ngFor="let cartProduct of cartProducts; trackBy: trackByFn"></banshop-cart-card>
+  </ng-container>
+  <ng-template #emptyCart>
+    <div>В вашей корзине еще нет товаров. Перейти к покупкам - <a [routerLink]="paths.home | path">каталог</a>.</div>
+  </ng-template>
+</ng-container>
