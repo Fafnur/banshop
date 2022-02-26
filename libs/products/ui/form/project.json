@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/products/ui/form",
+  "sourceRoot": "libs/products/ui/form/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/products/ui/form"],
+      "options": {
+        "jestConfig": "libs/products/ui/form/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/products/ui/form/src/**/*.ts", "libs/products/ui/form/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

@@ -47,6 +47,7 @@
       "@banshop/products/state": ["libs/products/state/src/index.ts"],
       "@banshop/products/ui/box": ["libs/products/ui/box/src/index.ts"],
       "@banshop/products/ui/card": ["libs/products/ui/card/src/index.ts"],
+      "@banshop/products/ui/form": ["libs/products/ui/form/src/index.ts"],
       "@banshop/products/ui/list": ["libs/products/ui/list/src/index.ts"],
       "@banshop/products/ui/pipes": ["libs/products/ui/pipes/src/index.ts"],
       "@banshop/russian/home/page": ["libs/russian/home/page/src/index.ts"],
@@ -56,7 +57,8 @@
       "@banshop/ui/grid": ["libs/ui/grid/src/index.ts"],
       "@banshop/ui/image": ["libs/ui/image/src/index.ts"],
       "@banshop/ui/layout": ["libs/ui/layout/src/index.ts"],
-      "@banshop/ui/link": ["libs/ui/link/src/index.ts"]
+      "@banshop/ui/link": ["libs/ui/link/src/index.ts"],
+      "@banshop/ui/width": ["libs/ui/width/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

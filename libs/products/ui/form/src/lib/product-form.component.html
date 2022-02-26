@@ -1,0 +1,12 @@
+<banshop-row tablet automation-id="form">
+  <banshop-column tablet="6">
+    <banshop-product-size
+      automation-id="size"
+      [control]="form | extractFormControl: fields.Size"
+      [sizes]="product.sizes"
+    ></banshop-product-size>
+  </banshop-column>
+  <banshop-column tablet="6">
+    <banshop-product-count automation-id="count" [control]="form | extractFormControl: fields.Count"></banshop-product-count>
+  </banshop-column>
+</banshop-row>

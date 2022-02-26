@@ -33,6 +33,7 @@
     "products-state": "libs/products/state",
     "products-ui-box": "libs/products/ui/box",
     "products-ui-card": "libs/products/ui/card",
+    "products-ui-form": "libs/products/ui/form",
     "products-ui-list": "libs/products/ui/list",
     "products-ui-pipes": "libs/products/ui/pipes",
     "russian-home-page": "libs/russian/home/page",
@@ -44,6 +45,7 @@
     "ui-grid": "libs/ui/grid",
     "ui-image": "libs/ui/image",
     "ui-layout": "libs/ui/layout",
-    "ui-link": "libs/ui/link"
+    "ui-link": "libs/ui/link",
+    "ui-width": "libs/ui/width"
   }
 }

@@ -1,4 +1,4 @@
-import { Product, ProductsResponse } from './product.interface';
+import { Product, ProductOptions, ProductsResponse } from './product.interface';
 
 /* eslint-disable max-len */
 export const PRODUCTS_RESPONSE_STUB: ProductsResponse = {
@@ -35,3 +35,8 @@ export const PRODUCT_STUB: Product = {
 /* eslint-enable max-len */
 
 export const PRODUCTS_STUB: Product[] = [PRODUCT_STUB];
+
+export const PRODUCT_OPTIONS_STUB: ProductOptions = {
+  size: PRODUCT_STUB.sizes[0],
+  count: 1,
+};

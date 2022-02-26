@@ -26,6 +26,6 @@ export class CartAddService {
   private get params(): MatDialogConfig {
     return this.layoutService.is(Breakpoints.Handset)
       ? { panelClass: 'mat-dialog-fullwidth', maxWidth: '100vw', maxHeight: '100vh', height: '100%', width: '100%' }
-      : { width: '600px' };
+      : { width: '800px' };
   }
 }

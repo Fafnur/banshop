@@ -1,0 +1,11 @@
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+mat-dialog-content {
+  @media (min-width: 350px) and (orientation: portrait), (min-width: 480px) and (orientation: landscape) {
+    max-height: 90vh;
+  }
+
+  @include store-mixins.media-web() {
+    max-height: 64vh;
+  }
+}

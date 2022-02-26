@@ -1,1 +1,12 @@
-<p>product-box works!</p>
+<banshop-row tablet>
+  <banshop-column tablet="6" web="5">
+    <banshop-carousel [images]="product.photos"></banshop-carousel>
+  </banshop-column>
+  <banshop-column tablet="6" web="7">
+    <h3>{{ product.title }}</h3>
+    <h4>{{ product.subtitle }}</h4>
+    <p>{{ product.price | currency }}</p>
+    <p>{{ product.description }}</p>
+    <ng-content></ng-content>
+  </banshop-column>
+</banshop-row>

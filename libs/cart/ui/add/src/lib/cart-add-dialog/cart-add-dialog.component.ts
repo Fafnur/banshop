@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, Inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { CartFacade } from '@banshop/cart/state';
@@ -11,8 +12,10 @@ import { Product } from '@banshop/products/common';
   styleUrls: ['./cart-add-dialog.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CartAddDialogComponent implements OnInit {
+export class CartAddDialogComponent {
   added = false;
+
+  form!: FormGroup;
 
   constructor(
     private readonly cartFacade: CartFacade,
@@ -20,14 +23,20 @@ export class CartAddDialogComponent implements OnInit {
     @Inject(PATHS) public readonly paths: NavigationPaths
   ) {}
 
-  ngOnInit(): void {
-    if (this.matData.product) {
-      // sss
-    }
+  get product(): Product {
+    return this.matData.product;
   }
 
   onAdd(): void {
-    this.added = true;
-    // this.cartFacade.addProduct()
+    this.form.markAllAsTouched();
+
+    if (this.form.valid) {
+      this.added = true;
+      this.cartFacade.addProduct(this.form.value);
+    }
+  }
+
+  onCreatedForm(form: FormGroup): void {
+    this.form = form;
   }
 }

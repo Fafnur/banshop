@@ -39,6 +39,7 @@ $store-theme: mat.define-light-theme(
   .mat-dialog-container {
     border-radius: 0;
   }
+
   @include store-mixins.media-tablet-up() {
     .mat-dialog-container {
       border-radius: 4px;
