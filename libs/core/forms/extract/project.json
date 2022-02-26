@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/core/forms/extract",
+  "sourceRoot": "libs/core/forms/extract/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/core/forms/extract"],
+      "options": {
+        "jestConfig": "libs/core/forms/extract/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/core/forms/extract/src/**/*.ts", "libs/core/forms/extract/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
