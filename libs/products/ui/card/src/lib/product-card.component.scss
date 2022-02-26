@@ -1,63 +1,44 @@
 @use '@angular/material' as mat;
 @use 'libs/ui/stylesheets/mixins' as store-mixins;
 
-:host {
-  mat-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background-color: mat.get-color-from-palette(mat.$gray-palette, 100);
+mat-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: mat.get-color-from-palette(mat.$gray-palette, 100);
+}
+
+mat-card-content {
+  flex: 1;
+}
+
+mat-card-title,
+mat-card-subtitle {
+  margin: auto;
+  text-align: center;
+}
+
+mat-card-subtitle {
+  margin-bottom: 1rem;
+}
+
+mat-card-header {
+  mat-card-subtitle:not(:first-child) {
+    margin-top: 0;
   }
 
-  mat-card-content {
-    flex: 1;
-  }
-
-  ::ng-deep .mat-card-header-text {
+  // TODO: Need to fix
+  ::ng-deep > div {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
 
-  ::ng-deep mat-card-title,
-  ::ng-deep mat-card-subtitle {
-    margin: auto;
-    text-align: center;
-  }
-
-  ::ng-deep mat-card-subtitle {
-    margin-bottom: 1rem;
-  }
-
-  ::ng-deep mat-card-header .mat-card-subtitle:not(:first-child) {
-    margin-top: 0;
-  }
-
   @include store-mixins.media-tablet-up() {
-    mat-card-header {
-      height: 6rem;
-    }
+    height: 6rem;
   }
 }
 
 banshop-carousel {
   margin: 0 -1rem 1rem -1rem;
-}
-
-mat-card-actions {
-  text-align: right;
-}
-
-.product-price {
-  text-align: center;
-  font-weight: 500;
-  font-size: 1rem;
-
-  @include store-mixins.media-tablet() {
-    font-size: 1.15rem;
-  }
-
-  @include store-mixins.media-web() {
-    font-size: 1.25rem;
-  }
 }
