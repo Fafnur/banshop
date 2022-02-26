@@ -29,6 +29,7 @@
     "products-common": "libs/products/common",
     "products-page": "libs/products/page",
     "products-state": "libs/products/state",
+    "products-ui-box": "libs/products/ui/box",
     "products-ui-card": "libs/products/ui/card",
     "products-ui-list": "libs/products/ui/list",
     "products-ui-pipes": "libs/products/ui/pipes",
