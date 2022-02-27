@@ -5,11 +5,11 @@ import { CartFacade } from '@banshop/cart/state';
 
 @Component({
   selector: 'banshop-cart-remove',
-  templateUrl: './cart-remove.component.html',
-  styleUrls: ['./cart-remove.component.scss'],
+  templateUrl: './card-remove.component.html',
+  styleUrls: ['./card-remove.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CartRemoveComponent {
+export class CardRemoveComponent {
   @Input() cartProduct!: CartProduct;
 
   constructor(private readonly cartFacade: CartFacade) {}

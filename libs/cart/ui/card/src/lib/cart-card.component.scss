@@ -1,0 +1,10 @@
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+:host {
+  display: flex;
+  flex-direction: column;
+
+  @include store-mixins.media-tablet-up() {
+    flex-direction: row;
+  }
+}

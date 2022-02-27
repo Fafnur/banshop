@@ -1,4 +1,6 @@
 <ng-container *ngIf="cartProduct.productId | productById | async; let product">
-  <div>{{ product.title }}</div>
+  <banshop-card-preview [images]="product.photos"></banshop-card-preview>
+  <banshop-card-title>{{ product.title }}</banshop-card-title>
+  <banshop-card-count [cartProduct]="cartProduct"></banshop-card-count>
   <banshop-cart-remove [cartProduct]="cartProduct"></banshop-cart-remove>
 </ng-container>

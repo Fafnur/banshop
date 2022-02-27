@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
-import { CartRemoveComponent } from './cart-remove.component';
+import { CardRemoveComponent } from './card-remove.component';
 
 @NgModule({
   imports: [CommonModule, MatIconModule, MatButtonModule],
-  declarations: [CartRemoveComponent],
-  exports: [CartRemoveComponent],
+  declarations: [CardRemoveComponent],
+  exports: [CardRemoveComponent],
 })
-export class CartRemoveModule {}
+export class CardRemoveModule {}
