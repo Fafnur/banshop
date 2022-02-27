@@ -1,6 +1,4 @@
 <ng-container *ngIf="cartProduct.productId | productById | async; let product">
   <div>{{ product.title }}</div>
-  <div>
-    <button type="button" (click)="onRemove()">Удалить</button>
-  </div>
+  <banshop-cart-remove [cartProduct]="cartProduct"></banshop-cart-remove>
 </ng-container>
