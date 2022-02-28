@@ -14,6 +14,7 @@
     "core-forms-mask": "libs/core/forms/mask",
     "core-forms-utils": "libs/core/forms/utils",
     "core-hammer": "libs/core/hammer",
+    "core-layout-service": "libs/core/layout/service",
     "core-navigation-common": "libs/core/navigation/common",
     "core-navigation-service": "libs/core/navigation/service",
     "core-navigation-ui-pipes": "libs/core/navigation/ui/pipes",
@@ -48,6 +49,7 @@
     "ui-image": "libs/ui/image",
     "ui-layout": "libs/ui/layout",
     "ui-link": "libs/ui/link",
+    "ui-multiplatform": "libs/ui/multiplatform",
     "ui-width": "libs/ui/width"
   }
 }

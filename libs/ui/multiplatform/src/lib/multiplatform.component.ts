@@ -5,12 +5,12 @@ import { Observable } from 'rxjs';
 import { LayoutService } from '@banshop/core/layout/service';
 
 @Component({
-  selector: 'banshop-layout',
-  templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss'],
+  selector: 'banshop-multiplatform',
+  templateUrl: './multiplatform.component.html',
+  styleUrls: ['./multiplatform.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LayoutComponent implements OnInit {
+export class MultiplatformComponent implements OnInit {
   readonly breakpoints = Breakpoints;
 
   layoutType$!: Observable<string>;

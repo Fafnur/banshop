@@ -1,23 +1,21 @@
-<ng-container *ngIf="cartProduct.productId | productById | async; let product">
-  <ng-container [ngSwitch]="layoutType$ | async">
-    <ng-container *ngSwitchCase="breakpoints.Web">
-      <banshop-card-preview [images]="product.photos"></banshop-card-preview>
-      <banshop-card-title>{{ product.title }}</banshop-card-title>
-      <banshop-card-count [cartProduct]="cartProduct"></banshop-card-count>
-      <banshop-cart-remove [cartProduct]="cartProduct" [icon]="true"></banshop-cart-remove>
-    </ng-container>
-    <ng-container *ngSwitchCase="breakpoints.Tablet"> </ng-container>
-    <ng-container *ngSwitchDefault>
-      <banshop-row handset>
-        <banshop-column handset="6">
-          <banshop-card-preview [images]="product.photos"></banshop-card-preview>
-        </banshop-column>
-        <banshop-column handset="6">
-          <banshop-card-title>{{ product.title }}</banshop-card-title>
-          <banshop-card-count [cartProduct]="cartProduct"></banshop-card-count>
-          <banshop-cart-remove [cartProduct]="cartProduct"></banshop-cart-remove>
-        </banshop-column>
-      </banshop-row>
-    </ng-container>
+<banshop-multiplatform *ngIf="cartProduct.productId | productById | async; let product">
+  <ng-container web>
+    <banshop-card-preview [images]="product.photos"></banshop-card-preview>
+    <banshop-card-title>{{ product.title }}</banshop-card-title>
+    <banshop-card-count [cartProduct]="cartProduct"></banshop-card-count>
+    <banshop-cart-remove [cartProduct]="cartProduct" [icon]="true"></banshop-cart-remove>
   </ng-container>
-</ng-container>
+  <ng-container tablet> </ng-container>
+  <ng-container handset>
+    <banshop-row handset>
+      <banshop-column handset="6">
+        <banshop-card-preview [images]="product.photos"></banshop-card-preview>
+      </banshop-column>
+      <banshop-column handset="6">
+        <banshop-card-title>{{ product.title }}</banshop-card-title>
+        <banshop-card-count [cartProduct]="cartProduct"></banshop-card-count>
+        <banshop-cart-remove [cartProduct]="cartProduct"></banshop-cart-remove>
+      </banshop-column>
+    </banshop-row>
+  </ng-container>
+</banshop-multiplatform>

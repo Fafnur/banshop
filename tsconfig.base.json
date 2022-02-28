@@ -28,6 +28,7 @@
       "@banshop/core/forms/mask": ["libs/core/forms/mask/src/index.ts"],
       "@banshop/core/forms/utils": ["libs/core/forms/utils/src/index.ts"],
       "@banshop/core/hammer": ["libs/core/hammer/src/index.ts"],
+      "@banshop/core/layout/service": ["libs/core/layout/service/src/index.ts"],
       "@banshop/core/navigation/common": ["libs/core/navigation/common/src/index.ts"],
       "@banshop/core/navigation/service": ["libs/core/navigation/service/src/index.ts"],
       "@banshop/core/navigation/ui/pipes": ["libs/core/navigation/ui/pipes/src/index.ts"],
@@ -60,6 +61,7 @@
       "@banshop/ui/image": ["libs/ui/image/src/index.ts"],
       "@banshop/ui/layout": ["libs/ui/layout/src/index.ts"],
       "@banshop/ui/link": ["libs/ui/link/src/index.ts"],
+      "@banshop/ui/multiplatform": ["libs/ui/multiplatform/src/index.ts"],
       "@banshop/ui/width": ["libs/ui/width/src/index.ts"]
     }
   },

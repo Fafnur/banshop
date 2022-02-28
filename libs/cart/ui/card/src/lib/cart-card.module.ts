@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { ProductPipesModule } from '@banshop/products/ui/pipes';
 import { GridModule } from '@banshop/ui/grid';
+import { MultiplatformModule } from '@banshop/ui/multiplatform';
 
 import { CartCardComponent } from './cart-card.component';
 import { CardCountModule } from './components/card-count/card-count.module';
@@ -23,6 +24,7 @@ import { CardTitleModule } from './components/card-title/card-title.module';
     CardPreviewModule,
     CardTitleModule,
     GridModule,
+    MultiplatformModule,
   ],
   declarations: [CartCardComponent],
   exports: [CartCardComponent],

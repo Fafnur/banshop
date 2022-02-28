@@ -4,8 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatDialogConfig } from '@angular/material/dialog/dialog-config';
 import { Observable } from 'rxjs';
 
+import { LayoutService } from '@banshop/core/layout/service';
 import { Product } from '@banshop/products/common';
-import { LayoutService } from '@banshop/ui/layout';
 
 import { CartAddDialogComponent } from './cart-add-dialog/cart-add-dialog.component';
 

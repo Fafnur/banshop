@@ -3,7 +3,7 @@
     <banshop-header></banshop-header>
     <main class="web" automation-id="web">
       <banshop-container>
-        <router-outlet></router-outlet>
+        <ng-container *ngTemplateOutlet="template"></ng-container>
       </banshop-container>
     </main>
     <banshop-footer></banshop-footer>
@@ -12,7 +12,7 @@
     <banshop-sidebar></banshop-sidebar>
     <main class="tablet" automation-id="tablet">
       <banshop-container mode="fluid">
-        <router-outlet></router-outlet>
+        <ng-container *ngTemplateOutlet="template"></ng-container>
       </banshop-container>
     </main>
   </ng-container>
@@ -21,10 +21,14 @@
       <banshop-header></banshop-header>
       <main class="handset" automation-id="handset">
         <banshop-container>
-          <router-outlet></router-outlet>
+          <ng-container *ngTemplateOutlet="template"></ng-container>
         </banshop-container>
       </main>
     </div>
     <banshop-menu></banshop-menu>
   </ng-container>
 </ng-container>
+
+<ng-template #template>
+  <router-outlet></router-outlet>
+</ng-template>
