@@ -7,4 +7,12 @@
   @include store-mixins.media-tablet-up() {
     flex-direction: row;
   }
+
+  banshop-row {
+    margin: 0 -0.5rem;
+  }
+
+  banshop-column {
+    padding: 0 0.5rem;
+  }
 }

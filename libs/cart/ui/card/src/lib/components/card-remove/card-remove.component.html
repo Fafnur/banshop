@@ -1,3 +1,4 @@
-<button mat-icon-button type="button" (click)="onRemove()">
+<button mat-icon-button type="button" (click)="onRemove()" *ngIf="icon">
   <mat-icon>delete</mat-icon>
 </button>
+<button mat-raised-button type="button" (click)="onRemove()" *ngIf="!icon">Delete</button>

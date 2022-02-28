@@ -11,6 +11,7 @@ import { CartFacade } from '@banshop/cart/state';
 })
 export class CardRemoveComponent {
   @Input() cartProduct!: CartProduct;
+  @Input() icon = false;
 
   constructor(private readonly cartFacade: CartFacade) {}
 
