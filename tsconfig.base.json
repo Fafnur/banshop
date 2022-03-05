@@ -22,6 +22,7 @@
       "@banshop/cart/ui/add": ["libs/cart/ui/add/src/index.ts"],
       "@banshop/cart/ui/card": ["libs/cart/ui/card/src/index.ts"],
       "@banshop/cart/ui/list": ["libs/cart/ui/list/src/index.ts"],
+      "@banshop/cart/ui/pipes": ["libs/cart/ui/pipes/src/index.ts"],
       "@banshop/core/api/service": ["libs/core/api/service/src/index.ts"],
       "@banshop/core/environments/service": ["libs/core/environments/service/src/index.ts"],
       "@banshop/core/forms/extract": ["libs/core/forms/extract/src/index.ts"],

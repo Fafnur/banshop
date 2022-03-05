@@ -15,4 +15,13 @@
   banshop-column {
     padding: 0 0.5rem;
   }
+
+  banshop-column + banshop-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  banshop-column + banshop-column > div {
+    flex: 1;
+  }
 }

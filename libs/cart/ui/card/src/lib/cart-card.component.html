@@ -1,21 +1,40 @@
 <banshop-multiplatform *ngIf="cartProduct.productId | productById | async; let product">
-  <ng-container web>
-    <banshop-card-preview [images]="product.photos"></banshop-card-preview>
-    <banshop-card-title>{{ product.title }}</banshop-card-title>
-    <banshop-card-count [cartProduct]="cartProduct"></banshop-card-count>
-    <banshop-cart-remove [cartProduct]="cartProduct" [icon]="true"></banshop-cart-remove>
-  </ng-container>
-  <ng-container tablet> </ng-container>
   <ng-container handset>
+    <banshop-card-title>{{ product.title }}</banshop-card-title>
     <banshop-row handset>
       <banshop-column handset="6">
         <banshop-card-preview [images]="product.photos"></banshop-card-preview>
       </banshop-column>
       <banshop-column handset="6">
-        <banshop-card-title>{{ product.title }}</banshop-card-title>
-        <banshop-card-count [cartProduct]="cartProduct"></banshop-card-count>
+        <div>
+          <banshop-card-count [cartProduct]="cartProduct"></banshop-card-count>
+          <banshop-card-price>{{ cartProduct | cartProductPrice: product | currency }}</banshop-card-price>
+        </div>
         <banshop-cart-remove [cartProduct]="cartProduct"></banshop-cart-remove>
       </banshop-column>
     </banshop-row>
+  </ng-container>
+  <ng-container tablet>
+    <banshop-row tablet>
+      <banshop-column tablet="5">
+        <banshop-card-preview [images]="product.photos"></banshop-card-preview>
+      </banshop-column>
+      <banshop-column handset="7">
+        <div>
+          <banshop-card-title>{{ product.title }}</banshop-card-title>
+          <banshop-card-price>{{ cartProduct | cartProductPrice: product | currency }}</banshop-card-price>
+          <banshop-card-description>{{ product.description }}</banshop-card-description>
+          <banshop-card-count [cartProduct]="cartProduct"></banshop-card-count>
+        </div>
+        <banshop-cart-remove [cartProduct]="cartProduct"></banshop-cart-remove>
+      </banshop-column>
+    </banshop-row>
+  </ng-container>
+  <ng-container web>
+    <banshop-card-preview [images]="product.photos"></banshop-card-preview>
+    <banshop-card-title>{{ product.title }}</banshop-card-title>
+    <banshop-card-price>{{ cartProduct | cartProductPrice: product | currency }}</banshop-card-price>
+    <banshop-card-count [cartProduct]="cartProduct"></banshop-card-count>
+    <banshop-cart-remove [cartProduct]="cartProduct" [icon]="true"></banshop-cart-remove>
   </ng-container>
 </banshop-multiplatform>

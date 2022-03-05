@@ -1,34 +1,30 @@
 <ng-container [ngSwitch]="layoutType$ | async">
-  <ng-container *ngSwitchCase="breakpoints.Web">
-    <banshop-header></banshop-header>
-    <main class="web" automation-id="web">
-      <banshop-container>
-        <ng-container *ngTemplateOutlet="template"></ng-container>
-      </banshop-container>
-    </main>
-    <banshop-footer></banshop-footer>
-  </ng-container>
-  <ng-container *ngSwitchCase="breakpoints.Tablet">
-    <banshop-sidebar></banshop-sidebar>
-    <main class="tablet" automation-id="tablet">
-      <banshop-container mode="fluid">
-        <ng-container *ngTemplateOutlet="template"></ng-container>
-      </banshop-container>
-    </main>
-  </ng-container>
   <ng-container *ngSwitchDefault>
     <div>
       <banshop-header></banshop-header>
       <main class="handset" automation-id="handset">
-        <banshop-container>
-          <ng-container *ngTemplateOutlet="template"></ng-container>
-        </banshop-container>
+        <ng-container *ngTemplateOutlet="template"></ng-container>
       </main>
     </div>
     <banshop-menu></banshop-menu>
   </ng-container>
+  <ng-container *ngSwitchCase="breakpoints.Tablet">
+    <banshop-sidebar></banshop-sidebar>
+    <main class="tablet" automation-id="tablet">
+      <ng-container *ngTemplateOutlet="template; context: { mode: 'fluid' }"></ng-container>
+    </main>
+  </ng-container>
+  <ng-container *ngSwitchCase="breakpoints.Web">
+    <banshop-header></banshop-header>
+    <main class="web" automation-id="web">
+      <ng-container *ngTemplateOutlet="template"></ng-container>
+    </main>
+    <banshop-footer></banshop-footer>
+  </ng-container>
 </ng-container>
 
-<ng-template #template>
-  <router-outlet></router-outlet>
+<ng-template #template let-mode="mode">
+  <banshop-container [mode]="mode">
+    <router-outlet></router-outlet>
+  </banshop-container>
 </ng-template>
