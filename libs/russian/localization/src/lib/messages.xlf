@@ -124,6 +124,16 @@
         <note priority="1" from="description">Delete link</note>
         <note priority="1" from="meaning">Cart card</note>
       </trans-unit>
+      <trans-unit id="127b73b25997509bd3e0ec8fbae22038c12f0733" datatype="html">
+        <source> There are no products in your cart yet. Go to shopping - <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;paths.home | path&quot;&gt;"/>catalog<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </source>
+        <target state="translated"> There are no products in your cart yet. Go to shopping - <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;paths.home | path&quot;&gt;"/>каталог<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/cart/ui/list/src/lib/cart-list.component.html</context>
+          <context context-type="linenumber">7,9</context>
+        </context-group>
+        <note priority="1" from="description">Empty cart</note>
+        <note priority="1" from="meaning">Cart list</note>
+      </trans-unit>
       <trans-unit id="c9be140e4b3e7fe071d29de65b243fb4e2a6bbba" datatype="html">
         <source>Page not found</source>
         <target state="translated">Страница не найдена</target>

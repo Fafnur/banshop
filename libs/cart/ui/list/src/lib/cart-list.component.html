@@ -3,6 +3,8 @@
     <banshop-cart-card [cartProduct]="cartProduct" *ngFor="let cartProduct of cartProducts; trackBy: trackByFn"></banshop-cart-card>
   </ng-container>
   <ng-template #emptyCart>
-    <div>В вашей корзине еще нет товаров. Перейти к покупкам - <a [routerLink]="paths.home | path">каталог</a>.</div>
+    <div i18n="Cart list|Empty cart">
+      There are no products in your cart yet. Go to shopping - <a [routerLink]="paths.home | path">catalog</a>.
+    </div>
   </ng-template>
 </ng-container>
