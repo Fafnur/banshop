@@ -12,6 +12,8 @@ export class ProductFacade {
 
   products$ = this.store.select(ProductSelectors.selectProducts);
 
+  productsEntities$ = this.store.select(ProductSelectors.selectProductsEntities);
+
   loadSuccess$ = this.actions$.pipe(
     ofType(ProductActions.loadSuccess),
     map(({ products }) => products)

@@ -7,6 +7,7 @@
     "cart-state": "libs/cart/state",
     "cart-ui-add": "libs/cart/ui/add",
     "cart-ui-card": "libs/cart/ui/card",
+    "cart-ui-info": "libs/cart/ui/info",
     "cart-ui-list": "libs/cart/ui/list",
     "cart-ui-pipes": "libs/cart/ui/pipes",
     "core-api-service": "libs/core/api/service",

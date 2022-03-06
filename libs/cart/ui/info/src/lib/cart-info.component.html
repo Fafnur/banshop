@@ -1,0 +1,12 @@
+<mat-card *ngIf="cartProducts$ | async; let cartProducts">
+  <mat-card-content>
+    <div i18n="Cart info|Cart count">
+      {cartProducts | cartTotalCount, plural, =0 {no products} =1 {1 product} other {
+      {{ cartProducts | cartTotalCount }} products} } in the cart
+    </div>
+    <div i18n="Cart info|Cart total">Total: {{ cartProducts | cartTotalPrice | async | currency }}</div>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button color="primary" type="button" i18n="Cart info|Order link" [routerLink]="paths.order | path">Order</a>
+  </mat-card-actions>
+</mat-card>
