@@ -27,9 +27,7 @@ export class CardCountComponent implements OnInit {
     this.control.valueChanges
       .pipe(
         isNotNullOrUndefined(),
-        tap((count) => {
-          this.cartFacade.changeProduct({ ...this.cartProduct, count });
-        }),
+        tap((count) => this.cartFacade.changeProduct({ ...this.cartProduct, count })),
         takeUntil(this.destroy$)
       )
       .subscribe();

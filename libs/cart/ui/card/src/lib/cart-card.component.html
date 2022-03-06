@@ -1,40 +1,56 @@
 <banshop-multiplatform *ngIf="cartProduct.productId | productById | async; let product">
   <ng-container handset>
-    <banshop-card-title>{{ product.title }}</banshop-card-title>
+    <banshop-card-title automation-id="handset">{{ product.title }}</banshop-card-title>
     <banshop-row handset>
       <banshop-column handset="6">
-        <banshop-card-preview [images]="product.photos"></banshop-card-preview>
+        <banshop-card-preview automation-id="handset" [images]="product.photos"></banshop-card-preview>
       </banshop-column>
       <banshop-column handset="6">
         <div>
-          <banshop-card-count [cartProduct]="cartProduct"></banshop-card-count>
-          <banshop-card-price>{{ cartProduct | cartProductPrice: product | currency }}</banshop-card-price>
+          <banshop-card-count automation-id="handset" [cartProduct]="cartProduct"></banshop-card-count>
+          <banshop-card-price automation-id="handset">{{ cartProduct | cartProductPrice: product | currency }}</banshop-card-price>
         </div>
-        <banshop-cart-remove [cartProduct]="cartProduct"></banshop-cart-remove>
+        <banshop-cart-remove automation-id="handset" [cartProduct]="cartProduct"></banshop-cart-remove>
       </banshop-column>
     </banshop-row>
   </ng-container>
   <ng-container tablet>
     <banshop-row tablet>
       <banshop-column tablet="5">
-        <banshop-card-preview [images]="product.photos"></banshop-card-preview>
+        <banshop-card-preview automation-id="tablet" [images]="product.photos"></banshop-card-preview>
       </banshop-column>
       <banshop-column handset="7">
         <div>
-          <banshop-card-title>{{ product.title }}</banshop-card-title>
-          <banshop-card-price>{{ cartProduct | cartProductPrice: product | currency }}</banshop-card-price>
-          <banshop-card-description>{{ product.description }}</banshop-card-description>
-          <banshop-card-count [cartProduct]="cartProduct"></banshop-card-count>
+          <banshop-card-title automation-id="tablet">{{ product.title }}</banshop-card-title>
+          <banshop-card-price automation-id="tablet">{{ cartProduct | cartProductPrice: product | currency }}</banshop-card-price>
+          <banshop-card-description automation-id="tablet">{{ product.description }}</banshop-card-description>
+          <banshop-card-count automation-id="tablet" [cartProduct]="cartProduct"></banshop-card-count>
         </div>
-        <banshop-cart-remove [cartProduct]="cartProduct"></banshop-cart-remove>
+        <banshop-cart-remove automation-id="tablet" [cartProduct]="cartProduct"></banshop-cart-remove>
       </banshop-column>
     </banshop-row>
   </ng-container>
   <ng-container web>
-    <banshop-card-preview [images]="product.photos"></banshop-card-preview>
-    <banshop-card-title>{{ product.title }}</banshop-card-title>
-    <banshop-card-price>{{ cartProduct | cartProductPrice: product | currency }}</banshop-card-price>
-    <banshop-card-count [cartProduct]="cartProduct"></banshop-card-count>
-    <banshop-cart-remove [cartProduct]="cartProduct" [icon]="true"></banshop-cart-remove>
+    <banshop-row web>
+      <banshop-column tablet="4">
+        <banshop-card-preview automation-id="web" [images]="product.photos"></banshop-card-preview>
+      </banshop-column>
+      <banshop-column handset="8">
+        <div>
+          <banshop-card-title automation-id="web">{{ product.title }}</banshop-card-title>
+          <banshop-card-description automation-id="web">{{ product.subtitle }}</banshop-card-description>
+          <banshop-card-description automation-id="web">{{ product.description }}</banshop-card-description>
+          <banshop-card-price automation-id="web">{{ cartProduct | cartProductPrice: product | currency }}</banshop-card-price>
+        </div>
+        <banshop-row web>
+          <banshop-column tablet="8">
+            <banshop-card-count automation-id="web" [cartProduct]="cartProduct"></banshop-card-count>
+          </banshop-column>
+          <banshop-column handset="4">
+            <banshop-cart-remove automation-id="web" [cartProduct]="cartProduct"></banshop-cart-remove>
+          </banshop-column>
+        </banshop-row>
+      </banshop-column>
+    </banshop-row>
   </ng-container>
 </banshop-multiplatform>

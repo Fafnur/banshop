@@ -9,13 +9,4 @@ banshop-cart-card {
     padding-bottom: 2rem;
     border-bottom: 1px solid mat.get-color-from-palette(mat.$gray-palette, 300);
   }
-
-  @include store-mixins.media-web() {
-    margin-bottom: 0;
-
-    &:not(:last-child) {
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-  }
 }

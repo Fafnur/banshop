@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CardDescriptionComponent } from './card-description.component';
 
-describe('CardTitleComponent', () => {
+describe('CardDescriptionComponent', () => {
   let component: CardDescriptionComponent;
   let fixture: ComponentFixture<CardDescriptionComponent>;
 
@@ -15,10 +15,11 @@ describe('CardTitleComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CardDescriptionComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
+    fixture.detectChanges();
+
     expect(component).toBeTruthy();
   });
 });

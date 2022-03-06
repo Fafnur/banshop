@@ -4,10 +4,6 @@
   display: flex;
   flex-direction: column;
 
-  @include store-mixins.media-tablet-up() {
-    flex-direction: row;
-  }
-
   banshop-row {
     margin: 0 -0.5rem;
   }
@@ -23,5 +19,16 @@
 
   banshop-column + banshop-column > div {
     flex: 1;
+  }
+
+  @include store-mixins.media-tablet-up() {
+    flex-direction: row;
+  }
+
+  @include store-mixins.media-web() {
+    banshop-card-count {
+      margin-bottom: -1rem;
+      display: block;
+    }
   }
 }

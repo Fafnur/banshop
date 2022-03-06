@@ -15,10 +15,11 @@ describe('CardTitleComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CardPriceComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
+    fixture.detectChanges();
+
     expect(component).toBeTruthy();
   });
 });

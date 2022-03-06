@@ -2,7 +2,7 @@ import { DebugElement } from '@angular/core';
 
 import { PageObject } from '@banshop/core/testing';
 
-enum ContainerAutomation {
+enum Automation {
   Handset = 'handset',
   Tablet = 'tablet',
   Web = 'web',
@@ -10,14 +10,14 @@ enum ContainerAutomation {
 
 export class LayoutComponentPo extends PageObject {
   get handset(): DebugElement | null {
-    return this.getByAutomationId(ContainerAutomation.Handset);
+    return this.getByAutomationId(Automation.Handset);
   }
 
   get tablet(): DebugElement | null {
-    return this.getByAutomationId(ContainerAutomation.Tablet);
+    return this.getByAutomationId(Automation.Tablet);
   }
 
   get web(): DebugElement | null {
-    return this.getByAutomationId(ContainerAutomation.Web);
+    return this.getByAutomationId(Automation.Web);
   }
 }

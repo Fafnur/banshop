@@ -1,7 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 
 import { CartPipesModule } from '@banshop/cart/ui/pipes';
 import { ProductPipesModule } from '@banshop/products/ui/pipes';
@@ -19,9 +17,6 @@ import { CardTitleModule } from './components/card-title/card-title.module';
 @NgModule({
   imports: [
     CommonModule,
-    ProductPipesModule,
-    MatIconModule,
-    MatButtonModule,
     CardRemoveModule,
     CardCountModule,
     CardPreviewModule,
@@ -31,6 +26,7 @@ import { CardTitleModule } from './components/card-title/card-title.module';
     GridModule,
     MultiplatformModule,
     CartPipesModule,
+    ProductPipesModule,
   ],
   declarations: [CartCardComponent],
   exports: [CartCardComponent],

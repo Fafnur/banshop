@@ -1,25 +1,38 @@
+import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockModule } from 'ng-mocks';
+
+import { CarouselModule } from '@banshop/ui/carousel';
 
 import { CardPreviewComponent } from './card-preview.component';
+import { CardPreviewComponentPo } from './card-preview.component.po';
 
 describe('CardPreviewComponent', () => {
-  let component: CardPreviewComponent;
+  let pageObject: CardPreviewComponentPo;
   let fixture: ComponentFixture<CardPreviewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CardPreviewComponent ]
-    })
-    .compileComponents();
+      imports: [CommonModule, MockModule(CarouselModule)],
+      declarations: [CardPreviewComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CardPreviewComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    pageObject = new CardPreviewComponentPo(fixture);
+    fixture.componentInstance.images = ['/img.jpg'];
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    fixture.detectChanges();
+
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('should show', () => {
+    fixture.detectChanges();
+
+    expect(pageObject.carousel).toBeTruthy();
   });
 });

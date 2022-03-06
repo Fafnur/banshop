@@ -2,6 +2,16 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="e085c7a5191b6d554f9b7bf94c6c2c0aea6a73c0" datatype="html">
+        <source>Cart</source>
+        <target state="translated">Корзина</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/cart/page/src/lib/cart-page.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Cart title</note>
+        <note priority="1" from="meaning">Cart page</note>
+      </trans-unit>
       <trans-unit id="3417209489472329026" datatype="html">
         <source>Duplicate CartProduct</source>
         <target state="translated">Дубликат товара</target>
@@ -59,7 +69,7 @@
         <target state="translated">Отмена</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/ui/add/src/lib/cart-add-dialog/cart-add-dialog.component.html</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">13</context>
         </context-group>
         <note priority="1" from="description">Cancel link</note>
         <note priority="1" from="meaning">Cart add</note>
@@ -69,7 +79,7 @@
         <target state="translated">Добавить в корзину</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/ui/add/src/lib/cart-add-dialog/cart-add-dialog.component.html</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="linenumber">14</context>
         </context-group>
         <note priority="1" from="description">Add link</note>
         <note priority="1" from="meaning">Cart add</note>
@@ -79,7 +89,7 @@
         <target state="translated">Продолжить покупки</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/ui/add/src/lib/cart-add-dialog/cart-add-dialog.component.html</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">17</context>
         </context-group>
         <note priority="1" from="description">Continue link</note>
         <note priority="1" from="meaning">Cart add</note>
@@ -89,10 +99,30 @@
         <target state="translated">Перейти в корзину</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/ui/add/src/lib/cart-add-dialog/cart-add-dialog.component.html</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">18</context>
         </context-group>
         <note priority="1" from="description">Go to cart link</note>
         <note priority="1" from="meaning">Cart add</note>
+      </trans-unit>
+      <trans-unit id="9bc91fe1e60fc6b7ff61ddfa5bfda070c575078f" datatype="html">
+        <source>Price: </source>
+        <target state="translated">Цена: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/cart/ui/card/src/lib/components/card-price/card-price.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Price</note>
+        <note priority="1" from="meaning">Cart card</note>
+      </trans-unit>
+      <trans-unit id="de6f55a2e1ec6b967d12e3dc97799398be926521" datatype="html">
+        <source> Delete </source>
+        <target state="translated"> Удалить </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/cart/ui/card/src/lib/components/card-remove/card-remove.component.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+        <note priority="1" from="description">Delete link</note>
+        <note priority="1" from="meaning">Cart card</note>
       </trans-unit>
       <trans-unit id="c9be140e4b3e7fe071d29de65b243fb4e2a6bbba" datatype="html">
         <source>Page not found</source>
