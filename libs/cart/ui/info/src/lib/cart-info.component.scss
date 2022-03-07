@@ -8,3 +8,12 @@ mat-card {
     width: 100%;
   }
 }
+mat-card-content {
+  div {
+    margin: 0.5rem 0;
+  }
+
+  ul {
+    padding-left: 1rem;
+  }
+}

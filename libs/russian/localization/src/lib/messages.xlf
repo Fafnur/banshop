@@ -124,8 +124,9 @@
         <note priority="1" from="description">Delete link</note>
         <note priority="1" from="meaning">Cart card</note>
       </trans-unit>
-      <trans-unit id="bd8738ecd312c4a0a0432974dd065c1c0d405d79" datatype="html">
-        <source> <x id="ICU" equiv-text="{cartProducts | cartTotalCount, plural, =0 {no products} =1 {1 product} other { {{ cartProducts | cartTotalCount }} products} }"/> in the cart </source>
+      <trans-unit id="93315c839a774e2e3a73302b08409b3999abecda" datatype="html">
+        <source> <x id="ICU" equiv-text="{cartProducts | cartTotalCount, plural, =0 {no products} =1 {1 product} other {
+      {{ cartProducts | cartTotalCount }} products} }"/> in the cart. </source>
         <target state="translated">В корзине <x id="ICU" equiv-text="{cartProducts | cartTotalCount, plural, =0 {no products} =1 {1 product} other { {{ cartProducts | cartTotalCount }} products} }"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/ui/info/src/lib/cart-info.component.html</context>
@@ -136,7 +137,7 @@
       </trans-unit>
       <trans-unit id="4b8caa29f3016d2c1148614c1617ce10a31c25d9" datatype="html">
         <source>{VAR_PLURAL, plural, =0 {no products} =1 {1 product} other {<x id="INTERPOLATION"/> products}}</source>
-        <target state="translated">{VAR_PLURAL, plural, =0 {пусто} =1 {1 товар} =2 {1 товара} =3 {1 товара} =4 {1 товара} other {<x id="INTERPOLATION"/> товаров}}</target>
+        <target state="translated">{VAR_PLURAL, plural, =0 {пусто} =1 {1 товар} =2 {1 товара} =3 {3 товара} =4 {4 товара} other {<x id="INTERPOLATION"/> товаров}}</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/ui/info/src/lib/cart-info.component.html</context>
           <context context-type="linenumber">4,7</context>
@@ -147,17 +148,17 @@
         <target state="translated">Итого: <x id="INTERPOLATION" equiv-text="{{ cartProducts | cartTotalPrice | async | currency }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/ui/info/src/lib/cart-info.component.html</context>
-          <context context-type="linenumber">7,8</context>
+          <context context-type="linenumber">13,14</context>
         </context-group>
         <note priority="1" from="description">Cart total</note>
         <note priority="1" from="meaning">Cart info</note>
       </trans-unit>
-      <trans-unit id="8ee678f794146c0bd9709b54491a1e3bedb69661" datatype="html">
-        <source>Order</source>
+      <trans-unit id="95630f5f2586787410d70419f682596834ac243d" datatype="html">
+        <source> Order </source>
         <target state="translated">Оформить</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/ui/info/src/lib/cart-info.component.html</context>
-          <context context-type="linenumber">10,13</context>
+          <context context-type="linenumber">25,29</context>
         </context-group>
         <note priority="1" from="description">Order link</note>
         <note priority="1" from="meaning">Cart info</note>
