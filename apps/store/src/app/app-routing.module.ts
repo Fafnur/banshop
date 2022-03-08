@@ -22,6 +22,10 @@ const routes: Routes = [
         loadChildren: () => import('@banshop/cart/page').then((modules) => modules.CartPageModule),
       },
       {
+        path: NAVIGATION_PATHS.order,
+        loadChildren: () => import('@banshop/orders/page').then((modules) => modules.OrderPageModule),
+      },
+      {
         path: '',
         loadChildren: () => import('@banshop/errors/pages').then((modules) => modules.ErrorsPagesModule),
       },

@@ -1,2 +1,2 @@
 export * from './lib/order.facade';
-export * from './lib/orders-state.module';
+export * from './lib/order-state.module';

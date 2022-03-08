@@ -6,14 +6,10 @@ import { OrdersApiModule } from '@banshop/orders/api';
 
 import { OrderEffects } from './order.effects';
 import { OrderFacade } from './order.facade';
-import * as fromOrder from './order.reducer';
+import { ORDER_FEATURE_KEY, reducer } from './order.reducer';
 
 @NgModule({
-  imports: [
-    OrdersApiModule,
-    StoreModule.forFeature(fromOrder.ORDER_FEATURE_KEY, fromOrder.reducer),
-    EffectsModule.forFeature([OrderEffects]),
-  ],
+  imports: [OrdersApiModule, StoreModule.forFeature(ORDER_FEATURE_KEY, reducer), EffectsModule.forFeature([OrderEffects])],
   providers: [OrderFacade],
 })
-export class OrdersStateModule {}
+export class OrderStateModule {}
