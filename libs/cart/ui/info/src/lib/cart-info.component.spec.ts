@@ -18,6 +18,9 @@ import { ProductPipesModule } from '@banshop/products/ui/pipes';
 
 import { CartInfoComponent } from './cart-info.component';
 
+/**
+ * TODO: Add tests
+ */
 describe('CartInfoComponent', () => {
   let component: CartInfoComponent;
   let fixture: ComponentFixture<CartInfoComponent>;
