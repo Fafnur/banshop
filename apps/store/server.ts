@@ -23,6 +23,11 @@ export function app(): express.Express {
     })
   );
 
+  // API for send order
+  server.post('/api/order', (req, res) => {
+    return res.status(204);
+  });
+
   server.set('view engine', 'html');
   server.set('views', distFolder);
 

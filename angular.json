@@ -28,6 +28,7 @@
     "core-testing": "libs/core/testing",
     "core-utils-destroy": "libs/core/utils/destroy",
     "core-utils-operators": "libs/core/utils/operators",
+    "core-utils-types": "libs/core/utils/types",
     "errors-not-found-page": "libs/errors/not-found/page",
     "errors-pages": "libs/errors/pages",
     "errors-server-error-page": "libs/errors/server-error/page",

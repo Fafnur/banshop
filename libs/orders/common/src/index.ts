@@ -1,1 +1,2 @@
-export * from './lib/orders-common.module';
+export * from './lib/order.interface';
+export * from './lib/order.stub';
