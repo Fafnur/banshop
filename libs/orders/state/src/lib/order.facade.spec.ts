@@ -1,81 +1,49 @@
 import { NgModule } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { EffectsModule } from '@ngrx/effects';
-import { Store, StoreModule } from '@ngrx/store';
-import { NxModule } from '@nrwl/angular';
-import { readFirst } from '@nrwl/angular/testing';
+import { StoreModule } from '@ngrx/store';
+import { of } from 'rxjs';
+import { mock, when } from 'ts-mockito';
 
-import * as OrderActions from './order.actions';
+import { LocalAsyncStorage } from '@banshop/core/storage/local';
+import { providerOf } from '@banshop/core/testing';
+import { OrdersApiService } from '@banshop/orders/api';
+import { OrderKeys } from '@banshop/orders/common';
+
 import { OrderEffects } from './order.effects';
 import { OrderFacade } from './order.facade';
-import { ORDER_FEATURE_KEY, OrderState, reducer } from './order.reducer';
-
-interface TestSchema {
-  order: OrderState;
-}
+import { ORDER_FEATURE_KEY, reducer } from './order.reducer';
 
 describe('OrderFacade', () => {
   let facade: OrderFacade;
-  let store: Store<TestSchema>;
+  let localAsyncStorageMock: LocalAsyncStorage;
+  let ordersApiServiceMock: OrdersApiService;
 
   describe('used in NgModule', () => {
     beforeEach(() => {
+      localAsyncStorageMock = mock(LocalAsyncStorage);
+      ordersApiServiceMock = mock(OrdersApiService);
+    });
+
+    beforeEach(() => {
       @NgModule({
         imports: [StoreModule.forFeature(ORDER_FEATURE_KEY, reducer), EffectsModule.forFeature([OrderEffects])],
-        providers: [OrderFacade],
+        providers: [OrderFacade, providerOf(LocalAsyncStorage, localAsyncStorageMock), providerOf(OrdersApiService, ordersApiServiceMock)],
       })
       class CustomFeatureModule {}
 
       @NgModule({
-        imports: [NxModule.forRoot(), StoreModule.forRoot({}), EffectsModule.forRoot([]), CustomFeatureModule],
+        imports: [StoreModule.forRoot({}), EffectsModule.forRoot([]), CustomFeatureModule],
       })
       class RootModule {}
       TestBed.configureTestingModule({ imports: [RootModule] });
 
-      store = TestBed.inject(Store);
+      when(localAsyncStorageMock.getItem(OrderKeys.Customer)).thenReturn(of(null));
       facade = TestBed.inject(OrderFacade);
     });
 
-    /**
-     * The initially generated facade::loadAll() returns empty array
-     */
-    it('loadAll() should return empty list with loaded == true', async () => {
-      let list = await readFirst(facade.allOrder$);
-      let isLoaded = await readFirst(facade.loaded$);
-
-      expect(list.length).toBe(0);
-      expect(isLoaded).toBe(false);
-
-      facade.init();
-
-      list = await readFirst(facade.allOrder$);
-      isLoaded = await readFirst(facade.loaded$);
-
-      expect(list.length).toBe(0);
-      expect(isLoaded).toBe(true);
-    });
-
-    /**
-     * Use `loadOrderSuccess` to manually update list
-     */
-    it('allOrder$ should return the loaded list; and loaded flag == true', async () => {
-      let list = await readFirst(facade.allOrder$);
-      let isLoaded = await readFirst(facade.loaded$);
-
-      expect(list.length).toBe(0);
-      expect(isLoaded).toBe(false);
-
-      store.dispatch(
-        OrderActions.loadOrderSuccess({
-          order: [createOrderEntity('AAA'), createOrderEntity('BBB')],
-        })
-      );
-
-      list = await readFirst(facade.allOrder$);
-      isLoaded = await readFirst(facade.loaded$);
-
-      expect(list.length).toBe(2);
-      expect(isLoaded).toBe(true);
+    it('should create', async () => {
+      expect(facade).toBeTruthy();
     });
   });
 });

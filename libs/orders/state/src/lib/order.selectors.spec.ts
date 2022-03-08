@@ -1,55 +1,29 @@
-import { OrderEntity } from './order.models';
-import { orderAdapter, OrderPartialState, orderInitialState } from './order.reducer';
+import { CUSTOMER_STUB } from '@banshop/orders/common';
+
+import { ORDER_FEATURE_KEY, orderInitialState, OrderPartialState, OrderState } from './order.reducer';
 import * as OrderSelectors from './order.selectors';
 
 describe('Order Selectors', () => {
-  const ERROR_MSG = 'No Error Available';
-  const getOrderId = (it: OrderEntity) => it.id;
-  const createOrderEntity = (id: string, name = '') =>
-    ({
-      id,
-      name: name || `name-${id}`,
-    } as OrderEntity);
-
+  const getStore = (state?: Partial<OrderState>) => ({
+    [ORDER_FEATURE_KEY]: { ...orderInitialState, ...state },
+  });
   let state: OrderPartialState;
 
   beforeEach(() => {
-    state = {
-      order: orderAdapter.setAll([createOrderEntity('PRODUCT-AAA'), createOrderEntity('PRODUCT-BBB'), createOrderEntity('PRODUCT-CCC')], {
-        ...orderInitialState,
-        selectedId: 'PRODUCT-BBB',
-        error: ERROR_MSG,
-        loaded: true,
-      }),
-    };
+    state = getStore();
   });
 
-  describe('Order Selectors', () => {
-    it('getAllOrder() should return the list of Order', () => {
-      const results = OrderSelectors.getAllOrder(state);
-      const selId = getOrderId(results[1]);
+  it('selectCustomer() should return customer', () => {
+    state = getStore({ customer: CUSTOMER_STUB });
+    const results = OrderSelectors.selectCustomer(state);
 
-      expect(results.length).toBe(3);
-      expect(selId).toBe('PRODUCT-BBB');
-    });
+    expect(results).toBe(CUSTOMER_STUB);
+  });
 
-    it('getSelected() should return the selected Entity', () => {
-      const result = OrderSelectors.getSelected(state) as OrderEntity;
-      const selId = getOrderId(result);
+  it('selectCustomer() should return orderCreating', () => {
+    state = getStore({ orderCreating: true });
+    const results = OrderSelectors.selectOrderCreating(state);
 
-      expect(selId).toBe('PRODUCT-BBB');
-    });
-
-    it('getOrderLoaded() should return the current "loaded" status', () => {
-      const result = OrderSelectors.getOrderLoaded(state);
-
-      expect(result).toBe(true);
-    });
-
-    it('getOrderError() should return the current "error" state', () => {
-      const result = OrderSelectors.getOrderError(state);
-
-      expect(result).toBe(ERROR_MSG);
-    });
+    expect(results).toBeTruthy();
   });
 });

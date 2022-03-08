@@ -1,6 +1,10 @@
 import { CartProduct } from '@banshop/cart/common';
 import { Product } from '@banshop/products/common';
 
+export enum OrderKeys {
+  Customer = 'customer',
+}
+
 export interface Customer {
   name: string;
   phone: string;
