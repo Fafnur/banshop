@@ -19,3 +19,5 @@ export const selectSelectedProduct = createSelector(selectProductsEntities, sele
 );
 
 export const selectProduct = (id: number) => createSelector(selectProductsEntities, (entities) => entities[id] ?? null);
+export const selectProductBySlug = (slug: string) =>
+  createSelector(selectProducts, (products) => products.find((product) => product.slug === slug) ?? null);

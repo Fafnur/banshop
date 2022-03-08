@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/products/ui/box",
+  "sourceRoot": "libs/products/ui/box/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/products/ui/box"],
+      "options": {
+        "jestConfig": "libs/products/ui/box/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/products/ui/box/src/**/*.ts", "libs/products/ui/box/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

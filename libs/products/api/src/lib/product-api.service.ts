@@ -23,8 +23,9 @@ export class ProductApiService {
 
     return this.apiService.get<ProductsResponse>(PRODUCT_API_ROUTES.load(this.environmentService.environments.google)).pipe(
       map((response: ProductsResponse) =>
-        response.values.map(([title, subtitle, price, sizes, description, photos], index) => ({
+        response.values.map(([slug, title, subtitle, price, sizes, description, photos], index) => ({
           id: index + 1,
+          slug: slug.trim(),
           title: title.trim(),
           subtitle: subtitle.trim(),
           price: Number(price.trim()),

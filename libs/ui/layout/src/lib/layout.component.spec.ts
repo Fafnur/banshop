@@ -6,6 +6,7 @@ import { MockModule } from 'ng-mocks';
 import { BehaviorSubject } from 'rxjs';
 import { mock, when } from 'ts-mockito';
 
+import { LayoutService } from '@banshop/core/layout/service';
 import { providerOf } from '@banshop/core/testing';
 import { ContainerModule } from '@banshop/ui/container';
 
@@ -15,7 +16,6 @@ import { MenuModule } from './components/menu/menu.module';
 import { SidebarModule } from './components/sidebar/sidebar.module';
 import { LayoutComponent } from './layout.component';
 import { LayoutComponentPo } from './layout.component.po';
-import { LayoutService } from './layout.service';
 
 describe('LayoutComponent', () => {
   let pageObject: LayoutComponentPo;

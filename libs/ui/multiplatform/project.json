@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/ui/multiplatform",
+  "sourceRoot": "libs/ui/multiplatform/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ui/multiplatform"],
+      "options": {
+        "jestConfig": "libs/ui/multiplatform/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/ui/multiplatform/src/**/*.ts", "libs/ui/multiplatform/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

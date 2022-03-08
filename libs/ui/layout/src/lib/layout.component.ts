@@ -2,7 +2,7 @@ import { Breakpoints } from '@angular/cdk/layout';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { LayoutService } from './layout.service';
+import { LayoutService } from '@banshop/core/layout/service';
 
 @Component({
   selector: 'banshop-layout',

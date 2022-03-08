@@ -14,10 +14,21 @@ export interface Product {
   sizes: number[];
   description: string;
   photos: string[];
+  slug: string;
 }
 
 export interface ProductsResponse {
   range: string;
   majorDimension: string;
-  values: [string, string, string, string, string, string][];
+  values: [string, string, string, string, string, string, string][];
+}
+
+export enum ProductField {
+  Size = 'size',
+  Count = 'count',
+}
+
+export interface ProductOptions {
+  size: number;
+  count: number;
 }

@@ -5,11 +5,11 @@
   </mat-card-header>
   <banshop-carousel [images]="product.photos"></banshop-carousel>
   <mat-card-content>
-    <p class="product-price">{{ product.price | currency }}</p>
+    <banshop-price>{{ product.price | currency }}</banshop-price>
     <p>{{ product.description }}</p>
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-button i18n="Product card|Details link">Details</button>
-    <button mat-button i18n="Product card|Buy link">Buy</button>
+  <mat-card-actions align="end">
+    <a mat-button i18n="Product card|Details link" [routerLink]="product | productPath">Details</a>
+    <button mat-button i18n="Product card|Buy link" (click)="onAdd()">Buy</button>
   </mat-card-actions>
 </mat-card>

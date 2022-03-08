@@ -1,0 +1,6 @@
+<button automation-id="icon" mat-icon-button type="button" (click)="onRemove()" *ngIf="icon">
+  <mat-icon>delete</mat-icon>
+</button>
+<button automation-id="button" mat-raised-button type="button" i18n="Cart card|Delete link" (click)="onRemove()" *ngIf="!icon">
+  Delete
+</button>

@@ -1,0 +1,12 @@
+@use '@angular/material' as mat;
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+banshop-cart-card {
+  display: block;
+  margin-bottom: 2rem;
+
+  &:not(:last-child) {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid mat.get-color-from-palette(mat.$gray-palette, 300);
+  }
+}

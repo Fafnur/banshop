@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/cart/page",
+  "sourceRoot": "libs/cart/page/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cart/page"],
+      "options": {
+        "jestConfig": "libs/cart/page/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/cart/page/src/**/*.ts", "libs/cart/page/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

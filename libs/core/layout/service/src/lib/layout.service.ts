@@ -48,4 +48,8 @@ export class LayoutService {
       )
       .subscribe();
   }
+
+  is(size: string): boolean {
+    return size === this.snapshotLayoutType;
+  }
 }

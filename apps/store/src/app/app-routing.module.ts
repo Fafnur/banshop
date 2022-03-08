@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { NAVIGATION_PATHS } from '@banshop/core/navigation/common';
 import { LayoutComponent } from '@banshop/ui/layout';
 
 const routes: Routes = [
@@ -9,8 +10,16 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: '',
+        path: NAVIGATION_PATHS.home,
         loadChildren: () => import('@banshop/russian/home/page').then((modules) => modules.HomePageModule),
+      },
+      {
+        path: NAVIGATION_PATHS.product,
+        loadChildren: () => import('@banshop/products/page').then((modules) => modules.ProductPageModule),
+      },
+      {
+        path: NAVIGATION_PATHS.cart,
+        loadChildren: () => import('@banshop/cart/page').then((modules) => modules.CartPageModule),
       },
       {
         path: '',

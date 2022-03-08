@@ -1,0 +1,11 @@
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+[mat-raised-button] {
+  width: 100%;
+  padding: 0.5rem 1rem;
+
+  //@include store-mixins.media-web() {
+  //  width: auto;
+  //  padding: 0.5rem 2rem;
+  //}
+}

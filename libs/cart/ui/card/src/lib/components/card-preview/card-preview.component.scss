@@ -1,0 +1,10 @@
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+img {
+  width: 100%;
+  //@include store-mixins.media-tablet-up() {
+  //}
+}
+banshop-carousel {
+  height: 100%;
+}

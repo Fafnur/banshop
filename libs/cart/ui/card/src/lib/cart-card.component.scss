@@ -1,0 +1,34 @@
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+:host {
+  display: flex;
+  flex-direction: column;
+
+  banshop-row {
+    margin: 0 -0.5rem;
+  }
+
+  banshop-column {
+    padding: 0 0.5rem;
+  }
+
+  banshop-column + banshop-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  banshop-column + banshop-column > div {
+    flex: 1;
+  }
+
+  @include store-mixins.media-tablet-up() {
+    flex-direction: row;
+  }
+
+  @include store-mixins.media-web() {
+    banshop-card-count {
+      margin-bottom: -1rem;
+      display: block;
+    }
+  }
+}

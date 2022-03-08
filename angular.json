@@ -1,10 +1,22 @@
 {
   "version": 2,
   "projects": {
+    "cart-api": "libs/cart/api",
+    "cart-common": "libs/cart/common",
+    "cart-page": "libs/cart/page",
+    "cart-state": "libs/cart/state",
+    "cart-ui-add": "libs/cart/ui/add",
+    "cart-ui-card": "libs/cart/ui/card",
+    "cart-ui-info": "libs/cart/ui/info",
+    "cart-ui-list": "libs/cart/ui/list",
+    "cart-ui-pipes": "libs/cart/ui/pipes",
     "core-api-service": "libs/core/api/service",
     "core-environments-service": "libs/core/environments/service",
+    "core-forms-extract": "libs/core/forms/extract",
     "core-forms-mask": "libs/core/forms/mask",
+    "core-forms-utils": "libs/core/forms/utils",
     "core-hammer": "libs/core/hammer",
+    "core-layout-service": "libs/core/layout/service",
     "core-navigation-common": "libs/core/navigation/common",
     "core-navigation-service": "libs/core/navigation/service",
     "core-navigation-ui-pipes": "libs/core/navigation/ui/pipes",
@@ -22,9 +34,13 @@
     "errors-ui-card": "libs/errors/ui/card",
     "products-api": "libs/products/api",
     "products-common": "libs/products/common",
+    "products-page": "libs/products/page",
     "products-state": "libs/products/state",
+    "products-ui-box": "libs/products/ui/box",
     "products-ui-card": "libs/products/ui/card",
+    "products-ui-form": "libs/products/ui/form",
     "products-ui-list": "libs/products/ui/list",
+    "products-ui-pipes": "libs/products/ui/pipes",
     "russian-home-page": "libs/russian/home/page",
     "russian-localization": "libs/russian/localization",
     "store": "apps/store",
@@ -34,6 +50,8 @@
     "ui-grid": "libs/ui/grid",
     "ui-image": "libs/ui/image",
     "ui-layout": "libs/ui/layout",
-    "ui-link": "libs/ui/link"
+    "ui-link": "libs/ui/link",
+    "ui-multiplatform": "libs/ui/multiplatform",
+    "ui-width": "libs/ui/width"
   }
 }

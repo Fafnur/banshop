@@ -1,0 +1,19 @@
+@use '@angular/material' as mat;
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+mat-card {
+  background-color: mat.get-color-from-palette(mat.$gray-palette, 100);
+
+  [mat-raised-button] {
+    width: 100%;
+  }
+}
+mat-card-content {
+  div {
+    margin: 0.5rem 0;
+  }
+
+  ul {
+    padding-left: 1rem;
+  }
+}
