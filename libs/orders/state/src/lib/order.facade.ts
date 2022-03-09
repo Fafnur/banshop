@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Actions, ofType } from '@ngrx/effects';
 import { Action, Store } from '@ngrx/store';
+import { map } from 'rxjs';
 
 import { OrderCreate } from '@banshop/orders/common';
 
@@ -12,7 +14,17 @@ export class OrderFacade {
 
   orderCreating$ = this.store.select(OrderSelectors.selectOrderCreating);
 
-  constructor(private readonly store: Store) {}
+  createOrderSuccess$ = this.actions$.pipe(
+    ofType(OrderActions.createOrderSuccess),
+    map(() => undefined)
+  );
+
+  createOrderFailure$ = this.actions$.pipe(
+    ofType(OrderActions.createOrderFailure),
+    map(({ error }) => error)
+  );
+
+  constructor(private readonly actions$: Actions, private readonly store: Store) {}
 
   createOrder(order: OrderCreate) {
     this.dispatch(OrderActions.createOrder({ order }));

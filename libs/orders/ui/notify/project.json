@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/orders/ui/notify",
+  "sourceRoot": "libs/orders/ui/notify/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/orders/ui/notify"],
+      "options": {
+        "jestConfig": "libs/orders/ui/notify/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/orders/ui/notify/src/**/*.ts", "libs/orders/ui/notify/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

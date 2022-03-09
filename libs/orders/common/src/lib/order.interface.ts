@@ -5,6 +5,15 @@ export enum OrderKeys {
   Customer = 'customer',
 }
 
+export enum CustomerField {
+  Name = 'name',
+  Phone = 'phone',
+  Email = 'email',
+  City = 'city',
+  Postcode = 'postcode',
+  Address = 'address',
+}
+
 export interface Customer {
   name: string;
   phone: string;
