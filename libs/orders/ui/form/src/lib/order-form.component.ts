@@ -6,6 +6,7 @@ import { DestroyService } from '@banshop/core/utils/destroy';
 import { isNotNullOrUndefined } from '@banshop/core/utils/operators';
 import { CustomerField } from '@banshop/orders/common';
 import { OrderFacade } from '@banshop/orders/state';
+import { OrderNotifyService } from '@banshop/orders/ui/notify';
 
 @Component({
   selector: 'banshop-order-form',
@@ -17,12 +18,15 @@ import { OrderFacade } from '@banshop/orders/state';
 export class OrderFormComponent implements OnInit {
   @Output() created = new EventEmitter<FormGroup>();
 
+  readonly fields = CustomerField;
+
   form!: FormGroup;
   submitted = false;
 
   constructor(
     private readonly changeDetectorRef: ChangeDetectorRef,
     private readonly orderFacade: OrderFacade,
+    private readonly orderNotifyService: OrderNotifyService,
     private readonly destroy$: DestroyService
   ) {}
 
@@ -30,22 +34,12 @@ export class OrderFormComponent implements OnInit {
     this.form = new FormGroup({
       [CustomerField.Name]: new FormControl(null, [Validators.required]),
       [CustomerField.Phone]: new FormControl(null, [Validators.required]),
-      [CustomerField.Email]: new FormControl(null, [Validators.required]),
+      [CustomerField.Email]: new FormControl(null, [Validators.required, Validators.email]),
       [CustomerField.City]: new FormControl(null, [Validators.required]),
       [CustomerField.Address]: new FormControl(null, [Validators.required]),
       [CustomerField.Postcode]: new FormControl(null, [Validators.required]),
     });
     this.created.emit(this.form);
-
-    this.form.valueChanges
-      .pipe(
-        tap(() => {
-          this.isShowError = false;
-          this.changeDetectorRef.markForCheck();
-        }),
-        takeUntil(this.destroy$)
-      )
-      .subscribe();
 
     this.orderFacade.customer$.pipe(
       take(1),
@@ -58,6 +52,7 @@ export class OrderFormComponent implements OnInit {
       .pipe(
         tap(() => {
           this.submitted = false;
+          this.orderNotifyService.openFailureDialog();
           this.changeDetectorRef.markForCheck();
         }),
         takeUntil(this.destroy$)
@@ -68,7 +63,7 @@ export class OrderFormComponent implements OnInit {
       .pipe(
         tap(() => {
           this.submitted = false;
-
+          this.orderNotifyService.openSuccessDialog();
           this.changeDetectorRef.markForCheck();
         }),
         takeUntil(this.destroy$)

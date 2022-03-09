@@ -1,12 +1,12 @@
 import { FormControl, FormGroup } from '@angular/forms';
 
-import { ExtractFormGroupPipe } from './extract-form-group.pipe';
+import { BanshopExtractFormGroupPipe } from './extract-form-group.pipe';
 
 describe('ExtractFormGroupPipe', () => {
-  let pipe: ExtractFormGroupPipe;
+  let pipe: BanshopExtractFormGroupPipe;
 
   beforeEach(() => {
-    pipe = new ExtractFormGroupPipe();
+    pipe = new BanshopExtractFormGroupPipe();
   });
 
   it('create an instance', () => {

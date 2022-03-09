@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType } from '@ngrx/effects';
 import { Action, Store } from '@ngrx/store';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 import { OrderCreate } from '@banshop/orders/common';
 
@@ -14,7 +14,7 @@ export class OrderFacade {
 
   orderCreating$ = this.store.select(OrderSelectors.selectOrderCreating);
 
-  createOrderSuccess$ = this.actions$.pipe(
+  createOrderSuccess$: Observable<void> = this.actions$.pipe(
     ofType(OrderActions.createOrderSuccess),
     map(() => undefined)
   );

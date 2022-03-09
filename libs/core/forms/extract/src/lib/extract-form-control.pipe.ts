@@ -2,9 +2,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Pipe({
-  name: 'extractFormControl',
+  name: 'banshopExtractFormControl',
 })
-export class ExtractFormControlPipe implements PipeTransform {
+export class BanshopExtractFormControlPipe implements PipeTransform {
   transform(formGroup: FormGroup, controlName: string): FormControl {
     const control = formGroup.get(controlName) as FormControl | null;
 
