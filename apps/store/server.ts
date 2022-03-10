@@ -25,7 +25,9 @@ export function app(): express.Express {
 
   // API for send order
   server.post('/api/order', (req, res) => {
-    return res.status(204);
+    // TODO: Add send order to mail
+    const id = Math.random().toString(36).slice(-6).toUpperCase();
+    return res.status(201).json({ id });
   });
 
   server.set('view engine', 'html');

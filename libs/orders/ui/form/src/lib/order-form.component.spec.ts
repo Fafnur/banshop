@@ -6,7 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MockModule } from 'ng-mocks';
 import { ReplaySubject } from 'rxjs';
-import { mock, verify, when } from 'ts-mockito';
+import { deepEqual, mock, verify, when } from 'ts-mockito';
 
 import { HTTP_ERROR_STUB } from '@banshop/core/api/service';
 import { FormExtractsModule } from '@banshop/core/forms/extract';
@@ -109,7 +109,7 @@ describe('OrderFormComponent', () => {
 
     createOrderSuccess$.next(ORDER_DETAILS_STUB);
 
-    verify(orderNotifyServiceMock.openSuccessDialog()).once();
+    verify(orderNotifyServiceMock.openSuccessDialog(deepEqual(ORDER_DETAILS_STUB))).once();
     verify(navigationServiceMock.navigateByUrl(NAVIGATION_PATHS.home)).once();
   });
 
