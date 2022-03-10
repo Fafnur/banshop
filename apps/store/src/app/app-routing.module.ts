@@ -11,7 +11,7 @@ const routes: Routes = [
     children: [
       {
         path: NAVIGATION_PATHS.home,
-        loadChildren: () => import('@banshop/russian/home/page').then((modules) => modules.HomePageModule),
+        loadChildren: () => import('@banshop/home/page').then((modules) => modules.HomePageModule),
       },
       {
         path: NAVIGATION_PATHS.product,
