@@ -41,6 +41,7 @@ const orderReducer = createReducer(
     OrderActions.createOrderSuccess,
     (state): OrderState => ({
       ...state,
+      customer: null,
       orderCreating: false,
     })
   ),

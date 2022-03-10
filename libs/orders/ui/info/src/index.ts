@@ -1,1 +1,1 @@
-export * from './lib/orders-ui-info.module';
+export * from './lib/order-info.module';

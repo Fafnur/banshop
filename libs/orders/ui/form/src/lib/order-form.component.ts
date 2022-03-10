@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { take, takeUntil, tap } from 'rxjs';
+import { debounceTime, take, takeUntil, tap } from 'rxjs';
 
+import { NavigationService } from '@banshop/core/navigation/service';
 import { DestroyService } from '@banshop/core/utils/destroy';
 import { isNotNullOrUndefined } from '@banshop/core/utils/operators';
 import { CustomerField } from '@banshop/orders/common';
@@ -16,8 +17,6 @@ import { OrderNotifyService } from '@banshop/orders/ui/notify';
   providers: [DestroyService],
 })
 export class OrderFormComponent implements OnInit {
-  @Output() created = new EventEmitter<FormGroup>();
-
   readonly fields = CustomerField;
 
   form!: FormGroup;
@@ -27,6 +26,7 @@ export class OrderFormComponent implements OnInit {
     private readonly changeDetectorRef: ChangeDetectorRef,
     private readonly orderFacade: OrderFacade,
     private readonly orderNotifyService: OrderNotifyService,
+    private readonly navigationService: NavigationService,
     private readonly destroy$: DestroyService
   ) {}
 
@@ -39,14 +39,24 @@ export class OrderFormComponent implements OnInit {
       [CustomerField.Address]: new FormControl(null, [Validators.required]),
       [CustomerField.Postcode]: new FormControl(null, [Validators.required]),
     });
-    this.created.emit(this.form);
 
-    this.orderFacade.customer$.pipe(
-      take(1),
-      isNotNullOrUndefined(),
-      tap((customer) => this.form.patchValue(customer)),
-      takeUntil(this.destroy$)
-    );
+    this.orderFacade.customer$
+      .pipe(
+        take(1),
+        isNotNullOrUndefined(),
+        tap((customer) => this.form.patchValue(customer)),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
+
+    this.form.valueChanges
+      .pipe(
+        isNotNullOrUndefined(),
+        debounceTime(1000),
+        tap((customer) => this.orderFacade.updateCustomer(customer)),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
 
     this.orderFacade.createOrderFailure$
       .pipe(
@@ -61,9 +71,10 @@ export class OrderFormComponent implements OnInit {
 
     this.orderFacade.createOrderSuccess$
       .pipe(
-        tap(() => {
+        tap((orderDetails) => {
           this.submitted = false;
-          this.orderNotifyService.openSuccessDialog();
+          this.orderNotifyService.openSuccessDialog(orderDetails);
+          void this.navigationService.navigateByUrl(this.navigationService.getPaths().home);
           this.changeDetectorRef.markForCheck();
         }),
         takeUntil(this.destroy$)

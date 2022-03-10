@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { ApiService } from '@banshop/core/api/service';
-import { Order } from '@banshop/orders/common';
+import { Order, OrderDetails } from '@banshop/orders/common';
 
 export const ORDER_API_ROUTES = {
   createOrder: '/api/order',
@@ -12,7 +12,7 @@ export const ORDER_API_ROUTES = {
 export class OrdersApiService {
   constructor(private readonly apiService: ApiService) {}
 
-  createOrder(order: Order): Observable<void> {
-    return this.apiService.post<void>(ORDER_API_ROUTES.createOrder, order);
+  createOrder(order: Order): Observable<OrderDetails> {
+    return this.apiService.post(ORDER_API_ROUTES.createOrder, order);
   }
 }

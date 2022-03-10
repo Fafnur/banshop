@@ -427,9 +427,9 @@
         <note priority="1" from="description">Price head</note>
         <note priority="1" from="meaning">Order info</note>
       </trans-unit>
-      <trans-unit id="b1ee7be1d5be3be9eafd89a283736f98bba0040b" datatype="html">
-        <source>Order error</source>
-        <target state="translated">Ошибка оформления заказа</target>
+      <trans-unit id="ab92c8d206da9e4b0044bf2a9339e53c1007fe7d" datatype="html">
+        <source>Order error!</source>
+        <target state="translated">Ошибка оформления заказа!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/orders/ui/notify/src/lib/component/order-notify-failure/order-notify-failure.component.html</context>
           <context context-type="linenumber">1</context>

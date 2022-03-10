@@ -2,11 +2,13 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 import { FormExtractsModule } from '@banshop/core/forms/extract';
 import { OrderNotifyModule } from '@banshop/orders/ui/notify';
 import { GridModule } from '@banshop/ui/grid';
 
+import { OrderActionsModule } from './components/order-actions/order-actions.module';
 import { OrderAddressModule } from './components/order-address/order-address.module';
 import { OrderCityModule } from './components/order-city/order-city.module';
 import { OrderEmailModule } from './components/order-email/order-email.module';
@@ -20,6 +22,7 @@ import { OrderFormComponent } from './order-form.component';
     CommonModule,
     ReactiveFormsModule,
     GridModule,
+    MatCardModule,
     MatButtonModule,
     OrderNotifyModule,
     OrderAddressModule,
@@ -29,6 +32,7 @@ import { OrderFormComponent } from './order-form.component';
     OrderPhoneModule,
     OrderPostcodeModule,
     FormExtractsModule,
+    OrderActionsModule,
   ],
   declarations: [OrderFormComponent],
   exports: [OrderFormComponent],

@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType } from '@ngrx/effects';
 import { Action, Store } from '@ngrx/store';
-import { map, Observable } from 'rxjs';
+import { map } from 'rxjs';
 
-import { OrderCreate } from '@banshop/orders/common';
+import { Nullable } from '@banshop/core/utils/types';
+import { Customer, OrderCreate } from '@banshop/orders/common';
 
 import * as OrderActions from './order.actions';
 import * as OrderSelectors from './order.selectors';
@@ -14,9 +15,9 @@ export class OrderFacade {
 
   orderCreating$ = this.store.select(OrderSelectors.selectOrderCreating);
 
-  createOrderSuccess$: Observable<void> = this.actions$.pipe(
+  createOrderSuccess$ = this.actions$.pipe(
     ofType(OrderActions.createOrderSuccess),
-    map(() => undefined)
+    map(({ orderDetails }) => orderDetails)
   );
 
   createOrderFailure$ = this.actions$.pipe(
@@ -28,6 +29,10 @@ export class OrderFacade {
 
   createOrder(order: OrderCreate) {
     this.dispatch(OrderActions.createOrder({ order }));
+  }
+
+  updateCustomer(customer: Nullable<Customer>) {
+    this.dispatch(OrderActions.updateCustomer({ customer }));
   }
 
   private dispatch(action: Action): void {

@@ -10,6 +10,7 @@ import { Customer, OrderKeys } from '@banshop/orders/common';
 import { selectProducts } from '@banshop/products/state';
 
 import * as OrderActions from './order.actions';
+import { selectCustomer } from './order.selectors';
 
 @Injectable()
 export class OrderEffects implements OnInitEffects {
@@ -29,9 +30,35 @@ export class OrderEffects implements OnInitEffects {
       concatLatestFrom(() => this.store.select(selectProducts)),
       fetch({
         run: ({ order }, products) => {
-          return this.ordersApiService.createOrder({ ...order, products }).pipe(map(() => OrderActions.createOrderSuccess()));
+          return this.ordersApiService
+            .createOrder({ ...order, products })
+            .pipe(map((orderDetails) => OrderActions.createOrderSuccess({ orderDetails })));
         },
         onError: (action, error) => OrderActions.createOrderFailure({ error }),
+      })
+    );
+  });
+
+  createOrderSuccess$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(OrderActions.createOrderSuccess),
+      fetch({
+        run: () => {
+          this.localAsyncStorage.removeItem(OrderKeys.Customer);
+        },
+      })
+    );
+  });
+
+  updateCustomer$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(OrderActions.updateCustomer),
+      concatLatestFrom(() => this.store.select(selectCustomer)),
+      fetch({
+        run: ({ customer }, previousCustomer) => {
+          const mergedCustomer = { ...previousCustomer, ...customer };
+          this.localAsyncStorage.setItem(OrderKeys.Customer, mergedCustomer);
+        },
       })
     );
   });

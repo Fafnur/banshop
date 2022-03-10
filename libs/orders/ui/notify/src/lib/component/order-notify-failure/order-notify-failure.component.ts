@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+
+import { NavigationPaths, PATHS } from '@banshop/core/navigation/common';
 
 @Component({
   selector: 'banshop-order-notify-failure',
@@ -6,4 +8,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./order-notify-failure.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class OrderNotifyFailureComponent {}
+export class OrderNotifyFailureComponent {
+  constructor(@Inject(PATHS) public readonly paths: NavigationPaths) {}
+}

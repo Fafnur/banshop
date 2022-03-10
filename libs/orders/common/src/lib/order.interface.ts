@@ -31,3 +31,7 @@ export interface OrderCreate {
 export interface Order extends OrderCreate {
   products: Product[];
 }
+
+export interface OrderDetails {
+  id: string;
+}

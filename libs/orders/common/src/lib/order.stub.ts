@@ -1,6 +1,7 @@
 import { CART_PRODUCTS_STUB } from '@banshop/cart/common';
-import { Customer, Order, OrderCreate } from '@banshop/orders/common';
 import { PRODUCTS_STUB } from '@banshop/products/common';
+
+import { Customer, Order, OrderCreate, OrderDetails } from './order.interface';
 
 export const CUSTOMER_STUB: Customer = {
   city: 'Новосибирск',
@@ -19,4 +20,8 @@ export const ORDER_CREATE_STUB: OrderCreate = {
 export const ORDER_STUB: Order = {
   ...ORDER_CREATE_STUB,
   products: PRODUCTS_STUB,
+};
+
+export const ORDER_DETAILS_STUB: OrderDetails = {
+  id: 'OR-100920',
 };

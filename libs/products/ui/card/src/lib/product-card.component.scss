@@ -5,7 +5,7 @@ mat-card {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: mat.get-color-from-palette(mat.$gray-palette, 100);
+  background-color: mat.get-color-from-palette(mat.$gray-palette, 50);
 }
 
 mat-card-content {
