@@ -1,4 +1,11 @@
-<mat-form-field automation-id="form-field" appearance="fill" banshop-full-width extractTouched [control]="control" *ngIf="sizes.length">
+<mat-form-field
+  automation-id="form-field"
+  appearance="fill"
+  banshop-full-width
+  banshopExtractTouched
+  [control]="control"
+  *ngIf="sizes.length"
+>
   <mat-label automation-id="label" i18n="Product form|Product size label">Size</mat-label>
   <mat-select automation-id="select" [formControl]="control">
     <mat-option *ngFor="let size of sizes" [value]="size">

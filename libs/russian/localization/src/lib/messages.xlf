@@ -165,7 +165,7 @@
       </trans-unit>
       <trans-unit id="127b73b25997509bd3e0ec8fbae22038c12f0733" datatype="html">
         <source> There are no products in your cart yet. Go to shopping - <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;paths.home | path&quot;&gt;"/>catalog<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </source>
-        <target state="translated"> There are no products in your cart yet. Go to shopping - <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;paths.home | path&quot;&gt;"/>каталог<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </target>
+        <target state="translated"> В вашей корзине еще нет товаров. Перейти к покупкам - <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;paths.home | path&quot;&gt;"/>каталог<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/ui/list/src/lib/cart-list.component.html</context>
           <context context-type="linenumber">7,9</context>
@@ -227,6 +227,260 @@
         <note priority="1" from="description">Description</note>
         <note priority="1" from="meaning">Error server error</note>
       </trans-unit>
+      <trans-unit id="6bee68caf4232f57d37a761bcf11585729ff0a85" datatype="html">
+        <source>Making an order</source>
+        <target state="translated">Оформить заказ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/page/src/lib/order-page.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Order title</note>
+        <note priority="1" from="meaning">Order page</note>
+      </trans-unit>
+      <trans-unit id="d50cfa94516f62ef3f6b2fd22a6bc2d44a5fa079" datatype="html">
+        <source>Address</source>
+        <target state="translated">Адрес</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/form/src/lib/components/order-address/order-address.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Address label</note>
+        <note priority="1" from="meaning">Order form</note>
+      </trans-unit>
+      <trans-unit id="6adefe64c8c09edd19f6003dbf5b07824d5c1622" datatype="html">
+        <source>Ex. 100 Main St</source>
+        <target state="translated">Ленина 100, кв. 10</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/form/src/lib/components/order-address/order-address.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">Address placeholder</note>
+        <note priority="1" from="meaning">Order form</note>
+      </trans-unit>
+      <trans-unit id="fe0d8cbd60234befdc9810d54f646c90f1f1e341" datatype="html">
+        <source>City</source>
+        <target state="translated">Город</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/form/src/lib/components/order-city/order-city.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">City label</note>
+        <note priority="1" from="meaning">Order form</note>
+      </trans-unit>
+      <trans-unit id="280aab48406b5e16d7146b4c4a4c3ea753abb7ce" datatype="html">
+        <source>Ex. Saint Petersburg</source>
+        <target state="translated">Санкт-Петербург</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/form/src/lib/components/order-city/order-city.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">City placeholder</note>
+        <note priority="1" from="meaning">Order form</note>
+      </trans-unit>
+      <trans-unit id="4aa47a5623325de39ffc900b03b9f5a4eb4b6f69" datatype="html">
+        <source>Email</source>
+        <target state="translated">Email</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/form/src/lib/components/order-email/order-email.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Email label</note>
+        <note priority="1" from="meaning">Order form</note>
+      </trans-unit>
+      <trans-unit id="8e20972c436ead45a4dc347825b578bdb2d6b47f" datatype="html">
+        <source>mail@example.com</source>
+        <target state="translated">your@mail.ru</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/form/src/lib/components/order-email/order-email.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Email placeholder</note>
+        <note priority="1" from="meaning">Order form</note>
+      </trans-unit>
+      <trans-unit id="6c94f227f074c7df41582d86f0f7c899609e4311" datatype="html">
+        <source>Full name</source>
+        <target state="translated">ФИО</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/form/src/lib/components/order-name/order-name.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Name label</note>
+        <note priority="1" from="meaning">Order form</note>
+      </trans-unit>
+      <trans-unit id="6af3d60812d2cb3eaa4ec16e4204f550e49ffd50" datatype="html">
+        <source>John Doe</source>
+        <target state="translated">Иванов Иван Иванович</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/form/src/lib/components/order-name/order-name.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Name placeholder</note>
+        <note priority="1" from="meaning">Order form</note>
+      </trans-unit>
+      <trans-unit id="ee622d006e0359e648502876819e86947ce69dbf" datatype="html">
+        <source>Phone</source>
+        <target state="translated">Телефон</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/form/src/lib/components/order-phone/order-phone.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Phone label</note>
+        <note priority="1" from="meaning">Order form</note>
+      </trans-unit>
+      <trans-unit id="80e9c6be3ca516e909673918ed134d064ff8aa67" datatype="html">
+        <source>+1 900 000 0000</source>
+        <target state="translated">+7 000 000 0000</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/form/src/lib/components/order-phone/order-phone.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Phone placeholder</note>
+        <note priority="1" from="meaning">Order form</note>
+      </trans-unit>
+      <trans-unit id="b4ed229affbeb4e56119c82561335cf65d5cae81" datatype="html">
+        <source>Postcode</source>
+        <target state="translated">Индекс</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/form/src/lib/components/order-postcode/order-postcode.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Postcode label</note>
+        <note priority="1" from="meaning">Order form</note>
+      </trans-unit>
+      <trans-unit id="4c5cbb3b5e56cbc6957b525b404f91df074a29bc" datatype="html">
+        <source>000000</source>
+        <target state="translated">000000</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/form/src/lib/components/order-postcode/order-postcode.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Postcode placeholder</note>
+        <note priority="1" from="meaning">Order form</note>
+      </trans-unit>
+      <trans-unit id="9a57c3b71162471b75aafebeb575acb46583f454" datatype="html">
+        <source>Order Form</source>
+        <target state="translated">Форма заказа</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/form/src/lib/order-form.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Title</note>
+        <note priority="1" from="meaning">Order form</note>
+      </trans-unit>
+      <trans-unit id="8217b4dd09513c5d4d6aba6119a124da1a65a5e4" datatype="html">
+        <source> Order </source>
+        <target state="translated">Оформить</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/form/src/lib/order-form.component.html</context>
+          <context context-type="linenumber">28,30</context>
+        </context-group>
+        <note priority="1" from="description">Submit button</note>
+        <note priority="1" from="meaning">Order form</note>
+      </trans-unit>
+      <trans-unit id="b536a4b36e2ce606c76b61cf71d10f0ba0437cbb" datatype="html">
+        <source>Title</source>
+        <target state="translated">Наименование</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/info/src/lib/order-info.component.html</context>
+          <context context-type="linenumber">3,5</context>
+        </context-group>
+        <note priority="1" from="description">Title head</note>
+        <note priority="1" from="meaning">Order info</note>
+      </trans-unit>
+      <trans-unit id="771e92e91b2c4d3888a330107291cfa0da749679" datatype="html">
+        <source>Total</source>
+        <target state="translated">Итого</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/info/src/lib/order-info.component.html</context>
+          <context context-type="linenumber">5,9</context>
+        </context-group>
+        <note priority="1" from="description">Total label</note>
+        <note priority="1" from="meaning">Order info</note>
+      </trans-unit>
+      <trans-unit id="a42084afa655e38c6d133e5277b403326f08001e" datatype="html">
+        <source>Size</source>
+        <target state="translated">Размер</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/info/src/lib/order-info.component.html</context>
+          <context context-type="linenumber">9,13</context>
+        </context-group>
+        <note priority="1" from="description">Size head</note>
+        <note priority="1" from="meaning">Order info</note>
+      </trans-unit>
+      <trans-unit id="5a6b002d85f0657c8a304205055d23b746aae69c" datatype="html">
+        <source>Count</source>
+        <target state="translated">Количество</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/info/src/lib/order-info.component.html</context>
+          <context context-type="linenumber">14,18</context>
+        </context-group>
+        <note priority="1" from="description">Count head</note>
+        <note priority="1" from="meaning">Order info</note>
+      </trans-unit>
+      <trans-unit id="82f66f2772bf9fe118b1e1060414e1e6b2d26955" datatype="html">
+        <source>Price</source>
+        <target state="translated">Цена</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/info/src/lib/order-info.component.html</context>
+          <context context-type="linenumber">19,21</context>
+        </context-group>
+        <note priority="1" from="description">Price head</note>
+        <note priority="1" from="meaning">Order info</note>
+      </trans-unit>
+      <trans-unit id="ab92c8d206da9e4b0044bf2a9339e53c1007fe7d" datatype="html">
+        <source>Order error!</source>
+        <target state="translated">Ошибка оформления заказа!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/notify/src/lib/component/order-notify-failure/order-notify-failure.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Error title</note>
+        <note priority="1" from="meaning">Order notify</note>
+      </trans-unit>
+      <trans-unit id="62300d680fa0773dbda808a6bf6eef5b8746832a" datatype="html">
+        <source> An error occurred when making an order. Check the entered data and try to make the order again. If the problem persists, contact <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;paths.support | path&quot; mat-dialog-close&gt;"/>support<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </source>
+        <target state="translated"> Произошла ошибка при оформлении заказа. Проверьте введенные данные и попробуйте оформить заказ еще раз. Если проблема не устранена, обратитесь в <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;paths.support | path&quot; mat-dialog-close&gt;"/>службу поддержки<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/notify/src/lib/component/order-notify-failure/order-notify-failure.component.html</context>
+          <context context-type="linenumber">3,6</context>
+        </context-group>
+        <note priority="1" from="description">Error description</note>
+        <note priority="1" from="meaning">Order notify</note>
+      </trans-unit>
+      <trans-unit id="ec862c4aedd5cf448df7d1b23ca9bbb94ca5bff6" datatype="html">
+        <source>Close</source>
+        <target state="translated">Закрыть</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/notify/src/lib/component/order-notify-failure/order-notify-failure.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/notify/src/lib/component/order-notify-success/order-notify-success.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Close button</note>
+        <note priority="1" from="meaning">Order notify</note>
+      </trans-unit>
+      <trans-unit id="68a15173013a937239e8218f8d8bc8eac005d45d" datatype="html">
+        <source>Order is processed!</source>
+        <target state="translated">Заказ оформлен!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/notify/src/lib/component/order-notify-success/order-notify-success.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Success title</note>
+        <note priority="1" from="meaning">Order notify</note>
+      </trans-unit>
+      <trans-unit id="1d7d1a5a9d370e272ac8ad6fe3c3dd20651fe9c2" datatype="html">
+        <source> Your order #<x id="INTERPOLATION" equiv-text="{{ matData.id }}"/> has been submitted for processing. Our manager will contact you soon. Thanks for your order! </source>
+        <target state="translated">Ваш заказ #<x id="INTERPOLATION" equiv-text="{{ matData.id }}"/> был передан в обработку. Наш менеджер свяжется с вами в ближайшее время. Спасибо за заказ! </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/ui/notify/src/lib/component/order-notify-success/order-notify-success.component.html</context>
+          <context context-type="linenumber">3,5</context>
+        </context-group>
+        <note priority="1" from="description">Success description</note>
+        <note priority="1" from="meaning">Order notify</note>
+      </trans-unit>
       <trans-unit id="312b2f48c1354f5a2b1176885e8e385cfaec7f03" datatype="html">
         <source>Details</source>
         <target state="translated">Подробнее</target>
@@ -262,7 +516,7 @@
         <target state="translated">Размер</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/products/ui/form/src/lib/components/product-size/product-size.component.html</context>
-          <context context-type="linenumber">2</context>
+          <context context-type="linenumber">9</context>
         </context-group>
         <note priority="1" from="description">Product size label</note>
         <note priority="1" from="meaning">Product form</note>

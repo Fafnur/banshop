@@ -1,0 +1,9 @@
+<h2 automation-id="title" mat-dialog-title i18n="Order notify|Success title">Order is processed!</h2>
+<mat-dialog-content>
+  <p automation-id="description" i18n="Order notify|Success description">
+    Your order #{{ matData.id }} has been submitted for processing. Our manager will contact you soon. Thanks for your order!
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button automation-id="close" mat-button [mat-dialog-close]="false" i18n="Order notify|Close button">Close</button>
+</mat-dialog-actions>

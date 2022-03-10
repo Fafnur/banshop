@@ -5,7 +5,7 @@ import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ExtractTouchedDirective } from './extract-touched.directive';
 
 @Component({
-  template: `<div extractTouched [control]="control"></div>`,
+  template: `<div banshopExtractTouched [control]="control"></div>`,
 })
 class WrapperComponent {
   control = new FormControl(null, [Validators.required]);

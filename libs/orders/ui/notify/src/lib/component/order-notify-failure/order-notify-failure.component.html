@@ -1,0 +1,10 @@
+<h2 automation-id="title" mat-dialog-title i18n="Order notify|Error title">Order error!</h2>
+<mat-dialog-content>
+  <p automation-id="description" i18n="Order notify|Error description">
+    An error occurred when making an order. Check the entered data and try to make the order again. If the problem persists, contact
+    <a [routerLink]="paths.support | path" mat-dialog-close>support</a>.
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button automation-id="close" mat-button [mat-dialog-close]="false" i18n="Order notify|Close button">Close</button>
+</mat-dialog-actions>

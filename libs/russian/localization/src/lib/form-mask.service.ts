@@ -4,7 +4,7 @@ import { AnyMaskedOptions } from 'imask';
 @Injectable()
 export class RussianFormMaskService {
   getPhoneMask(): AnyMaskedOptions {
-    return { mask: '+{7} 000 000-00-00' };
+    return { mask: '+{7} (000) 000 0000' };
   }
 
   geNumberMask(options?: Partial<{ min: number; max: number; thousandsSeparator: string }>): AnyMaskedOptions {

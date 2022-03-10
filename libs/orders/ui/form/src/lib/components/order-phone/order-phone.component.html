@@ -1,0 +1,13 @@
+<mat-form-field automation-id="form-field" appearance="fill" banshopFullWidth banshopExtractTouched [control]="control">
+  <mat-label automation-id="label" i18n="Order form|Phone label">Phone</mat-label>
+  <input
+    automation-id="control"
+    type="tel"
+    matInput
+    i18n-placeholder="Order form|Phone placeholder"
+    placeholder="+1 900 000 0000"
+    [formControl]="control"
+    [imask]="mask"
+    [unmask]="true"
+  />
+</mat-form-field>

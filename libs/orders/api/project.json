@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/orders/api",
+  "sourceRoot": "libs/orders/api/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/orders/api"],
+      "options": {
+        "jestConfig": "libs/orders/api/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/orders/api/src/**/*.ts", "libs/orders/api/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

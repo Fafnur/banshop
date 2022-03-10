@@ -1,0 +1,34 @@
+<mat-card>
+  <mat-card-title i18n="Order form|Title">Order Form</mat-card-title>
+  <mat-card-content>
+    <form automation-id="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <banshop-order-name automation-id="name" [control]="form | banshopExtractFormControl: fields.Name"></banshop-order-name>
+      <banshop-row tablet>
+        <banshop-column tablet="6">
+          <banshop-order-phone automation-id="phone" [control]="form | banshopExtractFormControl: fields.Phone"></banshop-order-phone>
+        </banshop-column>
+        <banshop-column tablet="6">
+          <banshop-order-email automation-id="email" [control]="form | banshopExtractFormControl: fields.Email"></banshop-order-email>
+        </banshop-column>
+      </banshop-row>
+      <banshop-order-city automation-id="city" [control]="form | banshopExtractFormControl: fields.City"></banshop-order-city>
+      <banshop-order-address automation-id="address" [control]="form | banshopExtractFormControl: fields.Address"></banshop-order-address>
+      <banshop-order-postcode
+        automation-id="postcode"
+        [control]="form | banshopExtractFormControl: fields.Postcode"
+      ></banshop-order-postcode>
+      <banshop-order-actions>
+        <button
+          automation-id="submit"
+          type="submit"
+          mat-raised-button
+          color="primary"
+          i18n="Order form|Submit button"
+          [disabled]="submitted"
+        >
+          Order
+        </button>
+      </banshop-order-actions>
+    </form>
+  </mat-card-content>
+</mat-card>

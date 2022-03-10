@@ -6,8 +6,7 @@ import { extractTouchedChanges } from '@banshop/core/forms/utils';
 import { DestroyService } from '@banshop/core/utils/destroy';
 
 @Directive({
-  // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: '[extractTouched]',
+  selector: '[banshopExtractTouched]',
   providers: [DestroyService],
 })
 export class ExtractTouchedDirective implements OnInit {

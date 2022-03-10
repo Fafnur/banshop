@@ -1,0 +1,27 @@
+@use '@angular/material' as mat;
+
+:host {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  @include mat.elevation(1);
+
+  padding: 0 1rem;
+
+  td {
+    padding: 0 0.375rem;
+  }
+
+  th.mat-header-cell:first-of-type,
+  td.mat-cell:first-of-type,
+  td.mat-footer-cell:first-of-type {
+    padding-left: 0;
+  }
+
+  [mat-footer-cell] {
+    font-weight: bold;
+  }
+}

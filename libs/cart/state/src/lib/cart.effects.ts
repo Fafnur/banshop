@@ -5,6 +5,7 @@ import { fetch } from '@nrwl/angular';
 
 import { CartKeys, CartProduct } from '@banshop/cart/common';
 import { LocalAsyncStorage } from '@banshop/core/storage/local';
+import { createOrderSuccess } from '@banshop/orders/state';
 
 import * as CartActions from './cart.actions';
 import { selectCartProductId } from './cart.reducer';
@@ -70,6 +71,19 @@ export class CartEffects implements OnInitEffects {
       concatLatestFrom(() => this.store.select(CartSelectors.selectCartProducts)),
       fetch({
         run: (action, cartProducts) => this.localAsyncStorage.setItem(CartKeys.Cart, cartProducts),
+      })
+    );
+  });
+
+  createOrderSuccess$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(createOrderSuccess),
+      fetch({
+        run: () => {
+          this.localAsyncStorage.removeItem(CartKeys.Cart);
+
+          return CartActions.clear();
+        },
       })
     );
   });
