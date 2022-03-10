@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { NAVIGATION_PATHS } from '@banshop/core/navigation/common';
+import { OrderGuard, OrderGuardsModule } from '@banshop/orders/guards';
 import { LayoutComponent } from '@banshop/ui/layout';
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
       },
       {
         path: NAVIGATION_PATHS.order,
+        canActivate: [OrderGuard],
         loadChildren: () => import('@banshop/orders/page').then((modules) => modules.OrderPageModule),
       },
       {
@@ -35,6 +37,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    OrderGuardsModule,
     RouterModule.forRoot(routes, {
       anchorScrolling: 'enabled',
       initialNavigation: 'enabled',

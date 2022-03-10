@@ -36,6 +36,7 @@
     "home-page": "libs/home/page",
     "orders-api": "libs/orders/api",
     "orders-common": "libs/orders/common",
+    "orders-guards": "libs/orders/guards",
     "orders-page": "libs/orders/page",
     "orders-state": "libs/orders/state",
     "orders-ui-form": "libs/orders/ui/form",
