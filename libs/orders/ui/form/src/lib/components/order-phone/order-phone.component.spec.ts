@@ -4,6 +4,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { IMaskModule } from 'angular-imask';
 import { MockModule } from 'ng-mocks';
 
 import { FormExtractsModule } from '@banshop/core/forms/extract';
@@ -32,6 +33,7 @@ describe('OrderPhoneComponent', () => {
         MockModule(MatInputModule),
         MockModule(FormExtractsModule),
         MockModule(WidthModule),
+        MockModule(IMaskModule),
       ],
       declarations: [OrderPhoneComponent, WrapperComponent],
     }).compileComponents();

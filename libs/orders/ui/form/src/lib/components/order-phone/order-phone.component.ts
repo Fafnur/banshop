@@ -1,5 +1,8 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { AnyMaskedOptions } from 'imask';
+
+import { FormMaskService } from '@banshop/core/forms/mask';
 
 @Component({
   selector: 'banshop-order-phone',
@@ -7,6 +10,14 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./order-phone.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class OrderPhoneComponent {
+export class OrderPhoneComponent implements OnInit {
   @Input() control!: FormControl;
+
+  mask!: AnyMaskedOptions;
+
+  constructor(private readonly formMaskService: FormMaskService) {}
+
+  ngOnInit(): void {
+    this.mask = this.formMaskService.getPhoneMask();
+  }
 }
