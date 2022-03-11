@@ -1,1 +1,1 @@
-export * from './lib/core-meta-common.module';
+export * from './lib/meta.interface';

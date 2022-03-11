@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/core/window/service",
+  "sourceRoot": "libs/core/window/service/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/core/window/service"],
+      "options": {
+        "jestConfig": "libs/core/window/service/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/core/window/service/src/**/*.ts", "libs/core/window/service/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
