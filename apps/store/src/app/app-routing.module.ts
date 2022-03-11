@@ -28,6 +28,11 @@ const routes: Routes = [
         loadChildren: () => import('@banshop/orders/page').then((modules) => modules.OrderPageModule),
       },
       {
+        path: NAVIGATION_PATHS.terms,
+        canActivate: [OrderGuard],
+        loadChildren: () => import('@banshop/russian/terms/page').then((modules) => modules.TermsPageModule),
+      },
+      {
         path: '',
         loadChildren: () => import('@banshop/errors/pages').then((modules) => modules.ErrorsPagesModule),
       },

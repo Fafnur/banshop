@@ -66,6 +66,7 @@
       "@banshop/products/ui/list": ["libs/products/ui/list/src/index.ts"],
       "@banshop/products/ui/pipes": ["libs/products/ui/pipes/src/index.ts"],
       "@banshop/russian/localization": ["libs/russian/localization/src/index.ts"],
+      "@banshop/russian/terms/page": ["libs/russian/terms/page/src/index.ts"],
       "@banshop/ui/carousel": ["libs/ui/carousel/src/index.ts"],
       "@banshop/ui/container": ["libs/ui/container/src/index.ts"],
       "@banshop/ui/grid": ["libs/ui/grid/src/index.ts"],

@@ -52,6 +52,7 @@
     "products-ui-list": "libs/products/ui/list",
     "products-ui-pipes": "libs/products/ui/pipes",
     "russian-localization": "libs/russian/localization",
+    "russian-terms-page": "libs/russian/terms/page",
     "store": "apps/store",
     "store-e2e": "apps/store-e2e",
     "ui-carousel": "libs/ui/carousel",
