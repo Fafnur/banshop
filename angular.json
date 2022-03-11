@@ -28,6 +28,7 @@
     "core-storage-local": "libs/core/storage/local",
     "core-storage-memory": "libs/core/storage/memory",
     "core-storage-session": "libs/core/storage/session",
+    "core-store-root": "libs/core/store/root",
     "core-testing": "libs/core/testing",
     "core-utils-destroy": "libs/core/utils/destroy",
     "core-utils-operators": "libs/core/utils/operators",

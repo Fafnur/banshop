@@ -41,12 +41,12 @@ export class MetaService {
     this.titleService.setTitle(config.title);
     this.setMetaProperty('description', config.description);
     this.setMetaProperty('keywords', config.keywords);
-    this.setMetaProperty('og:title', configOg.title);
+    this.setMetaProperty('og:title', `${configOg.title} | ${this.environmentService.environments.brand}`);
     this.setMetaProperty('og:description', configOg.description);
     this.setMetaProperty('og:type', configOg.type);
     this.setMetaProperty('og:locale', configOg.locale ?? this.localeId);
     this.setMetaProperty('og:site_name', configOg.siteName ?? this.environmentService.environments.brand);
-    this.setMetaProperty('og:image', configOg.image);
+    this.setMetaProperty('og:image', `${this.environmentService.environments.appHost}${configOg.image}`);
     this.setMetaProperty('og:image:type', configOg.imageType);
     this.setMetaProperty('og:image:width', configOg.imageWidth);
     this.setMetaProperty('og:image:height', configOg.imageHeight);

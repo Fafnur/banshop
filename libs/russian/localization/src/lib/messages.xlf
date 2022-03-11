@@ -17,7 +17,7 @@
         <target state="translated">Дубликат товара</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/state/src/lib/cart.effects.ts</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">34</context>
         </context-group>
         <note priority="1" from="meaning">Cart State</note>
       </trans-unit>
@@ -26,11 +26,11 @@
         <target state="translated">Товар не найден</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/state/src/lib/cart.effects.ts</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">50</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/state/src/lib/cart.effects.ts</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">63</context>
         </context-group>
         <note priority="1" from="meaning">Cart State</note>
       </trans-unit>
@@ -172,6 +172,30 @@
         </context-group>
         <note priority="1" from="description">Empty cart</note>
         <note priority="1" from="meaning">Cart list</note>
+      </trans-unit>
+      <trans-unit id="5253704491639101262" datatype="html">
+        <source>Online store Banshop</source>
+        <target state="translated">Онлайн магазин Banshop</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/core/meta/common/src/lib/meta.interface.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7149821316093328669" datatype="html">
+        <source>Banshop sportswear, shoes and accessories. Free delivery in Moscow and all over Russia when paying on the website.</source>
+        <target state="translated">Banshop спортивная одежда, обувь и аксессуары. Бесплатная доставка по Москве и всей России при оплате на сайте.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/core/meta/common/src/lib/meta.interface.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="843391217205867305" datatype="html">
+        <source>sneakers, sports shoes</source>
+        <target state="translated">кроссовки, спортивная обувь</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/core/meta/common/src/lib/meta.interface.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="c9be140e4b3e7fe071d29de65b243fb4e2a6bbba" datatype="html">
         <source>Page not found</source>

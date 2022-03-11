@@ -62,12 +62,16 @@ describe('MetaService', () => {
     expect((document.getElementById('canonical') as HTMLLinkElement)?.href).toBe('http://localhost/');
     expect((document.getElementById('meta-description') as HTMLMetaElement)?.content).toBe(META_CONFIG_DEFAULT.description);
     expect((document.getElementById('meta-keywords') as HTMLMetaElement)?.content).toBe(META_CONFIG_DEFAULT.keywords);
-    expect((document.getElementById('meta-og:title') as HTMLMetaElement)?.content).toBe(META_CONFIG_OG_DEFAULT.title);
+    expect((document.getElementById('meta-og:title') as HTMLMetaElement)?.content).toBe(
+      `${META_CONFIG_OG_DEFAULT.title} | ${ENVIRONMENTS_DEFAULT.brand}`
+    );
     expect((document.getElementById('meta-og:description') as HTMLMetaElement)?.content).toBe(META_CONFIG_OG_DEFAULT.description);
     expect((document.getElementById('meta-og:type') as HTMLMetaElement)?.content).toBe(META_CONFIG_OG_DEFAULT.type);
     expect((document.getElementById('meta-og:locale') as HTMLMetaElement)?.content).toBe('ru-RU');
     expect((document.getElementById('meta-og:site_name') as HTMLMetaElement)?.content).toBe(ENVIRONMENTS_DEFAULT.brand);
-    expect((document.getElementById('meta-og:image') as HTMLMetaElement)?.content).toBe(META_CONFIG_OG_DEFAULT.image);
+    expect((document.getElementById('meta-og:image') as HTMLMetaElement)?.content).toBe(
+      `${ENVIRONMENTS_DEFAULT.appHost}${META_CONFIG_OG_DEFAULT.image}`
+    );
     expect((document.getElementById('meta-og:image:type') as HTMLMetaElement)?.content).toBe(META_CONFIG_OG_DEFAULT.imageType);
     expect((document.getElementById('meta-og:image:width') as HTMLMetaElement)?.content).toBe(META_CONFIG_OG_DEFAULT.imageWidth);
     expect((document.getElementById('meta-og:image:height') as HTMLMetaElement)?.content).toBe(META_CONFIG_OG_DEFAULT.imageHeight);

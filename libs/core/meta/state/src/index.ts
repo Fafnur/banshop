@@ -1,1 +1,1 @@
-export * from './lib/core-meta-state.module';
+export * from './lib/meta-state.module';

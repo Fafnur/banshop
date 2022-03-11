@@ -34,7 +34,7 @@ export const META_CONFIG_OG_DEFAULT: MetaConfigOg = {
   title: META_CONFIG_DEFAULT.title,
   description: META_CONFIG_DEFAULT.description,
   type: 'website',
-  image: 'https://banshop.fafn.ru/assets/images/site.jpg',
+  image: '/assets/images/site.jpg',
   imageType: 'image/jpeg',
   imageWidth: '600',
   imageHeight: '284',

@@ -42,6 +42,7 @@
       "@banshop/core/storage/local": ["libs/core/storage/local/src/index.ts"],
       "@banshop/core/storage/memory": ["libs/core/storage/memory/src/index.ts"],
       "@banshop/core/storage/session": ["libs/core/storage/session/src/index.ts"],
+      "@banshop/core/store/root": ["libs/core/store/root/src/index.ts"],
       "@banshop/core/testing": ["libs/core/testing/src/index.ts"],
       "@banshop/core/utils/destroy": ["libs/core/utils/destroy/src/index.ts"],
       "@banshop/core/utils/operators": ["libs/core/utils/operators/src/index.ts"],
