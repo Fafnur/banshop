@@ -38,11 +38,11 @@ export class MetaService {
     const config: MetaConfig = { ...this.metaConfig, ...metaConfig };
     const configOg: MetaConfigOg = { ...this.metaConfigOg, ...metaConfigOg };
     this.setCanonicalUrl(config.url);
-    this.titleService.setTitle(config.title);
+    this.titleService.setTitle(`${config.title} | ${this.environmentService.environments.brand}`);
     this.setMetaProperty('description', config.description);
     this.setMetaProperty('keywords', config.keywords);
-    this.setMetaProperty('og:title', `${configOg.title} | ${this.environmentService.environments.brand}`);
-    this.setMetaProperty('og:description', configOg.description);
+    this.setMetaProperty('og:title', `${configOg.title ?? config.title} | ${this.environmentService.environments.brand}`);
+    this.setMetaProperty('og:description', configOg.description ?? config.description);
     this.setMetaProperty('og:type', configOg.type);
     this.setMetaProperty('og:locale', configOg.locale ?? this.localeId);
     this.setMetaProperty('og:site_name', configOg.siteName ?? this.environmentService.environments.brand);

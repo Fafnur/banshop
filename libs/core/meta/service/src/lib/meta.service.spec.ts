@@ -58,7 +58,7 @@ describe('MetaService', () => {
   it('should set meta', () => {
     service.update();
 
-    expect(document.title).toBe(META_CONFIG_DEFAULT.title);
+    expect(document.title).toBe(`${META_CONFIG_DEFAULT.title} | ${ENVIRONMENTS_DEFAULT.brand}`);
     expect((document.getElementById('canonical') as HTMLLinkElement)?.href).toBe('http://localhost/');
     expect((document.getElementById('meta-description') as HTMLMetaElement)?.content).toBe(META_CONFIG_DEFAULT.description);
     expect((document.getElementById('meta-keywords') as HTMLMetaElement)?.content).toBe(META_CONFIG_DEFAULT.keywords);

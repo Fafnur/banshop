@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, tap } from 'rxjs';
 
+import { MetaService } from '@banshop/core/meta/service';
 import { NavigationService } from '@banshop/core/navigation/service';
 import { isNotNullOrUndefined } from '@banshop/core/utils/operators';
 import { Product } from '@banshop/products/common';
@@ -19,7 +20,8 @@ export class ProductPageComponent implements OnInit {
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     private readonly productFacade: ProductFacade,
-    private readonly navigationService: NavigationService
+    private readonly navigationService: NavigationService,
+    private readonly metaService: MetaService
   ) {}
 
   ngOnInit(): void {
@@ -33,6 +35,12 @@ export class ProductPageComponent implements OnInit {
       tap((product) => {
         if (!product) {
           this.redirect(slug);
+        } else {
+          this.metaService.update({
+            title: product.title,
+            description: product.description,
+            keywords: product.title,
+          });
         }
       }),
       isNotNullOrUndefined()
