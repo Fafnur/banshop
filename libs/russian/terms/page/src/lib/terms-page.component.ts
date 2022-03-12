@@ -10,10 +10,12 @@ import { EnvironmentService } from '@banshop/core/environments/service';
 })
 export class TermsPageComponent implements OnInit {
   brand!: string;
+  appHost!: string;
 
   constructor(private readonly environmentService: EnvironmentService) {}
 
   ngOnInit(): void {
     this.brand = this.environmentService.environments.brand.toUpperCase();
+    this.appHost = this.environmentService.environments.appHost;
   }
 }

@@ -12,12 +12,13 @@ export class CarouselComponent {
     this.active = 0;
   }
   @Output() selected = new EventEmitter<number>();
+  @Output() clicked = new EventEmitter<void>();
 
   active = 0;
   slides!: string[];
 
-  onClick(index: number): void {
-    this.selected.emit(index);
+  onClicked(): void {
+    this.clicked.emit();
   }
 
   onSelected(index: number): void {

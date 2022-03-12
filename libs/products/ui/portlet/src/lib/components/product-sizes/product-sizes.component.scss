@@ -1,0 +1,34 @@
+@use '@angular/material' as mat;
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+:host {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.sizes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: -0.15rem;
+}
+
+.sizes-error {
+  margin: 1rem 0;
+  color: mat.get-color-from-palette(mat.$red-palette, 500);
+}
+
+button {
+  display: block;
+  margin: 0.15rem;
+
+  @include store-mixins.media-handset() {
+    width: 30%;
+  }
+  @include store-mixins.media-tablet() {
+    width: 25%;
+  }
+  @include store-mixins.media-web() {
+    width: 16.6667%;
+  }
+}

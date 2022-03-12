@@ -1,0 +1,9 @@
+<h2 mat-dialog-title i18n="Cart add|Add to Cart title">Add to cart</h2>
+<mat-dialog-content>
+  <h3 i18n="Cart add|Added to Cart title">{{ product.title }} added to cart!</h3>
+  <p i18n="Cart add|Added to Cart description">You can place an order or continue shopping.</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="true" i18n="Cart add|Continue link">Continue shopping</button>
+  <a mat-button color="primary" [mat-dialog-close]="true" i18n="Cart add|Go to cart link" [routerLink]="paths.cart | path">Go to cart</a>
+</mat-dialog-actions>

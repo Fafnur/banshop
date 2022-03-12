@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'banshop-carousel-slide',
@@ -9,4 +9,9 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class CarouselSlideComponent {
   @Input() image!: string;
   @Input() active = false;
+  @Output() clicked = new EventEmitter<void>();
+
+  onClick(): void {
+    this.clicked.emit();
+  }
 }

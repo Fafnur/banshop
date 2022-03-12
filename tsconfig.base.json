@@ -70,6 +70,7 @@
       "@banshop/products/ui/form": ["libs/products/ui/form/src/index.ts"],
       "@banshop/products/ui/list": ["libs/products/ui/list/src/index.ts"],
       "@banshop/products/ui/pipes": ["libs/products/ui/pipes/src/index.ts"],
+      "@banshop/products/ui/portlet": ["libs/products/ui/portlet/src/index.ts"],
       "@banshop/russian/localization": ["libs/russian/localization/src/index.ts"],
       "@banshop/russian/terms/page": ["libs/russian/terms/page/src/index.ts"],
       "@banshop/ui/carousel": ["libs/ui/carousel/src/index.ts"],

@@ -1,0 +1,9 @@
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+[mat-raised-button] {
+  padding: 0.5rem 2rem;
+
+  @include store-mixins.media-handset() {
+    width: 100%;
+  }
+}

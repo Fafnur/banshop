@@ -1,1 +1,7 @@
-<div automation-id="carousel-slide-image" class="carousel-image" [ngStyle]="image | backgroundImage" [class.is-active]="active"></div>
+<div
+  automation-id="carousel-slide-image"
+  class="carousel-image"
+  [ngStyle]="image | backgroundImage"
+  [class.is-active]="active"
+  (click)="onClick()"
+></div>

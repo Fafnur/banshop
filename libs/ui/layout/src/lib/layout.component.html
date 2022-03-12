@@ -24,7 +24,9 @@
 </ng-container>
 
 <ng-template #template let-mode="mode">
+  <router-outlet name="top"></router-outlet>
   <banshop-container [mode]="mode">
     <router-outlet></router-outlet>
   </banshop-container>
+  <router-outlet name="bottom"></router-outlet>
 </ng-template>

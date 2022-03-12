@@ -1,0 +1,17 @@
+<ng-container banshopExtractTouched [control]="control">
+  <h4 automation-id="title" i18n="Product portlet|Available sizes">Available sizes</h4>
+  <div automation-id="sizes" class="sizes">
+    <button
+      automation-id="button"
+      mat-raised-button
+      [class.mat-primary]="size === active"
+      (click)="onSelect(size)"
+      *ngFor="let size of sizes"
+    >
+      {{ size }}
+    </button>
+  </div>
+  <div automation-id="error" class="sizes-error" i18n="Product portlet|Select size" *ngIf="control?.touched && control?.invalid">
+    Please select your size
+  </div>
+</ng-container>
