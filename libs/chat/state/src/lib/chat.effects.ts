@@ -31,9 +31,9 @@ export class ChatEffects implements OnInitEffects {
             // Fake create message. It's for demo.
             chatMessage: {
               id: chatMessages.length > 0 ? chatMessages[chatMessages.length - 1].id + 1 : 1,
-              message: action.chatMessageCreate.message,
               created: new Date().toISOString(),
               isOwner: true,
+              message: action.chatMessageCreate.message,
             },
           }),
         onError: (action, error) => ChatActions.createMessageFailure({ error }),
