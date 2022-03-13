@@ -5,7 +5,7 @@
       {{ cartProducts | cartTotalCount }} products} } in the cart.
     </div>
     <ul *ngIf="cartProducts.length">
-      <ng-container *ngFor="let cartProduct of cartProducts">
+      <ng-container *ngFor="let cartProduct of cartProducts; trackBy: trackByFn">
         <li *ngIf="cartProduct.productId | productById | async; let product">{{ product.title }} x {{ cartProduct.count }}</li>
       </ng-container>
     </ul>

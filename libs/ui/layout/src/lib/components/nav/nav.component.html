@@ -1,4 +1,4 @@
-<banshop-nav-link automation-id="nav-link" *ngFor="let link of links">
+<banshop-nav-link automation-id="nav-link" *ngFor="let link of links; trackBy: trackByFn">
   <a
     mat-button
     #rla="routerLinkActive"
