@@ -9,6 +9,14 @@ export interface Environments {
     name: string;
     key: string;
   };
+  appHost: string;
 }
 
 export const ENVIRONMENTS = new InjectionToken<Environments>('ENVIRONMENTS');
+
+export const ENVIRONMENTS_DEFAULT: Environments = {
+  production: false,
+  brand: 'Banshop',
+  phone: '88002000000',
+  appHost: 'http://localhost',
+};

@@ -3,7 +3,7 @@
     <mat-card-title>{{ product.title }}</mat-card-title>
     <mat-card-subtitle>{{ product.subtitle }}</mat-card-subtitle>
   </mat-card-header>
-  <banshop-carousel [images]="product.photos"></banshop-carousel>
+  <banshop-carousel [images]="product.photos" (clicked)="onClicked()"></banshop-carousel>
   <mat-card-content>
     <banshop-price>{{ product.price | currency }}</banshop-price>
     <p>{{ product.description }}</p>

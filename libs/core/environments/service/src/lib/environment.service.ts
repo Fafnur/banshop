@@ -1,12 +1,6 @@
 import { Inject, Injectable, Optional } from '@angular/core';
 
-import { ENVIRONMENTS, Environments } from './environment.interface';
-
-export const ENVIRONMENTS_DEFAULT: Environments = {
-  production: false,
-  brand: 'Banshop',
-  phone: '88002000000',
-};
+import { ENVIRONMENTS, Environments, ENVIRONMENTS_DEFAULT } from './environment.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -25,5 +19,9 @@ export class EnvironmentService {
         name: process.env['GOOGLE_NAME'] ?? '',
       },
     };
+  }
+
+  getEnvironment(): Environments {
+    return this.environments;
   }
 }

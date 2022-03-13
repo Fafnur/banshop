@@ -1,0 +1,20 @@
+@use '@angular/material' as mat;
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+banshop-column {
+  background-color: #edeff0;
+  background-image: url(/assets/images/products/bg.png);
+  background-size: auto 100%;
+  display: flex;
+  flex-direction: column;
+
+  & + banshop-column {
+    background-color: white;
+    background-image: none;
+  }
+}
+
+banshop-carousel {
+  max-width: 40rem;
+  margin: auto;
+}

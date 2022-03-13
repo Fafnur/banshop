@@ -17,7 +17,7 @@
         <target state="translated">Дубликат товара</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/state/src/lib/cart.effects.ts</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">34</context>
         </context-group>
         <note priority="1" from="meaning">Cart State</note>
       </trans-unit>
@@ -26,11 +26,11 @@
         <target state="translated">Товар не найден</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/state/src/lib/cart.effects.ts</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">50</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/state/src/lib/cart.effects.ts</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">63</context>
         </context-group>
         <note priority="1" from="meaning">Cart State</note>
       </trans-unit>
@@ -51,6 +51,10 @@
           <context context-type="sourcefile">libs/cart/ui/add/src/lib/cart-add-dialog/cart-add-dialog.component.html</context>
           <context context-type="linenumber">7</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/products/ui/portlet/src/lib/components/product-add-to-bag/product-add-to-bag-dialog/product-add-to-bag-dialog.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">Added to Cart title</note>
         <note priority="1" from="meaning">Cart add</note>
       </trans-unit>
@@ -60,6 +64,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/ui/add/src/lib/cart-add-dialog/cart-add-dialog.component.html</context>
           <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/products/ui/portlet/src/lib/components/product-add-to-bag/product-add-to-bag-dialog/product-add-to-bag-dialog.component.html</context>
+          <context context-type="linenumber">4</context>
         </context-group>
         <note priority="1" from="description">Added to Cart description</note>
         <note priority="1" from="meaning">Cart add</note>
@@ -81,6 +89,10 @@
           <context context-type="sourcefile">libs/cart/ui/add/src/lib/cart-add-dialog/cart-add-dialog.component.html</context>
           <context context-type="linenumber">14</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/products/ui/portlet/src/lib/components/product-add-to-bag/product-add-to-bag-dialog/product-add-to-bag-dialog.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
         <note priority="1" from="description">Add link</note>
         <note priority="1" from="meaning">Cart add</note>
       </trans-unit>
@@ -91,6 +103,10 @@
           <context context-type="sourcefile">libs/cart/ui/add/src/lib/cart-add-dialog/cart-add-dialog.component.html</context>
           <context context-type="linenumber">17</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/products/ui/portlet/src/lib/components/product-add-to-bag/product-add-to-bag-dialog/product-add-to-bag-dialog.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
         <note priority="1" from="description">Continue link</note>
         <note priority="1" from="meaning">Cart add</note>
       </trans-unit>
@@ -100,6 +116,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/ui/add/src/lib/cart-add-dialog/cart-add-dialog.component.html</context>
           <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/products/ui/portlet/src/lib/components/product-add-to-bag/product-add-to-bag-dialog/product-add-to-bag-dialog.component.html</context>
+          <context context-type="linenumber">8</context>
         </context-group>
         <note priority="1" from="description">Go to cart link</note>
         <note priority="1" from="meaning">Cart add</note>
@@ -172,6 +192,30 @@
         </context-group>
         <note priority="1" from="description">Empty cart</note>
         <note priority="1" from="meaning">Cart list</note>
+      </trans-unit>
+      <trans-unit id="5253704491639101262" datatype="html">
+        <source>Online store Banshop</source>
+        <target state="translated">Онлайн магазин Banshop</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/core/meta/common/src/lib/meta.interface.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7149821316093328669" datatype="html">
+        <source>Banshop sportswear, shoes and accessories. Free delivery in Moscow and all over Russia when paying on the website.</source>
+        <target state="translated">Banshop спортивная одежда, обувь и аксессуары. Бесплатная доставка по Москве и всей России при оплате на сайте.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/core/meta/common/src/lib/meta.interface.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="843391217205867305" datatype="html">
+        <source>sneakers, sports shoes</source>
+        <target state="translated">кроссовки, спортивная обувь</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/core/meta/common/src/lib/meta.interface.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="c9be140e4b3e7fe071d29de65b243fb4e2a6bbba" datatype="html">
         <source>Page not found</source>
@@ -481,6 +525,36 @@
         <note priority="1" from="description">Success description</note>
         <note priority="1" from="meaning">Order notify</note>
       </trans-unit>
+      <trans-unit id="2510ca6e7389547ba2ad53d237aaa364542bfb5d" datatype="html">
+        <source>Description</source>
+        <target state="translated">Описание</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/products/page/src/lib/product-page.component.html</context>
+          <context context-type="linenumber">2,7</context>
+        </context-group>
+        <note priority="1" from="description">Description tab</note>
+        <note priority="1" from="meaning">Product page</note>
+      </trans-unit>
+      <trans-unit id="518c5f78321e73cfc68119b92119ce1a2270b2f7" datatype="html">
+        <source>Details</source>
+        <target state="translated">Характеристики</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/products/page/src/lib/product-page.component.html</context>
+          <context context-type="linenumber">7,9</context>
+        </context-group>
+        <note priority="1" from="description">Details tab</note>
+        <note priority="1" from="meaning">Product page</note>
+      </trans-unit>
+      <trans-unit id="9186a4bd00fd95bb31e9c179cc9e2bcd01417feb" datatype="html">
+        <source>Additional information about the product.</source>
+        <target state="translated">Дополнительная информация о продукте.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/products/page/src/lib/product-page.component.html</context>
+          <context context-type="linenumber">8,11</context>
+        </context-group>
+        <note priority="1" from="description">Details text</note>
+        <note priority="1" from="meaning">Product page</note>
+      </trans-unit>
       <trans-unit id="312b2f48c1354f5a2b1176885e8e385cfaec7f03" datatype="html">
         <source>Details</source>
         <target state="translated">Подробнее</target>
@@ -520,6 +594,46 @@
         </context-group>
         <note priority="1" from="description">Product size label</note>
         <note priority="1" from="meaning">Product form</note>
+      </trans-unit>
+      <trans-unit id="7d8e328313f96ca863bfae176ca92f2ca6db9f62" datatype="html">
+        <source>Add to bag</source>
+        <target state="translated">Добавить в корзину</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/products/ui/portlet/src/lib/components/product-add-to-bag/product-add-to-bag.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Added to bag</note>
+        <note priority="1" from="meaning">Product portlet</note>
+      </trans-unit>
+      <trans-unit id="f5e5650ed91a5b2ec27e7bda704fbf9fd9f01ea2" datatype="html">
+        <source>Available sizes</source>
+        <target state="translated">Доступные размеры</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/products/ui/portlet/src/lib/components/product-sizes/product-sizes.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Available sizes</note>
+        <note priority="1" from="meaning">Product portlet</note>
+      </trans-unit>
+      <trans-unit id="735b157fc48ffd72dee89a76168f8f6d0bf66dc0" datatype="html">
+        <source>Please select your size</source>
+        <target state="translated">Пожалуйста, выберите размер</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/products/ui/portlet/src/lib/components/product-sizes/product-sizes.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Select size</note>
+        <note priority="1" from="meaning">Product portlet</note>
+      </trans-unit>
+      <trans-unit id="8895df870d27235cd99f2444f316025e13a4f529" datatype="html">
+        <source>This product is excluded from all promotional discounts and offers.</source>
+        <target state="translated">Для данного товара не доступны скидки.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/products/ui/portlet/src/lib/product-portlet.component.html</context>
+          <context context-type="linenumber">11,13</context>
+        </context-group>
+        <note priority="1" from="description">Product promo</note>
+        <note priority="1" from="meaning">Product portlet</note>
       </trans-unit>
       <trans-unit id="3b1e1015b8cdca5ca18d43f1b90efef7c8e0a88f" datatype="html">
         <source>Terms of sale</source>

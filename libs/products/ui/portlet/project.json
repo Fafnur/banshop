@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/products/ui/portlet",
+  "sourceRoot": "libs/products/ui/portlet/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/products/ui/portlet"],
+      "options": {
+        "jestConfig": "libs/products/ui/portlet/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/products/ui/portlet/src/**/*.ts", "libs/products/ui/portlet/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

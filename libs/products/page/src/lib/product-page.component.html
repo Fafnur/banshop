@@ -1,15 +1,10 @@
-<div *ngIf="product$ | async as product">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>{{ product.title }}</mat-card-title>
-      <mat-card-subtitle>{{ product.subtitle }}</mat-card-subtitle>
-    </mat-card-header>
-    <banshop-carousel [images]="product.photos"></banshop-carousel>
-    <mat-card-content>
-      <p class="product-price">{{ product.price | currency }}</p>
-      <p>{{ product.description }}</p>
-    </mat-card-content>
-  </mat-card>
-
-  <p>product-page works!</p>
-</div>
+<mat-tab-group animationDuration="0ms" *ngIf="product$ | async as product">
+  <mat-tab i18n-label="Product page|Description tab" label="Description">
+    <p>
+      {{ product.description }}
+    </p>
+  </mat-tab>
+  <mat-tab i18n-label="Product page|Details tab" label="Details">
+    <p i18n="Product page|Details text">Additional information about the product.</p>
+  </mat-tab>
+</mat-tab-group>

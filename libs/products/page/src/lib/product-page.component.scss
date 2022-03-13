@@ -1,32 +1,6 @@
 @use '@angular/material' as mat;
 @use 'libs/ui/stylesheets/mixins' as store-mixins;
 
-:host {
-  ::ng-deep mat-card-subtitle {
-    margin-bottom: 1rem;
-  }
-}
-
-banshop-carousel {
-  margin: 0 -1rem 1rem -1rem;
-  max-height: 20rem;
-  overflow: hidden;
-}
-
-mat-card-actions {
-  text-align: right;
-}
-
-.product-price {
-  text-align: center;
-  font-weight: 500;
-  font-size: 1rem;
-
-  @include store-mixins.media-tablet() {
-    font-size: 1.15rem;
-  }
-
-  @include store-mixins.media-web() {
-    font-size: 1.25rem;
-  }
+p {
+  padding: 1rem 0;
 }

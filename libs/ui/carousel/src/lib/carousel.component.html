@@ -5,7 +5,7 @@
     [image]="image"
     [active]="active === index"
     *ngFor="let image of slides; let index = index"
-    (click)="onClick(index)"
+    (clicked)="onClicked()"
   ></banshop-carousel-slide>
 
   <banshop-carousel-dots

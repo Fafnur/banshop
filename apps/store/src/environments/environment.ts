@@ -8,6 +8,7 @@ export const environment: Environments = {
   production: false,
   brand: 'Banshop',
   phone: '88002000000',
+  appHost: 'http://localhost',
 };
 
 /*
