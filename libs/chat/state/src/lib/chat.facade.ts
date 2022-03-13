@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Actions, ofType } from '@ngrx/effects';
 import { Action, Store } from '@ngrx/store';
+import { map } from 'rxjs';
 
 import * as ChatActions from './chat.actions';
 import * as ChatSelectors from './chat.selectors';
@@ -10,7 +12,17 @@ export class ChatFacade {
 
   messages$ = this.store.select(ChatSelectors.selectChatMessages);
 
-  constructor(private readonly store: Store) {}
+  createMessageSuccess$ = this.actions$.pipe(
+    ofType(ChatActions.createMessageSuccess),
+    map(({ chatMessage }) => chatMessage)
+  );
+
+  createMessageFailure$ = this.actions$.pipe(
+    ofType(ChatActions.createMessageFailure),
+    map(({ error }) => error)
+  );
+
+  constructor(private readonly actions$: Actions, private readonly store: Store) {}
 
   addMessage(message: string): void {
     this.dispatch(ChatActions.createMessage({ chatMessageCreate: { message } }));

@@ -1,5 +1,4 @@
 <ng-container *ngIf="charMessages$ | async; let charMessages">
-  <div *ngFor="let charMessage of charMessages; trackBy: trackByFn">
-    {{ charMessage.message }}
-  </div>
+  <banshop-chat-messages [chatMessages]="charMessages"></banshop-chat-messages>
+  <banshop-chat-form></banshop-chat-form>
 </ng-container>

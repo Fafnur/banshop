@@ -26,20 +26,24 @@ main {
     width: 100%;
   }
 
-  &.tablet {
-    overflow-y: auto;
-    height: 100vh;
-  }
-
-  &.handset {
-    overflow-y: auto;
+  @include store-mixins.media-handset() {
     height: calc(100vh - 8rem);
+    overflow-y: auto;
   }
 
-  banshop-container {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+  @include store-mixins.media-tablet() {
+    height: 100vh;
+    overflow-y: auto;
   }
+}
+
+banshop-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 banshop-header,

@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/chat/ui/form",
+  "sourceRoot": "libs/chat/ui/form/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/chat/ui/form"],
+      "options": {
+        "jestConfig": "libs/chat/ui/form/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/chat/ui/form/src/**/*.ts", "libs/chat/ui/form/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
