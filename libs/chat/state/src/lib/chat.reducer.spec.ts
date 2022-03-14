@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-import { CHAT_MESSAGE_CREATE_STUB, CHAT_MESSAGE_CREATED_STUB, CHAT_MESSAGES, CHAT_STUB, ChatMessage } from '@banshop/chat/common';
+import { CHAT_MESSAGE_CREATE_STUB, CHAT_MESSAGE_CREATED_STUB, CHAT_MESSAGES_STUB, CHAT_STUB, ChatMessage } from '@banshop/chat/common';
 import { HTTP_ERROR_STUB } from '@banshop/core/api/service';
 
 import * as ChatActions from './chat.actions';
@@ -27,7 +27,7 @@ describe('Chat Reducer', () => {
   });
 
   it('restore() should set chat messages', () => {
-    const action = ChatActions.restore({ chatMessages: CHAT_STUB });
+    const action = ChatActions.restore({ chatMessages: CHAT_MESSAGES_STUB });
 
     const result = reducer(state, action);
 
@@ -45,13 +45,13 @@ describe('Chat Reducer', () => {
   });
 
   it('createMessageSuccess() should add message and set messageCreating false', () => {
-    state = getState({ messageCreating: true }, CHAT_MESSAGES);
+    state = getState({ messageCreating: true }, CHAT_MESSAGES_STUB);
     const action = ChatActions.createMessageSuccess({ chatMessage: CHAT_MESSAGE_CREATED_STUB });
 
     const result = reducer(state, action);
 
     expect(result.messageCreating).toBeFalsy();
-    expect(result.ids.length).toBe(CHAT_MESSAGES.length + 1);
+    expect(result.ids.length).toBe(CHAT_MESSAGES_STUB.length + 1);
   });
 
   it('createMessageFailure() should set messageCreating false', () => {

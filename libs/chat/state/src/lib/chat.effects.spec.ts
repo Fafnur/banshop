@@ -6,7 +6,7 @@ import { cold, hot } from 'jasmine-marbles';
 import { Observable, of } from 'rxjs';
 import { mock, when } from 'ts-mockito';
 
-import { CHAT_MESSAGE_CREATE_STUB, CHAT_MESSAGE_CREATED_STUB, CHAT_MESSAGES, CHAT_STUB, ChatKeys } from '@banshop/chat/common';
+import { CHAT_MESSAGE_CREATE_STUB, CHAT_MESSAGE_CREATED_STUB, CHAT_MESSAGES_STUB, CHAT_STUB, ChatKeys } from '@banshop/chat/common';
 import { LocalAsyncStorage } from '@banshop/core/storage/local';
 import { providerOf } from '@banshop/core/testing';
 
@@ -49,7 +49,7 @@ describe('ChatEffects', () => {
     mockStore = TestBed.inject(MockStore);
 
     mockStore.setState({
-      [CHAT_FEATURE_KEY]: chatAdapter.setAll(CHAT_MESSAGES, chatInitialState),
+      [CHAT_FEATURE_KEY]: chatAdapter.setAll(CHAT_MESSAGES_STUB, chatInitialState),
     });
 
     dateSpy = jest.spyOn<any, any>(global, 'Date').mockImplementation(() => mockDate);
@@ -58,7 +58,7 @@ describe('ChatEffects', () => {
   describe('init$', () => {
     it('should work', () => {
       actions = hot('-a-|', { a: ChatActions.init() });
-      const expected = hot('-a-|', { a: ChatActions.restore({ chatMessages: CHAT_STUB }) });
+      const expected = hot('-a-|', { a: ChatActions.restore({ chatMessages: CHAT_MESSAGES_STUB }) });
 
       expect(effects.init$).toBeObservable(expected);
     });

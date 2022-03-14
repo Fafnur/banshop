@@ -1,4 +1,4 @@
-import { CHAT_MESSAGES, ChatMessage } from '@banshop/chat/common';
+import { CHAT_MESSAGES_STUB, ChatMessage } from '@banshop/chat/common';
 
 import { CHAT_FEATURE_KEY, chatAdapter, chatInitialState, ChatPartialState, ChatState } from './chat.reducer';
 import * as ChatSelectors from './chat.selectors';
@@ -15,17 +15,17 @@ describe('Chat Selectors', () => {
   });
 
   it('selectChatMessages() should return chatMessages', () => {
-    state = getStore({}, CHAT_MESSAGES);
+    state = getStore({}, CHAT_MESSAGES_STUB);
     const results = ChatSelectors.selectChatMessages(state);
 
-    expect(results.length).toBe(CHAT_MESSAGES.length);
+    expect(results.length).toBe(CHAT_MESSAGES_STUB.length);
   });
 
   it('selectChatMessagesEntities() should return chatMessages dictionary', () => {
-    state = getStore({}, CHAT_MESSAGES);
+    state = getStore({}, CHAT_MESSAGES_STUB);
     const results = ChatSelectors.selectChatMessagesEntities(state);
 
-    expect(Object.keys(results).length).toBe(CHAT_MESSAGES.length);
+    expect(Object.keys(results).length).toBe(CHAT_MESSAGES_STUB.length);
   });
 
   it('selectLoaded() should return loaded', () => {

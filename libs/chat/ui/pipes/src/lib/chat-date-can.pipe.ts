@@ -11,7 +11,7 @@ export class ChatDateCanPipe implements PipeTransform {
   constructor(private readonly chatFacade: ChatFacade) {}
 
   transform(chatMessage: ChatMessage): Observable<boolean> {
-    return this.chatFacade.messages$.pipe(
+    return this.chatFacade.chatMessages$.pipe(
       map((messages) => {
         let prev: ChatMessage | null = null;
 

@@ -10,7 +10,7 @@ import * as ChatSelectors from './chat.selectors';
 export class ChatFacade {
   loaded$ = this.store.select(ChatSelectors.selectLoaded);
 
-  messages$ = this.store.select(ChatSelectors.selectChatMessages);
+  chatMessages$ = this.store.select(ChatSelectors.selectChatMessages);
 
   chatMessagesEntities$ = this.store.select(ChatSelectors.selectChatMessagesEntities);
 

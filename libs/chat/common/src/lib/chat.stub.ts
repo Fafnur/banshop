@@ -14,10 +14,10 @@ export const CHAT_MESSAGE_OPERATOR_STUB: ChatMessage = {
   message: 'Здравствуйте. Какой товар вас интересует?',
 };
 
-export const CHAT_MESSAGES: ChatMessage[] = [CHAT_MESSAGE_STUB, CHAT_MESSAGE_OPERATOR_STUB];
+export const CHAT_MESSAGES_STUB: ChatMessage[] = [CHAT_MESSAGE_STUB, CHAT_MESSAGE_OPERATOR_STUB];
 
 export const CHAT_STUB: Chat = {
-  messages: CHAT_MESSAGES,
+  messages: CHAT_MESSAGES_STUB,
 };
 
 export const CHAT_MESSAGE_CREATE_STUB: ChatMessageCreate = {

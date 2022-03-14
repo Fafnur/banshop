@@ -16,10 +16,6 @@ export class ChatPageComponent implements OnInit {
   constructor(private readonly chatFacade: ChatFacade) {}
 
   ngOnInit(): void {
-    this.charMessages$ = this.chatFacade.messages$;
-  }
-
-  trackByFn(index: number, chatMessage: ChatMessage): number {
-    return chatMessage.id;
+    this.charMessages$ = this.chatFacade.chatMessages$;
   }
 }
