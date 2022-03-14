@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormGroupDirective } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { takeUntil, tap } from 'rxjs';
 
 import { ChatFacade } from '@banshop/chat/state';
@@ -13,7 +13,10 @@ import { DestroyService } from '@banshop/core/utils/destroy';
   providers: [DestroyService],
 })
 export class ChatFormComponent implements OnInit {
-  form!: FormGroup;
+  readonly form = new FormGroup({
+    message: new FormControl(null),
+  });
+
   submitted = false;
 
   constructor(
@@ -23,10 +26,6 @@ export class ChatFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      message: new FormControl(null),
-    });
-
     this.chatFacade.createMessageFailure$
       .pipe(
         tap(() => {

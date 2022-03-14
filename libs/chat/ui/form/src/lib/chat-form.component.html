@@ -1,17 +1,16 @@
-<form #formDirective="ngForm" [formGroup]="form" (ngSubmit)="onSubmit()">
+<form automation-id="form" [formGroup]="form" (ngSubmit)="onSubmit()">
   <mat-form-field banshop-full-width>
-    <mat-label>Comment</mat-label>
+    <mat-label automation-id="label" i18n="Chat form|Write a message">Write a message</mat-label>
     <textarea
-      type="email"
+      automation-id="textarea"
       matInput
       formControlName="message"
-      placeholder="asdads"
       cdkTextareaAutosize
       cdkAutosizeMinRows="1"
       cdkAutosizeMaxRows="5"
     ></textarea>
   </mat-form-field>
-  <button mat-icon-button type="submit">
+  <button automation-id="submit" mat-icon-button type="button" (click)="onSubmit()">
     <mat-icon>send</mat-icon>
   </button>
 </form>

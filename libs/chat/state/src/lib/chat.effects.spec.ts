@@ -4,9 +4,9 @@ import { Action } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { cold, hot } from 'jasmine-marbles';
 import { Observable, of } from 'rxjs';
-import { mock, when } from 'ts-mockito';
+import { deepEqual, mock, verify, when } from 'ts-mockito';
 
-import { CHAT_MESSAGE_CREATE_STUB, CHAT_MESSAGE_CREATED_STUB, CHAT_MESSAGES_STUB, CHAT_STUB, ChatKeys } from '@banshop/chat/common';
+import { CHAT_MESSAGE_CREATE_STUB, CHAT_MESSAGE_CREATED_STUB, CHAT_MESSAGES_STUB, ChatKeys } from '@banshop/chat/common';
 import { LocalAsyncStorage } from '@banshop/core/storage/local';
 import { providerOf } from '@banshop/core/testing';
 
@@ -44,7 +44,7 @@ describe('ChatEffects', () => {
   );
 
   beforeEach(() => {
-    when(localAsyncStorageMock.getItem(ChatKeys.ChatMessages)).thenReturn(of(CHAT_STUB));
+    when(localAsyncStorageMock.getItem(ChatKeys.ChatMessages)).thenReturn(of(CHAT_MESSAGES_STUB));
     effects = TestBed.inject(ChatEffects);
     mockStore = TestBed.inject(MockStore);
 
@@ -64,6 +64,24 @@ describe('ChatEffects', () => {
     });
   });
 
+  describe('restore$', () => {
+    it('should return createMessage', () => {
+      actions = hot('-a-|', { a: ChatActions.restore({ chatMessages: null }) });
+      const expected = hot('-a-|', {
+        a: ChatActions.createMessage({ chatMessageCreate: { message: 'Здравствуйте. Какой у вас вопрос?', isOwner: false } }),
+      });
+
+      expect(effects.restore$).toBeObservable(expected);
+    });
+
+    it('should work', () => {
+      actions = hot('-a-|', { a: ChatActions.restore({ chatMessages: CHAT_MESSAGES_STUB }) });
+      const expected = hot('---|');
+
+      expect(effects.restore$).toBeObservable(expected);
+    });
+  });
+
   describe('createMessage$', () => {
     it('should return createMessageSuccess', () => {
       const action = ChatActions.createMessage({ chatMessageCreate: CHAT_MESSAGE_CREATE_STUB });
@@ -73,6 +91,18 @@ describe('ChatEffects', () => {
       const expected = cold('-a-|', { a: completion });
 
       expect(effects.createMessage$).toBeObservable(expected);
+    });
+  });
+
+  describe('createMessageSuccess$', () => {
+    it('should return createMessageSuccess', () => {
+      const action = ChatActions.createMessageSuccess({ chatMessage: CHAT_MESSAGE_CREATED_STUB });
+
+      actions = hot('-a-|', { a: action });
+      const expected = cold('---|');
+
+      expect(effects.createMessageSuccess$).toBeObservable(expected);
+      verify(localAsyncStorageMock.setItem(ChatKeys.ChatMessages, deepEqual(CHAT_MESSAGES_STUB))).once();
     });
   });
 });
