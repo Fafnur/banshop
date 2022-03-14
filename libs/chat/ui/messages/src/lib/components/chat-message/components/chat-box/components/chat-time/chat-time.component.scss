@@ -1,0 +1,10 @@
+@use '@angular/material' as mat;
+@use 'libs/ui/stylesheets/variables' as store;
+
+:host {
+  font-size: 0.75rem;
+  margin: auto 0 -0.2rem 0;
+  padding-left: 0.325rem;
+  color: mat.get-color-from-palette(mat.$gray-palette, 500);
+  user-select: none;
+}

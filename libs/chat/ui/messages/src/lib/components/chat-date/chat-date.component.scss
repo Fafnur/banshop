@@ -1,0 +1,14 @@
+@use '@angular/material' as mat;
+
+:host {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+}
+
+div {
+  border-radius: 2rem;
+  margin: auto;
+  background-color: mat.get-color-from-palette(mat.$gray-palette, 200);
+  padding: 0.25rem 0.8rem;
+}

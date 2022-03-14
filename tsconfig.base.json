@@ -28,7 +28,6 @@
       "@banshop/chat/page": ["libs/chat/page/src/index.ts"],
       "@banshop/chat/state": ["libs/chat/state/src/index.ts"],
       "@banshop/chat/ui/form": ["libs/chat/ui/form/src/index.ts"],
-      "@banshop/chat/ui/message": ["libs/chat/ui/message/src/index.ts"],
       "@banshop/chat/ui/messages": ["libs/chat/ui/messages/src/index.ts"],
       "@banshop/chat/ui/pipes": ["libs/chat/ui/pipes/src/index.ts"],
       "@banshop/core/api/service": ["libs/core/api/service/src/index.ts"],

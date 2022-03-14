@@ -1,5 +1,6 @@
 :host {
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
+  max-width: 28rem;
 }

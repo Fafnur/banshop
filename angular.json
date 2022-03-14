@@ -14,7 +14,6 @@
     "chat-page": "libs/chat/page",
     "chat-state": "libs/chat/state",
     "chat-ui-form": "libs/chat/ui/form",
-    "chat-ui-message": "libs/chat/ui/message",
     "chat-ui-messages": "libs/chat/ui/messages",
     "chat-ui-pipes": "libs/chat/ui/pipes",
     "core-api-service": "libs/core/api/service",

@@ -5,28 +5,26 @@ import { ChatMessage } from '@banshop/chat/common';
 import { ChatFacade } from '@banshop/chat/state';
 
 @Pipe({
-  name: 'banshopChatIconCan',
+  name: 'banshopChatDateCan',
 })
-export class ChatIconCanPipe implements PipeTransform {
+export class ChatDateCanPipe implements PipeTransform {
   constructor(private readonly chatFacade: ChatFacade) {}
 
   transform(chatMessage: ChatMessage): Observable<boolean> {
     return this.chatFacade.messages$.pipe(
       map((messages) => {
         let prev: ChatMessage | null = null;
-        let next: ChatMessage | null = null;
 
         for (const [index, message] of messages.entries()) {
           if (message.id === chatMessage.id) {
             prev = index > 0 ? messages[index - 1] : null;
-            next = index + 1 < messages.length ? messages[index + 1] : null;
             break;
           }
         }
 
         let result: boolean;
-        if (prev && next) {
-          result = next.isOwner !== chatMessage.isOwner || prev.isOwner !== chatMessage.isOwner;
+        if (prev) {
+          result = new Date(prev.created).getDate() < new Date(chatMessage.created).getDate();
         } else {
           result = true;
         }

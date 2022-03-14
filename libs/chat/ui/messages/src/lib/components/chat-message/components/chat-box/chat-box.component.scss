@@ -2,7 +2,9 @@
 @use 'libs/ui/stylesheets/variables' as store;
 
 :host {
-  display: block;
+  display: flex;
+  flex-direction: row;
+
   padding: 0.5rem;
   border-radius: 0.25rem;
   background-color: mat.get-color-from-palette(mat.$gray-palette, 200);
