@@ -1,3 +1,2 @@
-<div *ngIf="chatMessage">
-  {{ chatMessage.message }}
-</div>
+<banshop-chat-icon [chatMessage]="chatMessage"></banshop-chat-icon>
+<banshop-chat-box [chatMessage]="chatMessage" [lastOwner]="chatMessage | chatIconCan | async"></banshop-chat-box>

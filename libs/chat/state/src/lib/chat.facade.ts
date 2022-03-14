@@ -12,6 +12,8 @@ export class ChatFacade {
 
   messages$ = this.store.select(ChatSelectors.selectChatMessages);
 
+  chatMessagesEntities$ = this.store.select(ChatSelectors.selectChatMessagesEntities);
+
   createMessageSuccess$ = this.actions$.pipe(
     ofType(ChatActions.createMessageSuccess),
     map(({ chatMessage }) => chatMessage)

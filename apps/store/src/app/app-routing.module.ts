@@ -29,12 +29,10 @@ const routes: Routes = [
       },
       {
         path: NAVIGATION_PATHS.support,
-        canActivate: [OrderGuard],
         loadChildren: () => import('@banshop/chat/page').then((modules) => modules.ChatPageModule),
       },
       {
         path: NAVIGATION_PATHS.terms,
-        canActivate: [OrderGuard],
         loadChildren: () => import('@banshop/russian/terms/page').then((modules) => modules.TermsPageModule),
       },
       {
