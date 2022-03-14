@@ -34,9 +34,9 @@ const chatReducer = createReducer(
   ),
   on(
     ChatActions.restore,
-    (state, { chat }): ChatState =>
-      chat
-        ? chatAdapter.setAll(chat.messages, {
+    (state, { chatMessages }): ChatState =>
+      chatMessages?.length
+        ? chatAdapter.setAll(chatMessages, {
             ...state,
             loaded: true,
           })

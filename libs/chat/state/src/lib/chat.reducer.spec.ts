@@ -27,7 +27,7 @@ describe('Chat Reducer', () => {
   });
 
   it('restore() should set chat messages', () => {
-    const action = ChatActions.restore({ chat: CHAT_STUB });
+    const action = ChatActions.restore({ chatMessages: CHAT_STUB });
 
     const result = reducer(state, action);
 

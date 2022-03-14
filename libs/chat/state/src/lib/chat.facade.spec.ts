@@ -35,7 +35,7 @@ describe('ChatFacade', () => {
       class RootModule {}
       TestBed.configureTestingModule({ imports: [RootModule] });
 
-      when(localAsyncStorageMock.getItem(ChatKeys.Chat)).thenReturn(of(CHAT_STUB));
+      when(localAsyncStorageMock.getItem(ChatKeys.ChatMessages)).thenReturn(of(CHAT_STUB));
 
       facade = TestBed.inject(ChatFacade);
     });

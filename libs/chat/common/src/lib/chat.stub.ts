@@ -22,6 +22,7 @@ export const CHAT_STUB: Chat = {
 
 export const CHAT_MESSAGE_CREATE_STUB: ChatMessageCreate = {
   message: 'Интересует информация о кроссовках Rebook Lite. Есть в наличии 39 размер?',
+  isOwner: true,
 };
 
 export const CHAT_MESSAGE_CREATED_STUB: ChatMessage = {

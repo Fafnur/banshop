@@ -1,5 +1,5 @@
 export enum ChatKeys {
-  Chat = 'chat',
+  ChatMessages = 'chatMessages',
 }
 
 export interface Chat {
@@ -15,4 +15,5 @@ export interface ChatMessage {
 
 export interface ChatMessageCreate {
   message: string;
+  isOwner: boolean;
 }

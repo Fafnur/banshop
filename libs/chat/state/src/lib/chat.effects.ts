@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { Actions, concatLatestFrom, createEffect, ofType, OnInitEffects } from '@ngrx/effects';
 import { Action, Store } from '@ngrx/store';
 import { fetch } from '@nrwl/angular';
+import { take } from 'rxjs';
 
-import { Chat, ChatKeys } from '@banshop/chat/common';
+import { ChatKeys, ChatMessage } from '@banshop/chat/common';
 import { LocalAsyncStorage } from '@banshop/core/storage/local';
 
 import * as ChatActions from './chat.actions';
@@ -14,9 +15,21 @@ export class ChatEffects implements OnInitEffects {
   init$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(ChatActions.init),
-      concatLatestFrom(() => this.localAsyncStorage.getItem<Chat | null>(ChatKeys.Chat)),
+      concatLatestFrom(() => this.localAsyncStorage.getItem<ChatMessage[] | null>(ChatKeys.ChatMessages).pipe(take(1))),
       fetch({
-        run: (action, chat) => ChatActions.restore({ chat }),
+        run: (action, chatMessages) => ChatActions.restore({ chatMessages }),
+      })
+    );
+  });
+
+  restore$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(ChatActions.restore),
+      fetch({
+        run: ({ chatMessages }) =>
+          !chatMessages?.length
+            ? ChatActions.createMessage({ chatMessageCreate: { message: 'Здравствуйте. Какой у вас вопрос?', isOwner: false } })
+            : undefined,
       })
     );
   });
@@ -32,11 +45,21 @@ export class ChatEffects implements OnInitEffects {
             chatMessage: {
               id: chatMessages.length > 0 ? chatMessages[chatMessages.length - 1].id + 1 : 1,
               created: new Date().toISOString(),
-              isOwner: true,
+              isOwner: action.chatMessageCreate.isOwner ?? true,
               message: action.chatMessageCreate.message,
             },
           }),
         onError: (action, error) => ChatActions.createMessageFailure({ error }),
+      })
+    );
+  });
+
+  createMessageSuccess$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(ChatActions.createMessageSuccess),
+      concatLatestFrom(() => this.store.select(ChatSelectors.selectChatMessages)),
+      fetch({
+        run: (action, chatMessages) => this.localAsyncStorage.setItem(ChatKeys.ChatMessages, chatMessages),
       })
     );
   });

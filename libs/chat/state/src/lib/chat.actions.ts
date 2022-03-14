@@ -1,11 +1,11 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { createAction, props } from '@ngrx/store';
 
-import { Chat, ChatMessage, ChatMessageCreate } from '@banshop/chat/common';
+import { ChatMessage, ChatMessageCreate } from '@banshop/chat/common';
 
 export const init = createAction('[Chat] Init');
 
-export const restore = createAction('[Chat] Restore', props<{ chat: Chat | null }>());
+export const restore = createAction('[Chat] Restore', props<{ chatMessages: ChatMessage[] | null }>());
 
 export const createMessage = createAction('[Chat] Create Message', props<{ chatMessageCreate: ChatMessageCreate }>());
 

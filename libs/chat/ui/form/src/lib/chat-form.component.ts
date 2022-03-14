@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { merge, takeUntil, tap } from 'rxjs';
+import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { takeUntil, tap } from 'rxjs';
 
 import { ChatFacade } from '@banshop/chat/state';
 import { DestroyService } from '@banshop/core/utils/destroy';
@@ -27,7 +27,17 @@ export class ChatFormComponent implements OnInit {
       message: new FormControl(null, [Validators.required]),
     });
 
-    merge(this.chatFacade.createMessageFailure$, this.chatFacade.createMessageSuccess$)
+    this.chatFacade.createMessageFailure$
+      .pipe(
+        tap(() => {
+          this.submitted = false;
+          this.changeDetectorRef.markForCheck();
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
+
+    this.chatFacade.createMessageSuccess$
       .pipe(
         tap(() => {
           this.submitted = false;
@@ -38,12 +48,14 @@ export class ChatFormComponent implements OnInit {
       .subscribe();
   }
 
-  onSubmit(): void {
+  onSubmit(formDirective: FormGroupDirective): void {
     this.form.markAllAsTouched();
 
     if (!this.submitted && this.form.valid) {
       this.submitted = true;
       this.chatFacade.addMessage(this.form.value.message);
+      formDirective.resetForm();
+      this.form.reset();
     }
 
     this.changeDetectorRef.markForCheck();

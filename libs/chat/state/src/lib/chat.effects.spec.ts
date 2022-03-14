@@ -44,7 +44,7 @@ describe('ChatEffects', () => {
   );
 
   beforeEach(() => {
-    when(localAsyncStorageMock.getItem(ChatKeys.Chat)).thenReturn(of(CHAT_STUB));
+    when(localAsyncStorageMock.getItem(ChatKeys.ChatMessages)).thenReturn(of(CHAT_STUB));
     effects = TestBed.inject(ChatEffects);
     mockStore = TestBed.inject(MockStore);
 
@@ -58,7 +58,7 @@ describe('ChatEffects', () => {
   describe('init$', () => {
     it('should work', () => {
       actions = hot('-a-|', { a: ChatActions.init() });
-      const expected = hot('-a-|', { a: ChatActions.restore({ chat: CHAT_STUB }) });
+      const expected = hot('-a-|', { a: ChatActions.restore({ chatMessages: CHAT_STUB }) });
 
       expect(effects.init$).toBeObservable(expected);
     });

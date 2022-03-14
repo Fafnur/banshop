@@ -24,8 +24,8 @@ export class ChatFacade {
 
   constructor(private readonly actions$: Actions, private readonly store: Store) {}
 
-  addMessage(message: string): void {
-    this.dispatch(ChatActions.createMessage({ chatMessageCreate: { message } }));
+  addMessage(message: string, isOwner: boolean = true): void {
+    this.dispatch(ChatActions.createMessage({ chatMessageCreate: { message, isOwner } }));
   }
 
   private dispatch(action: Action): void {
