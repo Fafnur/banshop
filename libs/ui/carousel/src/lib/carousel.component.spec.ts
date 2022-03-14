@@ -48,13 +48,13 @@ describe('CarouselComponent', () => {
   });
 
   it('should call selected after click on first slide', () => {
-    const selected = jest.spyOn(pageObject.carousel?.componentInstance.selected, 'emit');
+    const selected = jest.spyOn(pageObject.carousel?.componentInstance.clicked, 'emit');
 
     fixtureWrapper.detectChanges();
     pageObject.triggerCarouselSlideFirstClick();
     fixtureWrapper.detectChanges();
 
-    expect(selected).toBeCalledWith(0);
+    expect(selected).toBeCalled();
   });
 
   it('should change active slide after click next', () => {

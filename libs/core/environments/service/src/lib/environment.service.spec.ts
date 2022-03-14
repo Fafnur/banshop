@@ -1,4 +1,5 @@
-import { ENVIRONMENTS_DEFAULT, EnvironmentService } from './environment.service';
+import { ENVIRONMENTS_DEFAULT } from './environment.interface';
+import { EnvironmentService } from './environment.service';
 
 describe('EnvironmentService', () => {
   let service: EnvironmentService;

@@ -6,9 +6,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MockModule } from 'ng-mocks';
-import { mock } from 'ts-mockito';
+import { mock, when } from 'ts-mockito';
 
 import { CartAddModule, CartAddService } from '@banshop/cart/ui/add';
+import { NAVIGATION_PATHS } from '@banshop/core/navigation/common';
+import { NavigationService } from '@banshop/core/navigation/service';
 import { providerOf } from '@banshop/core/testing';
 import { PRODUCT_STUB } from '@banshop/products/common';
 import { ProductPipesModule } from '@banshop/products/ui/pipes';
@@ -21,9 +23,11 @@ describe('ProductCardComponent', () => {
   let component: ProductCardComponent;
   let fixture: ComponentFixture<ProductCardComponent>;
   let cartAddServiceMock: CartAddService;
+  let navigationServiceMock: NavigationService;
 
   beforeEach(() => {
     cartAddServiceMock = mock(CartAddService);
+    navigationServiceMock = mock(NavigationService);
   });
 
   beforeEach(async () => {
@@ -41,11 +45,13 @@ describe('ProductCardComponent', () => {
         MockModule(PriceModule),
       ],
       declarations: [ProductCardComponent],
-      providers: [providerOf(CartAddService, cartAddServiceMock)],
+      providers: [providerOf(CartAddService, cartAddServiceMock), providerOf(NavigationService, navigationServiceMock)],
     }).compileComponents();
   });
 
   beforeEach(() => {
+    when(navigationServiceMock.getPaths()).thenReturn(NAVIGATION_PATHS);
+
     fixture = TestBed.createComponent(ProductCardComponent);
     component = fixture.componentInstance;
     component.product = PRODUCT_STUB;
