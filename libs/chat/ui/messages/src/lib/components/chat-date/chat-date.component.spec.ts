@@ -1,25 +1,37 @@
+import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { CHAT_MESSAGE_STUB } from '@banshop/chat/common';
+
 import { ChatDateComponent } from './chat-date.component';
+import { ChatDateComponentPo } from './chat-date.component.po';
 
 describe('ChatDateComponent', () => {
-  let component: ChatDateComponent;
+  let pageObject: ChatDateComponentPo;
   let fixture: ComponentFixture<ChatDateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChatDateComponent ]
-    })
-    .compileComponents();
+      imports: [CommonModule],
+      declarations: [ChatDateComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ChatDateComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    pageObject = new ChatDateComponentPo(fixture);
+    fixture.componentInstance.chatMessage = CHAT_MESSAGE_STUB;
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    fixture.detectChanges();
+
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('should show', () => {
+    fixture.detectChanges();
+
+    expect(pageObject.date).toBe('3/13/22');
   });
 });
