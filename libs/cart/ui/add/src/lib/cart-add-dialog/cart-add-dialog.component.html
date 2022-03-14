@@ -1,20 +1,29 @@
-<h2 mat-dialog-title i18n="Cart add|Add to Cart title">Add to Cart</h2>
+<h2 automation-id="title" mat-dialog-title i18n="Cart add|Add to Cart title">Add to Cart</h2>
 <mat-dialog-content>
-  <banshop-product-box [product]="product" *ngIf="!added; else nextStepDescription">
-    <banshop-product-form [product]="product" (created)="onCreatedForm($event)"></banshop-product-form>
+  <banshop-product-box automation-id="box" [product]="product" *ngIf="!added; else nextStepDescription">
+    <banshop-product-form automation-id="form" [product]="product" (created)="onCreatedForm($event)"></banshop-product-form>
   </banshop-product-box>
   <ng-template #nextStepDescription>
-    <h3 i18n="Cart add|Added to Cart title">{{ product.title }} added to cart!</h3>
-    <p i18n="Cart add|Added to Cart description">You can place an order or continue shopping.</p>
+    <h3 automation-id="next-title" i18n="Cart add|Added to Cart title">{{ product.title }} added to cart!</h3>
+    <p automation-id="next-description" i18n="Cart add|Added to Cart description">You can place an order or continue shopping.</p>
   </ng-template>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <ng-container *ngIf="!added; else nextStepActions">
-    <button mat-button [mat-dialog-close]="false" i18n="Cart add|Cancel link">Cancel</button>
-    <button mat-button color="primary" cdkFocusInitial i18n="Cart add|Add link" (click)="onAdd()">Add to cart</button>
+    <button automation-id="cancel" mat-button [mat-dialog-close]="false" i18n="Cart add|Cancel link">Cancel</button>
+    <button automation-id="add" mat-button color="primary" cdkFocusInitial i18n="Cart add|Add link" (click)="onAdd()">Add to cart</button>
   </ng-container>
   <ng-template #nextStepActions>
-    <button mat-button [mat-dialog-close]="true" i18n="Cart add|Continue link">Continue shopping</button>
-    <a mat-button color="primary" [mat-dialog-close]="true" i18n="Cart add|Go to cart link" [routerLink]="paths.cart | path">Go to cart</a>
+    <button automation-id="continue" mat-button [mat-dialog-close]="true" i18n="Cart add|Continue link">Continue shopping</button>
+    <a
+      automation-id="cart"
+      mat-button
+      color="primary"
+      [mat-dialog-close]="true"
+      i18n="Cart add|Go to cart link"
+      [routerLink]="paths.cart | path"
+    >
+      Go to cart
+    </a>
   </ng-template>
 </mat-dialog-actions>

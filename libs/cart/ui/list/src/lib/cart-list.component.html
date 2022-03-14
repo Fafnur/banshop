@@ -1,9 +1,13 @@
 <ng-container *ngIf="cartProducts$ | async; let cartProducts">
   <ng-container *ngIf="cartProducts.length; else emptyCart">
-    <banshop-cart-card [cartProduct]="cartProduct" *ngFor="let cartProduct of cartProducts; trackBy: trackByFn"></banshop-cart-card>
+    <banshop-cart-card
+      automation-id="card"
+      [cartProduct]="cartProduct"
+      *ngFor="let cartProduct of cartProducts; trackBy: trackByFn"
+    ></banshop-cart-card>
   </ng-container>
   <ng-template #emptyCart>
-    <div i18n="Cart list|Empty cart">
+    <div automation-id="empty" i18n="Cart list|Empty cart">
       There are no products in your cart yet. Go to shopping - <a [routerLink]="paths.home | path">catalog</a>.
     </div>
   </ng-template>

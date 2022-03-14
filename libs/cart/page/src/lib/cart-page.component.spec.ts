@@ -8,12 +8,10 @@ import { CartListModule } from '@banshop/cart/ui/list';
 import { GridModule } from '@banshop/ui/grid';
 
 import { CartPageComponent } from './cart-page.component';
+import { CartPageComponentPo } from './cart-page.component.po';
 
-/**
- * TODO: Add tests
- */
 describe('CartPageComponent', () => {
-  let component: CartPageComponent;
+  let pageObject: CartPageComponentPo;
   let fixture: ComponentFixture<CartPageComponent>;
 
   beforeEach(async () => {
@@ -25,12 +23,19 @@ describe('CartPageComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CartPageComponent);
-    component = fixture.componentInstance;
+    pageObject = new CartPageComponentPo(fixture);
   });
 
   it('should create', () => {
     fixture.detectChanges();
 
-    expect(component).toBeTruthy();
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('should show', () => {
+    fixture.detectChanges();
+
+    expect(pageObject.list).toBeTruthy();
+    expect(pageObject.info).toBeTruthy();
   });
 });
