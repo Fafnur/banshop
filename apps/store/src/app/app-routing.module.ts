@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { NAVIGATION_PATHS } from '@banshop/core/navigation/common';
 import { OrderGuard, OrderGuardsModule } from '@banshop/orders/guards';
+import { ProductGuard, ProductGuardsModule } from '@banshop/products/guards';
 import { LayoutComponent } from '@banshop/ui/layout';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
       },
       {
         path: NAVIGATION_PATHS.product,
+        canActivate: [ProductGuard],
         loadChildren: () => import('@banshop/products/page').then((modules) => modules.ProductPageModule),
       },
       {
@@ -46,6 +48,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     OrderGuardsModule,
+    ProductGuardsModule,
     RouterModule.forRoot(routes, {
       anchorScrolling: 'enabled',
       initialNavigation: 'enabled',

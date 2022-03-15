@@ -69,6 +69,7 @@
       "@banshop/orders/ui/notify": ["libs/orders/ui/notify/src/index.ts"],
       "@banshop/products/api": ["libs/products/api/src/index.ts"],
       "@banshop/products/common": ["libs/products/common/src/index.ts"],
+      "@banshop/products/guards": ["libs/products/guards/src/index.ts"],
       "@banshop/products/page": ["libs/products/page/src/index.ts"],
       "@banshop/products/state": ["libs/products/state/src/index.ts"],
       "@banshop/products/ui/box": ["libs/products/ui/box/src/index.ts"],

@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/products/guards",
+  "sourceRoot": "libs/products/guards/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/products/guards"],
+      "options": {
+        "jestConfig": "libs/products/guards/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/products/guards/src/**/*.ts", "libs/products/guards/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
