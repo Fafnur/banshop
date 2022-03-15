@@ -3,41 +3,47 @@ import { UrlTree } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { cold } from 'jasmine-marbles';
 import { ReplaySubject } from 'rxjs';
-import { mock, when } from 'ts-mockito';
+import { anything, mock, when } from 'ts-mockito';
 
-import { CART_PRODUCTS_STUB, CartProduct } from '@banshop/cart/common';
-import { CartFacade } from '@banshop/cart/state';
 import { NAVIGATION_PATHS } from '@banshop/core/navigation/common';
 import { NavigationService } from '@banshop/core/navigation/service';
 import { providerOf } from '@banshop/core/testing';
+import { Product, PRODUCT_STUB } from '@banshop/products/common';
+import { ProductFacade } from '@banshop/products/state';
 
 import { ProductGuard } from './product.guard';
 
-describe('OrderGuard', () => {
+describe('ProductGuard', () => {
   let guard: ProductGuard;
   let navigationServiceMock: NavigationService;
-  let cartFacadeMock: CartFacade;
-  let cartProducts$: ReplaySubject<CartProduct[]>;
+  let productFacadeMock: ProductFacade;
+  let productBySlug$: ReplaySubject<Product | null>;
+  const SNAPSHOT_STUB: any = {
+    params: { slug: PRODUCT_STUB.slug },
+  };
+  const UTL_TREE_STUB = {} as UrlTree;
 
   beforeEach(() => {
     navigationServiceMock = mock(NavigationService);
-    cartFacadeMock = mock(CartFacade);
+    productFacadeMock = mock(ProductFacade);
 
-    cartProducts$ = new ReplaySubject<CartProduct[]>(1);
+    productBySlug$ = new ReplaySubject<Product | null>(1);
   });
 
   beforeEach(
     waitForAsync(() => {
       void TestBed.configureTestingModule({
         imports: [RouterTestingModule],
-        providers: [ProductGuard, providerOf(NavigationService, navigationServiceMock), providerOf(CartFacade, cartFacadeMock)],
+        providers: [ProductGuard, providerOf(NavigationService, navigationServiceMock), providerOf(ProductFacade, productFacadeMock)],
       }).compileComponents();
     })
   );
 
   beforeEach(() => {
     when(navigationServiceMock.getPaths()).thenReturn(NAVIGATION_PATHS);
-    when(cartFacadeMock.cartProducts$).thenReturn(cartProducts$);
+    when(productFacadeMock.productBySlug$(PRODUCT_STUB.slug)).thenReturn(productBySlug$);
+    when(navigationServiceMock.createUrlTree(anything())).thenReturn(UTL_TREE_STUB);
+
     guard = TestBed.inject(ProductGuard);
   });
 
@@ -46,16 +52,14 @@ describe('OrderGuard', () => {
   });
 
   it('should return true', () => {
-    cartProducts$.next(CART_PRODUCTS_STUB);
+    productBySlug$.next(PRODUCT_STUB);
 
-    expect(guard.canActivate()).toBeObservable(cold('a', { a: true }));
+    expect(guard.canActivate(SNAPSHOT_STUB)).toBeObservable(cold('a', { a: true }));
   });
 
   it('should return true', () => {
-    cartProducts$.next([]);
+    productBySlug$.next(null);
 
-    const urlTree = {} as UrlTree;
-    when(navigationServiceMock.createUrlTree(NAVIGATION_PATHS.home)).thenReturn(urlTree);
-    expect(guard.canActivate()).toBeObservable(cold('a', { a: urlTree }));
+    expect(guard.canActivate(SNAPSHOT_STUB)).toBeObservable(cold('a', { a: UTL_TREE_STUB }));
   });
 });
