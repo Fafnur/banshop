@@ -14,12 +14,10 @@ import { providerOf } from '@banshop/core/testing';
 import { PRODUCT_STUB } from '@banshop/products/common';
 
 import { ProductAddToBagDialogComponent } from './product-add-to-bag-dialog.component';
+import { ProductAddToBagDialogComponentPo } from './product-add-to-bag-dialog.component.po';
 
-/**
- * TODO: Add tests
- */
-describe('CartAddDialogComponent', () => {
-  let component: ProductAddToBagDialogComponent;
+describe('ProductAddToBagDialogComponent', () => {
+  let pageObject: ProductAddToBagDialogComponentPo;
   let fixture: ComponentFixture<ProductAddToBagDialogComponent>;
   let cartFacadeMock: CartFacade;
 
@@ -51,12 +49,22 @@ describe('CartAddDialogComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ProductAddToBagDialogComponent);
-    component = fixture.componentInstance;
+    pageObject = new ProductAddToBagDialogComponentPo(fixture);
   });
 
   it('should create', () => {
     fixture.detectChanges();
 
-    expect(component).toBeTruthy();
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('should show after add', () => {
+    fixture.detectChanges();
+
+    expect(pageObject.titleText).toBe('Add to cart');
+    expect(pageObject.nextTitleText).toBeTruthy();
+    expect(pageObject.nextDescriptionText).toBeTruthy();
+    expect(pageObject.continue).toBeTruthy();
+    expect(pageObject.cart).toBeTruthy();
   });
 });

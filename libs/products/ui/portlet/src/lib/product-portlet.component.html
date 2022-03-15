@@ -1,17 +1,17 @@
 <banshop-row tablet="" [noPadding]="true" *ngIf="product$ | async; let product">
   <banshop-column tablet="7" web="8">
-    <banshop-carousel [images]="product.photos"></banshop-carousel>
+    <banshop-carousel automation-id="carousel" [images]="product.photos"></banshop-carousel>
   </banshop-column>
   <banshop-column tablet="5" web="4">
     <banshop-container mode="fluid">
-      <banshop-product-title>{{ product.title }}</banshop-product-title>
-      <banshop-product-subtitle>{{ product.subtitle }}</banshop-product-subtitle>
-      <banshop-product-price>{{ product.price | currency }}</banshop-product-price>
-      <banshop-product-promo>
+      <banshop-product-title automation-id="title">{{ product.title }}</banshop-product-title>
+      <banshop-product-subtitle automation-id="subtitle">{{ product.subtitle }}</banshop-product-subtitle>
+      <banshop-product-price automation-id="price">{{ product.price | currency }}</banshop-product-price>
+      <banshop-product-promo automation-id="promo">
         <strong i18n="Product portlet|Product promo">This product is excluded from all promotional discounts and offers.</strong>
       </banshop-product-promo>
-      <banshop-product-sizes [sizes]="product.sizes" [control]="control"></banshop-product-sizes>
-      <banshop-product-add-to-bag [product]="product" [control]="control"> </banshop-product-add-to-bag>
+      <banshop-product-sizes automation-id="sizes" [sizes]="product.sizes" [control]="control"></banshop-product-sizes>
+      <banshop-product-add-to-bag automation-id="add-to-bag" [product]="product" [control]="control"></banshop-product-add-to-bag>
     </banshop-container>
   </banshop-column>
 </banshop-row>

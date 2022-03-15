@@ -18,9 +18,10 @@ import { CarouselModule } from '@banshop/ui/carousel';
 
 import { PriceModule } from './price/price.module';
 import { ProductCardComponent } from './product-card.component';
+import { ProductCardComponentPo } from './product-card.component.po';
 
 describe('ProductCardComponent', () => {
-  let component: ProductCardComponent;
+  let pageObject: ProductCardComponentPo;
   let fixture: ComponentFixture<ProductCardComponent>;
   let cartAddServiceMock: CartAddService;
   let navigationServiceMock: NavigationService;
@@ -53,13 +54,24 @@ describe('ProductCardComponent', () => {
     when(navigationServiceMock.getPaths()).thenReturn(NAVIGATION_PATHS);
 
     fixture = TestBed.createComponent(ProductCardComponent);
-    component = fixture.componentInstance;
-    component.product = PRODUCT_STUB;
+    pageObject = new ProductCardComponentPo(fixture);
+    fixture.componentInstance.product = PRODUCT_STUB;
   });
 
   it('should create', () => {
     fixture.detectChanges();
 
-    expect(component).toBeTruthy();
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('should show', () => {
+    fixture.detectChanges();
+
+    expect(pageObject.carousel).toBeTruthy();
+    expect(pageObject.title).toBeTruthy();
+    expect(pageObject.subtitle).toBeTruthy();
+    expect(pageObject.description).toBeTruthy();
+    expect(pageObject.details).toBeTruthy();
+    expect(pageObject.buy).toBeTruthy();
   });
 });
