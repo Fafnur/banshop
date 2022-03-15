@@ -1,0 +1,22 @@
+@import 'libs/ui/width/src/lib/full-width.directive';
+
+:host {
+  display: block;
+  margin-top: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  width: 100%;
+}
+
+mat-form-field {
+  flex-grow: 1;
+}
+
+button {
+  margin-bottom: 1rem;
+}

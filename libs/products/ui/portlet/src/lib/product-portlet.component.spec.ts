@@ -8,7 +8,7 @@ import { ReplaySubject } from 'rxjs';
 import { mock, when } from 'ts-mockito';
 
 import { providerOf } from '@banshop/core/testing';
-import { Product } from '@banshop/products/common';
+import { Product, PRODUCT_STUB } from '@banshop/products/common';
 import { ProductFacade } from '@banshop/products/state';
 import { CarouselModule } from '@banshop/ui/carousel';
 import { ContainerModule } from '@banshop/ui/container';
@@ -21,12 +21,10 @@ import { ProductSizesModule } from './components/product-sizes/product-sizes.mod
 import { ProductSubtitleModule } from './components/product-subtitle/product-subtitle.module';
 import { ProductTitleModule } from './components/product-title/product-title.module';
 import { ProductPortletComponent } from './product-portlet.component';
+import { ProductPortletComponentPo } from './product-portlet.component.po';
 
-/**
- * TODO: Add tests
- */
 describe('ProductPortletComponent', () => {
-  let component: ProductPortletComponent;
+  let pageObject: ProductPortletComponentPo;
   let fixture: ComponentFixture<ProductPortletComponent>;
   let activatedRouteMock: ActivatedRoute;
   let productFacadeMock: ProductFacade;
@@ -67,12 +65,24 @@ describe('ProductPortletComponent', () => {
     when(productFacadeMock.productBySlug$(SLUG)).thenReturn(productBySlug$);
 
     fixture = TestBed.createComponent(ProductPortletComponent);
-    component = fixture.componentInstance;
+    pageObject = new ProductPortletComponentPo(fixture);
   });
 
   it('should create', () => {
     fixture.detectChanges();
 
-    expect(component).toBeTruthy();
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('should show', () => {
+    productBySlug$.next(PRODUCT_STUB);
+    fixture.detectChanges();
+
+    expect(pageObject.carousel).toBeTruthy();
+    expect(pageObject.title).toBeTruthy();
+    expect(pageObject.subtitle).toBeTruthy();
+    expect(pageObject.promo).toBeTruthy();
+    expect(pageObject.sizes).toBeTruthy();
+    expect(pageObject.addToBag).toBeTruthy();
   });
 });

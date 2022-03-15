@@ -40,4 +40,8 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
     this.links = getLinks(this.paths);
   }
+
+  trackByFn(index: number, link: NavigationLink): string {
+    return link.route;
+  }
 }

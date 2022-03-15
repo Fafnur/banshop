@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/chat/page",
+  "sourceRoot": "libs/chat/page/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/chat/page"],
+      "options": {
+        "jestConfig": "libs/chat/page/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/chat/page/src/**/*.ts", "libs/chat/page/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

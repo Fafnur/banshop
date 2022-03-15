@@ -16,13 +16,11 @@ import { ProductFacade } from '@banshop/products/state';
 export class ProductPortletComponent implements OnInit {
   product$!: Observable<Product>;
 
-  control!: FormControl;
+  readonly control = new FormControl(null, [Validators.required]);
 
   constructor(private readonly activatedRoute: ActivatedRoute, private readonly productFacade: ProductFacade) {}
 
   ngOnInit(): void {
-    this.control = new FormControl(null, [Validators.required]);
-
     const { slug } = this.activatedRoute.snapshot.params;
 
     if (slug) {

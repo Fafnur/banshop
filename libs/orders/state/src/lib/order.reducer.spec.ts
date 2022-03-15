@@ -1,7 +1,7 @@
 import { Action } from '@ngrx/store';
 
 import { HTTP_ERROR_STUB } from '@banshop/core/api/service';
-import { CUSTOMER_STUB, ORDER_CREATE_STUB } from '@banshop/orders/common';
+import { CUSTOMER_STUB, ORDER_CREATE_STUB, ORDER_DETAILS_STUB } from '@banshop/orders/common';
 
 import * as OrderActions from './order.actions';
 import { orderInitialState, OrderState, reducer } from './order.reducer';
@@ -31,7 +31,7 @@ describe('Order Reducer', () => {
 
   it('createOrder() should set orderCreating true', () => {
     state = getState({ orderCreating: true });
-    const action = OrderActions.createOrderSuccess();
+    const action = OrderActions.createOrderSuccess({ orderDetails: ORDER_DETAILS_STUB });
     const result = reducer(state, action);
 
     expect(result.orderCreating).toBeFalsy();

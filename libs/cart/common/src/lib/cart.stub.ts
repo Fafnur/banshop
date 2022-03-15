@@ -1,4 +1,4 @@
-import { CartProduct } from '@banshop/cart/common';
+import { CartProduct } from './cart.interface';
 
 export const CART_PRODUCT_STUB: CartProduct = {
   productId: 1,

@@ -7,7 +7,7 @@ import { PRODUCTS_RESPONSE_STUB, ProductsResponse } from '@banshop/products/comm
 
 import { PRODUCT_API_ROUTES, ProductApiService } from './product-api.service';
 
-describe('BonusApiService', () => {
+describe('ProductApiService', () => {
   let service: ProductApiService;
   let apiServiceMock: ApiService;
   let environmentServiceMock: EnvironmentService;

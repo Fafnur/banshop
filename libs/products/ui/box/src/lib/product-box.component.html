@@ -1,12 +1,12 @@
 <banshop-row tablet>
   <banshop-column tablet="6" web="5">
-    <banshop-carousel [images]="product.photos"></banshop-carousel>
+    <banshop-carousel automation-id="carousel" [images]="product.photos"></banshop-carousel>
   </banshop-column>
   <banshop-column tablet="6" web="7">
-    <h3>{{ product.title }}</h3>
-    <h4>{{ product.subtitle }}</h4>
-    <p>{{ product.price | currency }}</p>
-    <p>{{ product.description }}</p>
+    <h3 automation-id="title">{{ product.title }}</h3>
+    <h4 automation-id="subtitle">{{ product.subtitle }}</h4>
+    <p automation-id="price">{{ product.price | currency }}</p>
+    <p automation-id="description">{{ product.description }}</p>
     <ng-content></ng-content>
   </banshop-column>
 </banshop-row>

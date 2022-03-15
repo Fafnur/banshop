@@ -1,20 +1,23 @@
-<mat-card *ngIf="cartProducts$ | async; let cartProducts">
+<mat-card automation-id="card" *ngIf="cartProducts$ | async; let cartProducts">
   <mat-card-content>
-    <div i18n="Cart info|Cart count">
+    <div automation-id="count" i18n="Cart info|Cart count">
       {cartProducts | cartTotalCount, plural, =0 {no products} =1 {1 product} other {
       {{ cartProducts | cartTotalCount }} products} } in the cart.
     </div>
-    <ul *ngIf="cartProducts.length">
-      <ng-container *ngFor="let cartProduct of cartProducts">
-        <li *ngIf="cartProduct.productId | productById | async; let product">{{ product.title }} x {{ cartProduct.count }}</li>
+    <ul automation-id="list" *ngIf="cartProducts.length">
+      <ng-container *ngFor="let cartProduct of cartProducts; trackBy: trackByFn">
+        <li automation-id="items" *ngIf="cartProduct.productId | productById | async; let product">
+          {{ product.title }} x {{ cartProduct.count }}
+        </li>
       </ng-container>
     </ul>
-    <div *ngIf="cartProducts.length">
+    <div automation-id="total" *ngIf="cartProducts.length">
       <strong i18n="Cart info|Cart total">Total: {{ cartProducts | cartTotalPrice | async | currency }}</strong>
     </div>
   </mat-card-content>
   <mat-card-actions>
     <a
+      automation-id="order"
       mat-raised-button
       color="primary"
       type="button"

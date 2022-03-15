@@ -23,6 +23,7 @@ export class CarouselComponent {
 
   onSelected(index: number): void {
     this.active = index;
+    this.selected.emit(index);
   }
 
   onPrev(): void {

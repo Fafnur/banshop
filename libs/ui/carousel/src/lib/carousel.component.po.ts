@@ -37,7 +37,7 @@ export class CarouselComponentPo extends PageObject {
   }
 
   triggerCarouselSlideFirstClick(): void {
-    this.triggerEventHandler(this.carouselSlides[0], 'click');
+    this.triggerEventHandler(this.carouselSlides[0], 'clicked');
   }
 
   triggerCarouselDotsClick(eventObj: number): void {

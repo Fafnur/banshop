@@ -5,7 +5,7 @@ import { MockModule } from 'ng-mocks';
 import { ReplaySubject } from 'rxjs';
 import { mock, when } from 'ts-mockito';
 
-import { CartProduct } from '@banshop/cart/common';
+import { CART_PRODUCTS_STUB, CartProduct } from '@banshop/cart/common';
 import { CartFacade } from '@banshop/cart/state';
 import { CartCardModule } from '@banshop/cart/ui/card';
 import { PATHS_STUB } from '@banshop/core/navigation/common';
@@ -13,12 +13,10 @@ import { NavigationPipesModule } from '@banshop/core/navigation/ui/pipes';
 import { providerOf } from '@banshop/core/testing';
 
 import { CartListComponent } from './cart-list.component';
+import { CartListComponentPo } from './cart-list.component.po';
 
-/**
- * TODO: Add tests
- */
 describe('CartListComponent', () => {
-  let component: CartListComponent;
+  let pageObject: CartListComponentPo;
   let fixture: ComponentFixture<CartListComponent>;
   let cartFacadeMock: CartFacade;
 
@@ -42,12 +40,29 @@ describe('CartListComponent', () => {
     when(cartFacadeMock.cartProducts$).thenReturn(cartProducts$);
 
     fixture = TestBed.createComponent(CartListComponent);
-    component = fixture.componentInstance;
+    pageObject = new CartListComponentPo(fixture);
   });
 
   it('should create', () => {
     fixture.detectChanges();
 
-    expect(component).toBeTruthy();
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('should show', () => {
+    cartProducts$.next(CART_PRODUCTS_STUB);
+
+    fixture.detectChanges();
+
+    expect(pageObject.card.length).toBe(2);
+    expect(pageObject.empty).toBeNull();
+  });
+
+  it('should show empty', () => {
+    cartProducts$.next([]);
+    fixture.detectChanges();
+
+    expect(pageObject.card.length).toBe(0);
+    expect(pageObject.empty).toBe('There are no products in your cart yet. Go to shopping - catalog.');
   });
 });

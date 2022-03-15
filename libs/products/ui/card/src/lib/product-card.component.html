@@ -1,15 +1,15 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>{{ product.title }}</mat-card-title>
-    <mat-card-subtitle>{{ product.subtitle }}</mat-card-subtitle>
+    <mat-card-title automation-id="title">{{ product.title }}</mat-card-title>
+    <mat-card-subtitle automation-id="subtitle">{{ product.subtitle }}</mat-card-subtitle>
   </mat-card-header>
-  <banshop-carousel [images]="product.photos" (clicked)="onClicked()"></banshop-carousel>
+  <banshop-carousel automation-id="carousel" [images]="product.photos" (clicked)="onClicked()"></banshop-carousel>
   <mat-card-content>
-    <banshop-price>{{ product.price | currency }}</banshop-price>
-    <p>{{ product.description }}</p>
+    <banshop-price automation-id="price">{{ product.price | currency }}</banshop-price>
+    <p automation-id="description">{{ product.description }}</p>
   </mat-card-content>
   <mat-card-actions align="end">
-    <a mat-button i18n="Product card|Details link" [routerLink]="product | productPath">Details</a>
-    <button mat-button i18n="Product card|Buy link" (click)="onAdd()">Buy</button>
+    <a automation-id="details" mat-button i18n="Product card|Details link" [routerLink]="product | productPath">Details</a>
+    <button automation-id="buy" mat-button i18n="Product card|Buy link" (click)="onAdd()">Buy</button>
   </mat-card-actions>
 </mat-card>

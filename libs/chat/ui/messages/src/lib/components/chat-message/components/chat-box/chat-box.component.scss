@@ -1,0 +1,27 @@
+@use '@angular/material' as mat;
+@use 'libs/ui/stylesheets/variables' as store;
+
+:host {
+  display: flex;
+  flex-direction: row;
+
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: mat.get-color-from-palette(mat.$gray-palette, 200);
+  position: relative;
+  line-height: 1;
+  margin: auto 0 auto 1rem;
+
+  &.is-last-owner:before {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0.5rem 0.5rem;
+    border-color: transparent transparent mat.get-color-from-palette(mat.$gray-palette, 200) transparent;
+    left: -0.4rem;
+    bottom: 0;
+  }
+}

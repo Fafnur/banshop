@@ -1,0 +1,6 @@
+<banshop-chat-messages
+  automation-id="messages"
+  [chatMessages]="charMessages"
+  *ngIf="charMessages$ | async; let charMessages"
+></banshop-chat-messages>
+<banshop-chat-form automation-id="form"></banshop-chat-form>

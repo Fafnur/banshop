@@ -1,0 +1,4 @@
+<ng-container *ngFor="let chatMessage of chatMessages; trackBy: trackByFn">
+  <banshop-chat-date automation-id="date" [chatMessage]="chatMessage" *ngIf="chatMessage | banshopChatDateCan | async"></banshop-chat-date>
+  <banshop-chat-message automation-id="message" [chatMessage]="chatMessage"></banshop-chat-message>
+</ng-container>

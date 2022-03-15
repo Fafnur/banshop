@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable, tap } from 'rxjs';
 
 import { MetaService } from '@banshop/core/meta/service';
-import { NavigationService } from '@banshop/core/navigation/service';
 import { isNotNullOrUndefined } from '@banshop/core/utils/operators';
 import { Product } from '@banshop/products/common';
 import { ProductFacade } from '@banshop/products/state';
@@ -20,38 +19,21 @@ export class ProductPageComponent implements OnInit {
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     private readonly productFacade: ProductFacade,
-    private readonly navigationService: NavigationService,
     private readonly metaService: MetaService
   ) {}
 
   ngOnInit(): void {
     const { slug } = this.activatedRoute.snapshot.params;
 
-    if (!slug) {
-      this.redirect();
-    }
-
     this.product$ = this.productFacade.productBySlug$(slug).pipe(
+      isNotNullOrUndefined(),
       tap((product) => {
-        if (!product) {
-          this.redirect(slug);
-        } else {
-          this.metaService.update({
-            title: product.title,
-            description: product.description,
-            keywords: product.title,
-          });
-        }
-      }),
-      isNotNullOrUndefined()
-    );
-  }
-
-  private redirect(path?: string): void {
-    void this.navigationService.navigateByUrl(
-      this.navigationService.getPaths().notFound,
-      {},
-      { queryParams: { path: path ? `/product/${path}` : undefined } }
+        this.metaService.update({
+          title: product.title,
+          description: product.description,
+          keywords: product.title,
+        });
+      })
     );
   }
 }

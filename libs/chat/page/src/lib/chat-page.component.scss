@@ -1,0 +1,17 @@
+@use 'libs/ui/stylesheets/mixins' as store-mixins;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+
+  @include store-mixins.media-web() {
+    min-height: calc(100vh - 11rem);
+  }
+}
+
+banshop-chat-messages {
+  flex: 1;
+}

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { NAVIGATION_PATHS } from '@banshop/core/navigation/common';
 import { OrderGuard, OrderGuardsModule } from '@banshop/orders/guards';
+import { ProductGuard, ProductGuardsModule } from '@banshop/products/guards';
 import { LayoutComponent } from '@banshop/ui/layout';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
       },
       {
         path: NAVIGATION_PATHS.product,
+        canActivate: [ProductGuard],
         loadChildren: () => import('@banshop/products/page').then((modules) => modules.ProductPageModule),
       },
       {
@@ -28,8 +30,11 @@ const routes: Routes = [
         loadChildren: () => import('@banshop/orders/page').then((modules) => modules.OrderPageModule),
       },
       {
+        path: NAVIGATION_PATHS.support,
+        loadChildren: () => import('@banshop/chat/page').then((modules) => modules.ChatPageModule),
+      },
+      {
         path: NAVIGATION_PATHS.terms,
-        canActivate: [OrderGuard],
         loadChildren: () => import('@banshop/russian/terms/page').then((modules) => modules.TermsPageModule),
       },
       {
@@ -43,6 +48,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     OrderGuardsModule,
+    ProductGuardsModule,
     RouterModule.forRoot(routes, {
       anchorScrolling: 'enabled',
       initialNavigation: 'enabled',
