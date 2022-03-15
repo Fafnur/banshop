@@ -10,7 +10,7 @@
     "test": "nx test",
     "test:all": "nx run-many --target=test --all --parallel --maxParallel=8",
     "lint": "nx workspace-lint && ng lint",
-    "e2e": "ng e2e",
+    "e2e": "nx e2e",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
     "affected:build": "nx affected:build",
@@ -23,11 +23,11 @@
     "format:write": "nx format:write",
     "format:check": "nx format:check",
     "update": "nx migrate latest",
-    "dev:ssr": "ng run store:serve-ssr",
+    "dev:ssr": "nx run store:serve-ssr",
     "serve:ssr": "node dist/store/server/ru-RU/main.js",
-    "build:ssr": "ng build && ng run store:server",
-    "prerender": "ng run store:prerender",
-    "extract-i18n": "ng extract-i18n store --out-file=libs/russian/localization/src/lib/source.xlf"
+    "build:ssr": "nx build && ng run store:server",
+    "prerender": "nx run store:prerender",
+    "extract-i18n": "nx extract-i18n store --out-file=libs/russian/localization/src/lib/source.xlf"
   },
   "private": true,
   "dependencies": {

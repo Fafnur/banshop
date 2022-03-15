@@ -1,1 +1,1 @@
-export const getGreeting = () => cy.get('h1');
+export const getProductList = () => cy.get('banshop-product-list');
