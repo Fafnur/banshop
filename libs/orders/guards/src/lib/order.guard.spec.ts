@@ -36,6 +36,7 @@ describe('OrderGuard', () => {
   );
 
   beforeEach(() => {
+    when(navigationServiceMock.getPaths()).thenReturn(NAVIGATION_PATHS);
     when(cartFacadeMock.cartProducts$).thenReturn(cartProducts$);
     guard = TestBed.inject(OrderGuard);
   });
