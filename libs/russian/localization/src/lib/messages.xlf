@@ -110,16 +110,12 @@
         <note priority="1" from="description">Continue link</note>
         <note priority="1" from="meaning">Cart add</note>
       </trans-unit>
-      <trans-unit id="cd41822993947eb28112dcb46966ae5f7eadb871" datatype="html">
-        <source>Go to cart</source>
+      <trans-unit id="5634d12e8323a9b983c1558ac4fdf556a1ccac19" datatype="html">
+        <source> Go to cart </source>
         <target state="translated">Перейти в корзину</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/ui/add/src/lib/cart-add-dialog/cart-add-dialog.component.html</context>
-          <context context-type="linenumber">18</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">libs/products/ui/portlet/src/lib/components/product-add-to-bag/product-add-to-bag-dialog/product-add-to-bag-dialog.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">25,27</context>
         </context-group>
         <note priority="1" from="description">Go to cart link</note>
         <note priority="1" from="meaning">Cart add</note>
@@ -168,7 +164,7 @@
         <target state="translated">Итого: <x id="INTERPOLATION" equiv-text="{{ cartProducts | cartTotalPrice | async | currency }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/ui/info/src/lib/cart-info.component.html</context>
-          <context context-type="linenumber">13,14</context>
+          <context context-type="linenumber">15,16</context>
         </context-group>
         <note priority="1" from="description">Cart total</note>
         <note priority="1" from="meaning">Cart info</note>
@@ -178,7 +174,7 @@
         <target state="translated">Оформить</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/ui/info/src/lib/cart-info.component.html</context>
-          <context context-type="linenumber">25,29</context>
+          <context context-type="linenumber">28,32</context>
         </context-group>
         <note priority="1" from="description">Order link</note>
         <note priority="1" from="meaning">Cart info</note>
@@ -188,10 +184,20 @@
         <target state="translated"> В вашей корзине еще нет товаров. Перейти к покупкам - <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;paths.home | path&quot;&gt;"/>каталог<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/ui/list/src/lib/cart-list.component.html</context>
-          <context context-type="linenumber">7,9</context>
+          <context context-type="linenumber">11,13</context>
         </context-group>
         <note priority="1" from="description">Empty cart</note>
         <note priority="1" from="meaning">Cart list</note>
+      </trans-unit>
+      <trans-unit id="4e76b4df23fca4e8ab71cbe7ec2957d19e520652" datatype="html">
+        <source>Write a message</source>
+        <target state="translated">Написать сообщение</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/chat/ui/form/src/lib/chat-form.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Write a message</note>
+        <note priority="1" from="meaning">Chat form</note>
       </trans-unit>
       <trans-unit id="5253704491639101262" datatype="html">
         <source>Online store Banshop</source>
@@ -540,7 +546,7 @@
         <target state="translated">Характеристики</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/products/page/src/lib/product-page.component.html</context>
-          <context context-type="linenumber">7,9</context>
+          <context context-type="linenumber">7,8</context>
         </context-group>
         <note priority="1" from="description">Details tab</note>
         <note priority="1" from="meaning">Product page</note>
@@ -595,6 +601,16 @@
         <note priority="1" from="description">Product size label</note>
         <note priority="1" from="meaning">Product form</note>
       </trans-unit>
+      <trans-unit id="f3861fd449acf1706ccda99dec18b5abdd58607d" datatype="html">
+        <source> Go to cart </source>
+        <target state="translated">Перейти в корзину</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/products/ui/portlet/src/lib/components/product-add-to-bag/product-add-to-bag-dialog/product-add-to-bag-dialog.component.html</context>
+          <context context-type="linenumber">15,17</context>
+        </context-group>
+        <note priority="1" from="description">Go to cart link</note>
+        <note priority="1" from="meaning">Cart add</note>
+      </trans-unit>
       <trans-unit id="7d8e328313f96ca863bfae176ca92f2ca6db9f62" datatype="html">
         <source>Add to bag</source>
         <target state="translated">Добавить в корзину</target>
@@ -615,12 +631,12 @@
         <note priority="1" from="description">Available sizes</note>
         <note priority="1" from="meaning">Product portlet</note>
       </trans-unit>
-      <trans-unit id="735b157fc48ffd72dee89a76168f8f6d0bf66dc0" datatype="html">
-        <source>Please select your size</source>
+      <trans-unit id="db2d70f55c2a720c19ac429adb2b480a7f7b40b8" datatype="html">
+        <source> Please select your size </source>
         <target state="translated">Пожалуйста, выберите размер</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/products/ui/portlet/src/lib/components/product-sizes/product-sizes.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">14,16</context>
         </context-group>
         <note priority="1" from="description">Select size</note>
         <note priority="1" from="meaning">Product portlet</note>
