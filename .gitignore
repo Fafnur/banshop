@@ -45,4 +45,5 @@ yarn.lock
 package-lock.json
 .env
 /apps/**/.env
+/apps/**/sitemap.xml
 /libs/**/source.xlf

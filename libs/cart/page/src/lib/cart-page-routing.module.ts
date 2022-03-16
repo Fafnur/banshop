@@ -7,6 +7,12 @@ const routes: Routes = [
   {
     path: '',
     component: CartPageComponent,
+    data: {
+      sitemap: {
+        loc: '/cart',
+        priority: '1.0',
+      },
+    },
   },
 ];
 
