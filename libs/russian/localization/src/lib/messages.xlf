@@ -711,6 +711,36 @@
         <note priority="1" from="description">Terms link</note>
         <note priority="1" from="meaning">Layout</note>
       </trans-unit>
+      <trans-unit id="1404a05b887dce7f3a1bfc2f313acb4d3b9dd371" datatype="html">
+        <source>Cart</source>
+        <target state="translated">Корзина</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ui/layout/src/lib/components/header/actions/components/cart/cart.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Cart link</note>
+        <note priority="1" from="meaning">Layout</note>
+      </trans-unit>
+      <trans-unit id="3acf048483bbf2cff960ef71380377596a712e3a" datatype="html">
+        <source>Chat</source>
+        <target state="translated">Чат</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ui/layout/src/lib/components/header/actions/components/support/support.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Chat link</note>
+        <note priority="1" from="meaning">Layout</note>
+      </trans-unit>
+      <trans-unit id="a570a73472e9b5fc324137f138ade46b7889a8b8" datatype="html">
+        <source>Call to phone</source>
+        <target state="translated">Позвонить</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ui/layout/src/lib/components/nav/nav.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">Call to phone</note>
+        <note priority="1" from="meaning">Layout</note>
+      </trans-unit>
     </body>
   </file>
 </xliff>
