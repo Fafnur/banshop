@@ -48,6 +48,12 @@ export function app(): express.Express {
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
+    // res.set(
+    //   'Content-Security-Policy',
+    // eslint-disable-next-line max-len
+    //   `default-src 'self'; img-src 'self' blob: data: *.reebok.com *.google-analytics.com *.google.com *.google.ru www.googleadservices.com *.googlesyndication.com; style-src 'self' 'unsafe-inline' www.gstatic.com cdnjs.cloudflare.com; font-src 'self' fonts.gstatic.com cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' blob: *.google-analytics.com www.googleadservices.com *.gstatic.com cdnjs.cloudflare.com; connect-src 'self' *.googleapis.com *.google-analytics.com ws://localhost:4000; media-src 'self' * blob: data:; child-src 'self' blob:; worker-src 'self' blob:;`
+    // );
+
     const filePath = join(distFolder, req.path, 'index.html');
     // For prerender, use exists file
     if (existsSync(filePath)) {
