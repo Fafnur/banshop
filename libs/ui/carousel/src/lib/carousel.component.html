@@ -1,5 +1,4 @@
 <div *ngIf="slides?.length" (swipeleft)="onNext()" (swiperight)="onPrev()">
-  <img class="image-mask" [src]="slides[0]" alt="" width="840" height="auto" />
   <banshop-carousel-slide
     automation-id="carousel-slide"
     [image]="image"

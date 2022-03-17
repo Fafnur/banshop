@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { map } from 'rxjs';
+import { filter, map, switchMap } from 'rxjs';
 
 import * as ProductActions from './product.actions';
 import * as ProductSelectors from './product.selectors';
@@ -27,6 +27,12 @@ export class ProductFacade {
   product$ = (id: number) => this.store.select(ProductSelectors.selectProduct(id));
 
   productBySlug$ = (slug: string) => this.store.select(ProductSelectors.selectProductBySlug(slug));
+
+  productBySlugLoaded$ = (slug: string) =>
+    this.products$.pipe(
+      filter((products) => products?.length > 0),
+      switchMap(() => this.store.select(ProductSelectors.selectProductBySlug(slug)))
+    );
 
   constructor(private readonly actions$: Actions, private readonly store: Store) {}
 

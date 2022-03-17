@@ -15,6 +15,18 @@ banshop-column {
 }
 
 banshop-carousel {
-  max-width: 40rem;
   margin: auto;
+  height: 20rem;
+  width: 20rem;
+  max-width: 100%;
+
+  @include store-mixins.media-tablet() {
+    height: 25rem;
+    width: 25rem;
+  }
+
+  @include store-mixins.media-web() {
+    height: 40rem;
+    width: 40rem;
+  }
 }

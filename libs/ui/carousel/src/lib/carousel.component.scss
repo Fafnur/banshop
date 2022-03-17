@@ -12,6 +12,11 @@
 :host {
   display: block;
   position: relative;
+  height: 20rem;
+
+  @include store-mixins.media-web() {
+    height: 25rem;
+  }
 
   banshop-carousel-navs {
     opacity: 0;
@@ -19,6 +24,10 @@
 
   &:hover banshop-carousel-navs {
     opacity: 1;
+  }
+
+  @include store-mixins.media-handset() {
+    height: 20rem;
   }
 }
 

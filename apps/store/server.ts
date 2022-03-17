@@ -49,6 +49,7 @@ export function app(): express.Express {
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
     const filePath = join(distFolder, req.path, 'index.html');
+
     // For prerender, use exists file
     if (existsSync(filePath)) {
       res.sendFile(filePath);
