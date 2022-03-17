@@ -130,12 +130,22 @@
         <note priority="1" from="description">Price</note>
         <note priority="1" from="meaning">Cart card</note>
       </trans-unit>
-      <trans-unit id="de6f55a2e1ec6b967d12e3dc97799398be926521" datatype="html">
-        <source> Delete </source>
+      <trans-unit id="f6ab5e104124eafbf88471b0e473ebf9696d918d" datatype="html">
+        <source>Delete</source>
         <target state="translated"> Удалить </target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/ui/card/src/lib/components/card-remove/card-remove.component.html</context>
-          <context context-type="linenumber">4,6</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Delete area label</note>
+        <note priority="1" from="meaning">Cart card</note>
+      </trans-unit>
+      <trans-unit id="de6f55a2e1ec6b967d12e3dc97799398be926521" datatype="html">
+        <source> Delete</source>
+        <target state="translated"> Удалить </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/cart/ui/card/src/lib/components/card-remove/card-remove.component.html</context>
+          <context context-type="linenumber">12,14</context>
         </context-group>
         <note priority="1" from="description">Delete link</note>
         <note priority="1" from="meaning">Cart card</note>
@@ -197,6 +207,16 @@
           <context context-type="linenumber">3</context>
         </context-group>
         <note priority="1" from="description">Write a message</note>
+        <note priority="1" from="meaning">Chat form</note>
+      </trans-unit>
+      <trans-unit id="c637560ec74fb9eda27137c796af436b58eb706a" datatype="html">
+        <source>Send</source>
+        <target state="translated">Отправить</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/chat/ui/form/src/lib/chat-form.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">Send area label</note>
         <note priority="1" from="meaning">Chat form</note>
       </trans-unit>
       <trans-unit id="5253704491639101262" datatype="html">
@@ -631,12 +651,22 @@
         <note priority="1" from="description">Available sizes</note>
         <note priority="1" from="meaning">Product portlet</note>
       </trans-unit>
+      <trans-unit id="294ef42ee7c9a3968a901ffc546102369f4b029f" datatype="html">
+        <source>Select</source>
+        <target state="translated">Выбрать размер</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/products/ui/portlet/src/lib/components/product-sizes/product-sizes.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Select size area label</note>
+        <note priority="1" from="meaning">Product portlet</note>
+      </trans-unit>
       <trans-unit id="db2d70f55c2a720c19ac429adb2b480a7f7b40b8" datatype="html">
         <source> Please select your size </source>
         <target state="translated">Пожалуйста, выберите размер</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/products/ui/portlet/src/lib/components/product-sizes/product-sizes.component.html</context>
-          <context context-type="linenumber">14,16</context>
+          <context context-type="linenumber">16,18</context>
         </context-group>
         <note priority="1" from="description">Select size</note>
         <note priority="1" from="meaning">Product portlet</note>
@@ -650,6 +680,26 @@
         </context-group>
         <note priority="1" from="description">Product promo</note>
         <note priority="1" from="meaning">Product portlet</note>
+      </trans-unit>
+      <trans-unit id="71f1c3bf21ade1179bbaf3c9ad8e27fe69d52824" datatype="html">
+        <source>Carousel prev</source>
+        <target state="translated">Предыдущий слайд</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ui/carousel/src/lib/carousel-navs/carousel-navs.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Carousel prev</note>
+        <note priority="1" from="meaning">Carousel navs</note>
+      </trans-unit>
+      <trans-unit id="015b103dc22e1e11c7ecfd07518cf138b29e8680" datatype="html">
+        <source>Carousel next</source>
+        <target state="translated">Следующий слайд</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ui/carousel/src/lib/carousel-navs/carousel-navs.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">Carousel next</note>
+        <note priority="1" from="meaning">Carousel navs</note>
       </trans-unit>
       <trans-unit id="3b1e1015b8cdca5ca18d43f1b90efef7c8e0a88f" datatype="html">
         <source>Terms of sale</source>

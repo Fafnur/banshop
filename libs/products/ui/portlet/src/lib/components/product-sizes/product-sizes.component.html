@@ -3,6 +3,8 @@
   <div automation-id="sizes" class="sizes">
     <button
       automation-id="button"
+      aria-label="Select"
+      i18n-aria-label="Product portlet|Select size area label"
       mat-raised-button
       [class.mat-primary]="size === active"
       (click)="onSelect(size)"
