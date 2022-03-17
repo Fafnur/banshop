@@ -14,10 +14,11 @@ export class ProductGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot): Observable<boolean | UrlTree> {
     const { slug } = route.params;
+
     if (!slug) {
       return of(this.redirectTree);
     }
 
-    return this.productFacade.productBySlug$(slug).pipe(map((product) => !!product || this.redirectTree));
+    return this.productFacade.productBySlugLoaded$(slug).pipe(map((product) => !!product || this.redirectTree));
   }
 }

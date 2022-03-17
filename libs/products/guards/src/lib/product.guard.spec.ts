@@ -17,7 +17,7 @@ describe('ProductGuard', () => {
   let guard: ProductGuard;
   let navigationServiceMock: NavigationService;
   let productFacadeMock: ProductFacade;
-  let productBySlug$: ReplaySubject<Product | null>;
+  let productBySlugLoaded$: ReplaySubject<Product | null>;
   const SNAPSHOT_STUB: any = {
     params: { slug: PRODUCT_STUB.slug },
   };
@@ -27,7 +27,7 @@ describe('ProductGuard', () => {
     navigationServiceMock = mock(NavigationService);
     productFacadeMock = mock(ProductFacade);
 
-    productBySlug$ = new ReplaySubject<Product | null>(1);
+    productBySlugLoaded$ = new ReplaySubject<Product | null>(1);
   });
 
   beforeEach(
@@ -41,7 +41,7 @@ describe('ProductGuard', () => {
 
   beforeEach(() => {
     when(navigationServiceMock.getPaths()).thenReturn(NAVIGATION_PATHS);
-    when(productFacadeMock.productBySlug$(PRODUCT_STUB.slug)).thenReturn(productBySlug$);
+    when(productFacadeMock.productBySlugLoaded$(PRODUCT_STUB.slug)).thenReturn(productBySlugLoaded$);
     when(navigationServiceMock.createUrlTree(anything())).thenReturn(UTL_TREE_STUB);
 
     guard = TestBed.inject(ProductGuard);
@@ -52,13 +52,13 @@ describe('ProductGuard', () => {
   });
 
   it('should return true', () => {
-    productBySlug$.next(PRODUCT_STUB);
+    productBySlugLoaded$.next(PRODUCT_STUB);
 
     expect(guard.canActivate(SNAPSHOT_STUB)).toBeObservable(cold('a', { a: true }));
   });
 
-  it('should return true', () => {
-    productBySlug$.next(null);
+  it('should return url', () => {
+    productBySlugLoaded$.next(null);
 
     expect(guard.canActivate(SNAPSHOT_STUB)).toBeObservable(cold('a', { a: UTL_TREE_STUB }));
   });
