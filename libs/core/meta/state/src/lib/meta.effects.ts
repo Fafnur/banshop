@@ -18,7 +18,13 @@ export class MetaEffects {
       fetch({
         run: (action: NavigationActon) => {
           const { meta, metaOg } = action.payload.routerState?.data ?? {};
-          this.metaService.update(meta, metaOg);
+          this.metaService.update(
+            {
+              url: action.payload.routerState.url,
+              ...meta,
+            },
+            metaOg
+          );
         },
       })
     );
