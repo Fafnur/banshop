@@ -1,4 +1,5 @@
 @use '@angular/material' as mat;
+@use 'libs/ui/stylesheets/variables' as store;
 @use 'libs/ui/stylesheets/mixins' as store-mixins;
 
 p {

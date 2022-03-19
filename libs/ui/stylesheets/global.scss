@@ -23,3 +23,10 @@ body {
   color: #212121;
   font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, Lucida Grande, sans-serif;
 }
+
+.mat-tab-labels {
+  .mat-tab-label,
+  .mat-tab-link {
+    opacity: 1;
+  }
+}
