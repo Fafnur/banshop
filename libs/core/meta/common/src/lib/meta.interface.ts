@@ -22,13 +22,12 @@ export interface MetaConfig {
 export const META_CONFIG = new InjectionToken<MetaConfig>('MetaConfig');
 export const META_CONFIG_OG = new InjectionToken<MetaConfigOg>('MetaConfigOg');
 
-/* eslint-disable max-len */
 export const META_CONFIG_DEFAULT: MetaConfig = {
-  title: $localize`Online store Banshop`,
-  description: $localize`Banshop sportswear, shoes and accessories. Free delivery in Moscow and all over Russia when paying on the website.`,
-  keywords: $localize`sneakers, sports shoes`,
+  title: $localize`:Meta default|:Online store Banshop`,
+  // eslint-disable-next-line max-len
+  description: $localize`:Meta default|:Banshop sportswear, shoes and accessories. Free delivery in Moscow and all over Russia when paying on the website.`,
+  keywords: $localize`:Meta default|:sneakers, sports shoes`,
 };
-/* eslint-enable max-len */
 
 export const META_CONFIG_OG_DEFAULT: MetaConfigOg = {
   title: META_CONFIG_DEFAULT.title,

@@ -14,6 +14,7 @@ const routes: Routes = [
   {
     path: '',
     component: ProductPageComponent,
+    // Note: Sitemap and meta tags will be generated automatically
   },
 ];
 

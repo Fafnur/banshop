@@ -2,6 +2,33 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="5888897186275347598" datatype="html">
+        <source>Cart | Online store Banshop</source>
+        <target state="translated">Корзина | Online store Banshop</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/cart/page/src/lib/cart-page-routing.module.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="meaning">Cart meta</note>
+      </trans-unit>
+      <trans-unit id="5761555328980840889" datatype="html">
+        <source>It is very easy to buy on banshop. To place an order, click the order button.</source>
+        <target state="translated">Купить на banshop очень легко. Для оформления заказа, нажмите кнопку оформить заказ.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/cart/page/src/lib/cart-page-routing.module.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="meaning">Cart meta</note>
+      </trans-unit>
+      <trans-unit id="5496170052620750024" datatype="html">
+        <source>cart, banshop</source>
+        <target state="translated">корзина, покупки, banshop</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/cart/page/src/lib/cart-page-routing.module.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="meaning">Cart meta</note>
+      </trans-unit>
       <trans-unit id="e085c7a5191b6d554f9b7bf94c6c2c0aea6a73c0" datatype="html">
         <source>Cart</source>
         <target state="translated">Корзина</target>
@@ -199,6 +226,33 @@
         <note priority="1" from="description">Empty cart</note>
         <note priority="1" from="meaning">Cart list</note>
       </trans-unit>
+      <trans-unit id="4013210983707116904" datatype="html">
+        <source>Support | Online store Banshop</source>
+        <target state="translated">Поддержка | Онлайн магазин Banshop</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/chat/page/src/lib/chat-page-routing.module.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="meaning">Chat meta</note>
+      </trans-unit>
+      <trans-unit id="1823264744972156246" datatype="html">
+        <source>Ask any question you are interested in by writing a message below.</source>
+        <target state="translated">Задайте любой интересующий вас вопрос, написав сообщение ниже.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/chat/page/src/lib/chat-page-routing.module.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="meaning">Chat meta</note>
+      </trans-unit>
+      <trans-unit id="2588626093450629534" datatype="html">
+        <source>support, chat, feedback, banshop</source>
+        <target state="translated">служба поддержки, чат, обратная связь, banshop</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/chat/page/src/lib/chat-page-routing.module.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="meaning">Chat meta</note>
+      </trans-unit>
       <trans-unit id="4e76b4df23fca4e8ab71cbe7ec2957d19e520652" datatype="html">
         <source>Write a message</source>
         <target state="translated">Написать сообщение</target>
@@ -219,29 +273,59 @@
         <note priority="1" from="description">Send area label</note>
         <note priority="1" from="meaning">Chat form</note>
       </trans-unit>
-      <trans-unit id="5253704491639101262" datatype="html">
+      <trans-unit id="4200209183369241927" datatype="html">
         <source>Online store Banshop</source>
         <target state="translated">Онлайн магазин Banshop</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/meta/common/src/lib/meta.interface.ts</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">26</context>
         </context-group>
+        <note priority="1" from="meaning">Meta default</note>
       </trans-unit>
-      <trans-unit id="7149821316093328669" datatype="html">
+      <trans-unit id="7992442832277696741" datatype="html">
         <source>Banshop sportswear, shoes and accessories. Free delivery in Moscow and all over Russia when paying on the website.</source>
         <target state="translated">Banshop спортивная одежда, обувь и аксессуары. Бесплатная доставка по Москве и всей России при оплате на сайте.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/meta/common/src/lib/meta.interface.ts</context>
           <context context-type="linenumber">28</context>
         </context-group>
+        <note priority="1" from="meaning">Meta default</note>
       </trans-unit>
-      <trans-unit id="843391217205867305" datatype="html">
+      <trans-unit id="4602954671357549820" datatype="html">
         <source>sneakers, sports shoes</source>
         <target state="translated">кроссовки, спортивная обувь</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/meta/common/src/lib/meta.interface.ts</context>
           <context context-type="linenumber">29</context>
         </context-group>
+        <note priority="1" from="meaning">Meta default</note>
+      </trans-unit>
+      <trans-unit id="6067274648937068226" datatype="html">
+        <source>Page not found | Online store Banshop</source>
+        <target state="translated">Страница не найдена | Онлайн магазин Banshop</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/errors/not-found/page/src/lib/not-found-page-routing.module.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="meaning">Errors not found meta</note>
+      </trans-unit>
+      <trans-unit id="1901451511469090092" datatype="html">
+        <source>Sorry, the requested page was not found. Go to the home page</source>
+        <target state="translated">Извините, запрашиваемая страница не найдена. Перейти на главную.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/errors/not-found/page/src/lib/not-found-page-routing.module.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="meaning">Errors not found meta</note>
+      </trans-unit>
+      <trans-unit id="7714316024372552587" datatype="html">
+        <source>not found, 404, banshop</source>
+        <target state="translated">cтраница не найдена, 404, banshop</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/errors/not-found/page/src/lib/not-found-page-routing.module.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="meaning">Errors not found meta</note>
       </trans-unit>
       <trans-unit id="c9be140e4b3e7fe071d29de65b243fb4e2a6bbba" datatype="html">
         <source>Page not found</source>
@@ -277,6 +361,33 @@
         <note priority="1" from="description">Link home</note>
         <note priority="1" from="meaning">Error page</note>
       </trans-unit>
+      <trans-unit id="7773359514446733621" datatype="html">
+        <source>Internal server error | Online store Banshop</source>
+        <target state="translated">Внутренняя ошибка сервера | Онлайн магазин Banshop</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/errors/server-error/page/src/lib/server-error-page-routing.module.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="meaning">Errors server error meta</note>
+      </trans-unit>
+      <trans-unit id="4809882650598563207" datatype="html">
+        <source>If you’re facing some issues while using our service you’re unable to solve yourself, please contact our customer service department by sending a message to support. We’ll try to do our best as soon as we’ll consider  your appeal.</source>
+        <target state="translated"> Если при использовании нашего сервиса у вас возникли проблемы, которые вы не можете решить самостоятельно, обратитесь в наш отдел обслуживания клиентов, отправив сообщение в службу поддержки. Мы постараемся сделать все возможное, как только рассмотрим ваше обращение.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/errors/server-error/page/src/lib/server-error-page-routing.module.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="meaning">Errors server error meta</note>
+      </trans-unit>
+      <trans-unit id="1305298021351969757" datatype="html">
+        <source>not found, 404, banshop</source>
+        <target state="translated">not found, 404, banshop</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/errors/server-error/page/src/lib/server-error-page-routing.module.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="meaning">Errors server error meta</note>
+      </trans-unit>
       <trans-unit id="0f75344d41764bc5221841427577c737ae100428" datatype="html">
         <source>Internal server error</source>
         <target state="translated">Внутренняя ошибка сервера</target>
@@ -296,6 +407,60 @@
         </context-group>
         <note priority="1" from="description">Description</note>
         <note priority="1" from="meaning">Error server error</note>
+      </trans-unit>
+      <trans-unit id="1086959634081883486" datatype="html">
+        <source>Online store Banshop</source>
+        <target state="translated">Онлайн магазин Banshop</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/home/page/src/lib/home-page-routing.module.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="meaning">Home page meta</note>
+      </trans-unit>
+      <trans-unit id="4879193282990338300" datatype="html">
+        <source>Banshop sportswear, shoes and accessories. Free delivery in Moscow and all over Russia when paying on the website.</source>
+        <target state="translated">Banshop спортивная одежда, обувь и аксессуары. Бесплатная доставка по Москве и всей России при оплате на сайте.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/home/page/src/lib/home-page-routing.module.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <note priority="1" from="meaning">Home page meta</note>
+      </trans-unit>
+      <trans-unit id="2750204850046196761" datatype="html">
+        <source>online store, sneakers, sports shoes, banshop</source>
+        <target state="translated">Онлайн магазин, кроссовки, спортивная обувь, banshop</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/home/page/src/lib/home-page-routing.module.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="meaning">Home page meta</note>
+      </trans-unit>
+      <trans-unit id="453221740484324219" datatype="html">
+        <source>Order | Banshop</source>
+        <target state="translated">Оформить заказ | Онлайн магазин Banshop</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/page/src/lib/order-page-routing.module.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="meaning">Order page meta</note>
+      </trans-unit>
+      <trans-unit id="6205649277396058173" datatype="html">
+        <source>Place your order by filling out the form below. Our manager will contact you immediately after receiving the application.</source>
+        <target state="translated">Оформите свой заказ, заполнив форму ниже. Наш менеджер свяжется с вами сразу после получения заявки.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/page/src/lib/order-page-routing.module.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="meaning">Order page meta</note>
+      </trans-unit>
+      <trans-unit id="1465928568980906127" datatype="html">
+        <source>order, place a order, banshop</source>
+        <target state="translated">оформить заказ, получить заказ, banshop</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/orders/page/src/lib/order-page-routing.module.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="meaning">Order page meta</note>
       </trans-unit>
       <trans-unit id="6bee68caf4232f57d37a761bcf11585729ff0a85" datatype="html">
         <source>Making an order</source>
@@ -556,7 +721,7 @@
         <target state="translated">Описание</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/products/page/src/lib/product-page.component.html</context>
-          <context context-type="linenumber">2,7</context>
+          <context context-type="linenumber">2,5</context>
         </context-group>
         <note priority="1" from="description">Description tab</note>
         <note priority="1" from="meaning">Product page</note>
@@ -680,6 +845,33 @@
         </context-group>
         <note priority="1" from="description">Product promo</note>
         <note priority="1" from="meaning">Product portlet</note>
+      </trans-unit>
+      <trans-unit id="4910368041036063836" datatype="html">
+        <source>Terms | Banshop</source>
+        <target state="translated">Условия покупки | Онлайн магазин Banshop.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/russian/terms/page/src/lib/terms-page-routing.module.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="meaning">Terms page meta</note>
+      </trans-unit>
+      <trans-unit id="2377253155356589626" datatype="html">
+        <source>Agreement on the terms of sale of goods of banshop.</source>
+        <target state="translated">Соглашение об условиях продажи товаров banshop.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/russian/terms/page/src/lib/terms-page-routing.module.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="meaning">Terms page meta</note>
+      </trans-unit>
+      <trans-unit id="8503662261114110966" datatype="html">
+        <source>terms, private and confidential, banshop</source>
+        <target state="translated">условия покупки, banshop.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/russian/terms/page/src/lib/terms-page-routing.module.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <note priority="1" from="meaning">Terms page meta</note>
       </trans-unit>
       <trans-unit id="71f1c3bf21ade1179bbaf3c9ad8e27fe69d52824" datatype="html">
         <source>Carousel prev</source>

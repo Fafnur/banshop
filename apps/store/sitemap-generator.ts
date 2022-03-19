@@ -3,16 +3,11 @@ import * as fs from 'fs';
 import * as https from 'https';
 import * as path from 'path';
 
+import { SitemapConfig } from '@banshop/core/navigation/common';
+
 import { environment } from './src/environments/environment.prod';
 
 config({ path: 'apps/store/.env' });
-
-interface SitemapConfig {
-  loc: string;
-  lastmod: string;
-  priority: string;
-  changefreq: string;
-}
 
 const routes = new Set<string>();
 

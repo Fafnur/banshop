@@ -8,5 +8,8 @@
     "types": []
   },
   "exclude": ["src/test-setup.ts", "**/*.spec.ts", "**/*.test.ts"],
-  "include": ["**/*.ts"]
+  "include": [
+    "**/*.ts",
+    "../../../../node_modules/@angular/localize/init/index.d.ts"
+  ]
 }
