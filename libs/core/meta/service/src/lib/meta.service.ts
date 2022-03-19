@@ -56,18 +56,14 @@ export class MetaService {
     const link = (this.document.getElementById('canonical') ?? this.document.createElement('link')) as HTMLLinkElement;
     link.setAttribute('rel', 'canonical');
     link.setAttribute('id', 'canonical');
-    link.setAttribute('href', url ?? this.getCanonicalURL());
+    link.setAttribute('href', this.getCanonicalURL(url));
     if (!this.document.getElementById('canonical')) {
       this.document.head.appendChild(link);
     }
   }
 
-  private getCanonicalURL(): string {
-    const location = this.document.defaultView?.location ?? null;
-    const host = location?.origin ?? this.environmentService.environments.appHost;
-    const path = location?.pathname ?? this.router.url;
-
-    return `${host}${path}`;
+  private getCanonicalURL(url?: string): string {
+    return `${this.environmentService.environments.appHost}${url ?? this.router.url}`;
   }
 
   private setMetaProperty(name: string, content: string): void {

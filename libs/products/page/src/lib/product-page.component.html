@@ -1,5 +1,5 @@
 <mat-tab-group animationDuration="0ms" *ngIf="product$ | async as product">
-  <mat-tab i18n-label="Product page|Description tab" label="Description">
+  <mat-tab i18n-label="Product page|Description tab" label="Description" labelClass="mat-tab-label">
     <p automation-id="description">
       {{ product.description }}
     </p>
