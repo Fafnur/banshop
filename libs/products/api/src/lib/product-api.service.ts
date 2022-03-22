@@ -10,6 +10,19 @@ export const PRODUCT_API_ROUTES = {
     `https://sheets.googleapis.com/v4/spreadsheets/${payload.id}/values/${payload.name}?key=${payload.key}`,
 };
 
+export function castProduct(response: ProductsResponse): Product[] {
+  return response.values.map(([slug, title, subtitle, price, sizes, description, photos], index) => ({
+    id: index + 1,
+    slug: slug.trim(),
+    title: title.trim(),
+    subtitle: subtitle.trim(),
+    price: Number(price.trim()),
+    sizes: sizes.split(',').map((size) => Number(size.trim())),
+    description: description.trim(),
+    photos: photos.split('\n').map((photo) => photo.trim()),
+  }));
+}
+
 @Injectable()
 export class ProductApiService {
   constructor(private readonly apiService: ApiService, private readonly environmentService: EnvironmentService) {}
@@ -21,19 +34,8 @@ export class ProductApiService {
       return of([]);
     }
 
-    return this.apiService.get<ProductsResponse>(PRODUCT_API_ROUTES.load(this.environmentService.environments.google)).pipe(
-      map((response: ProductsResponse) =>
-        response.values.map(([slug, title, subtitle, price, sizes, description, photos], index) => ({
-          id: index + 1,
-          slug: slug.trim(),
-          title: title.trim(),
-          subtitle: subtitle.trim(),
-          price: Number(price.trim()),
-          sizes: sizes.split(',').map((size) => Number(size.trim())),
-          description: description.trim(),
-          photos: photos.split('\n').map((photo) => photo.trim()),
-        }))
-      )
-    );
+    return this.apiService
+      .get<ProductsResponse>(PRODUCT_API_ROUTES.load(this.environmentService.environments.google))
+      .pipe(map((response) => castProduct(response)));
   }
 }
