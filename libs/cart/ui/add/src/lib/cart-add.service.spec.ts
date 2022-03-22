@@ -1,6 +1,5 @@
 import { MatDialog } from '@angular/material/dialog';
-import { ReplaySubject } from 'rxjs';
-import { anything, deepEqual, instance, mock, verify, when } from 'ts-mockito';
+import { deepEqual, instance, mock, verify } from 'ts-mockito';
 
 import { LayoutService } from '@banshop/core/layout/service';
 import { PRODUCT_STUB } from '@banshop/products/common';
@@ -13,13 +12,9 @@ describe('CartAddService', () => {
   let layoutServiceMock: LayoutService;
   let matDialogMock: MatDialog;
 
-  let afterClosed$: ReplaySubject<boolean>;
-
   beforeEach(() => {
     matDialogMock = mock(MatDialog);
     layoutServiceMock = mock(LayoutService);
-    afterClosed$ = new ReplaySubject<boolean>(1);
-    when(matDialogMock.open(anything(), anything())).thenReturn({ afterClosed: () => afterClosed$ } as any);
 
     service = new CartAddService(instance(matDialogMock), instance(layoutServiceMock));
   });
