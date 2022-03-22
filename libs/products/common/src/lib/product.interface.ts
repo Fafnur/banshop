@@ -27,8 +27,3 @@ export enum ProductField {
   Size = 'size',
   Count = 'count',
 }
-
-export interface ProductOptions {
-  size: number;
-  count: number;
-}
