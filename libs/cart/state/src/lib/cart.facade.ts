@@ -12,6 +12,8 @@ import * as CartSelectors from './cart.selectors';
 export class CartFacade {
   loaded$ = this.store.select(CartSelectors.selectLoaded);
 
+  count$ = this.store.select(CartSelectors.selectCount);
+
   cartProducts$ = this.store.select(CartSelectors.selectCartProducts);
 
   addProductSuccess$ = this.actions$.pipe(

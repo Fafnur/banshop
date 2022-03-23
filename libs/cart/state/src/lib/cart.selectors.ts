@@ -6,8 +6,10 @@ export const selectCartState = createFeatureSelector<CartState>(CART_FEATURE_KEY
 
 const { selectAll, selectEntities } = cartAdapter.getSelectors();
 
-export const selectLoaded = createSelector(selectCartState, (state: CartState) => state.loaded);
+export const selectLoaded = createSelector(selectCartState, (state) => state.loaded);
 
-export const selectCartProducts = createSelector(selectCartState, (state: CartState) => selectAll(state));
+export const selectCartProducts = createSelector(selectCartState, (state) => selectAll(state));
 
-export const selectCartProductsEntities = createSelector(selectCartState, (state: CartState) => selectEntities(state));
+export const selectCartProductsEntities = createSelector(selectCartState, (state) => selectEntities(state));
+
+export const selectCount = createSelector(selectCartProducts, (cartProducts) => cartProducts.reduce((sum, item) => sum + item.count, 0));

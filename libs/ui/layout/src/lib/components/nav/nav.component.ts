@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, Inject, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
+import { CartFacade } from '@banshop/cart/state';
 import { NavigationLink, NavigationPaths, PATHS } from '@banshop/core/navigation/common';
 
 export function getLinks(paths: NavigationPaths): NavigationLink[] {
@@ -34,10 +36,12 @@ export function getLinks(paths: NavigationPaths): NavigationLink[] {
 })
 export class NavComponent implements OnInit {
   links!: NavigationLink[];
+  count$!: Observable<number>;
 
-  constructor(@Inject(PATHS) private readonly paths: NavigationPaths) {}
+  constructor(private readonly cartFacade: CartFacade, @Inject(PATHS) public readonly paths: NavigationPaths) {}
 
   ngOnInit(): void {
+    this.count$ = this.cartFacade.count$;
     this.links = getLinks(this.paths);
   }
 

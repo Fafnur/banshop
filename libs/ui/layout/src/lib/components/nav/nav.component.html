@@ -8,7 +8,15 @@
     [routerLinkActiveOptions]="link.routerLinkActiveOptions || { exact: false }"
     [routerLink]="link.route | path"
   >
-    <mat-icon>{{ link.label }}</mat-icon>
+    <mat-icon *ngIf="link.route !== paths.cart">{{ link.label }}</mat-icon>
+    <mat-icon
+      matBadgeColor="accent"
+      [matBadge]="count$ | async"
+      [matBadgeHidden]="(count$ | async) === 0"
+      *ngIf="link.route === paths.cart"
+    >
+      {{ link.label }}
+    </mat-icon>
   </a>
 </banshop-nav-link>
 <banshop-nav-link class="phone" automation-id="nav-link">

@@ -1,5 +1,7 @@
-import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
+import { CartFacade } from '@banshop/cart/state';
 import { NavigationPaths, PATHS } from '@banshop/core/navigation/common';
 
 @Component({
@@ -8,6 +10,12 @@ import { NavigationPaths, PATHS } from '@banshop/core/navigation/common';
   styleUrls: ['./cart.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CartComponent {
-  constructor(@Inject(PATHS) public readonly paths: NavigationPaths) {}
+export class CartComponent implements OnInit {
+  count$!: Observable<number>;
+
+  constructor(private readonly cartFacade: CartFacade, @Inject(PATHS) public readonly paths: NavigationPaths) {}
+
+  ngOnInit(): void {
+    this.count$ = this.cartFacade.count$;
+  }
 }
