@@ -31,6 +31,13 @@ const orderReducer = createReducer(
     })
   ),
   on(
+    OrderActions.updateCustomer,
+    (state, { customer }): OrderState => ({
+      ...state,
+      customer: { ...state.customer, ...customer },
+    })
+  ),
+  on(
     OrderActions.createOrder,
     (state): OrderState => ({
       ...state,
