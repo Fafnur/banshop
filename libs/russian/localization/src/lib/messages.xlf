@@ -190,7 +190,7 @@
       </trans-unit>
       <trans-unit id="4b8caa29f3016d2c1148614c1617ce10a31c25d9" datatype="html">
         <source>{VAR_PLURAL, plural, =0 {no products} =1 {1 product} other {<x id="INTERPOLATION"/> products}}</source>
-        <target state="translated">{VAR_PLURAL, plural, =0 {пусто} =1 {1 товар} =2 {1 товара} =3 {3 товара} =4 {4 товара} other {<x id="INTERPOLATION"/> товаров}}</target>
+        <target state="translated">{VAR_PLURAL, plural, =0 {пусто} =1 {1 товар} =2 {2 товара} =3 {3 товара} =4 {4 товара} other {<x id="INTERPOLATION"/> товаров}}</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/cart/ui/info/src/lib/cart-info.component.html</context>
           <context context-type="linenumber">4,7</context>
