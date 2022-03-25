@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/errors/interceptors",
+  "sourceRoot": "libs/errors/interceptors/src",
+  "prefix": "banshop",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/errors/interceptors"],
+      "options": {
+        "jestConfig": "libs/errors/interceptors/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/errors/interceptors/src/**/*.ts", "libs/errors/interceptors/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

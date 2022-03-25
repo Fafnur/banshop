@@ -7,6 +7,7 @@ import { ENVIRONMENTS } from '@banshop/core/environments/service';
 import { MetaStateModule } from '@banshop/core/meta/state';
 import { NAVIGATION_PATHS, PATHS } from '@banshop/core/navigation/common';
 import { RootStoreModule } from '@banshop/core/store/root';
+import { ErrorsInterceptorsModule } from '@banshop/errors/interceptors';
 import { ProductsStateModule } from '@banshop/products/state';
 import { LocalizationModule } from '@banshop/russian/localization';
 
@@ -19,6 +20,7 @@ import { environment } from '../environments/environment';
     RootStoreModule,
     !environment.production ? StoreDevtoolsModule.instrument({ logOnly: environment.production }) : [],
     CartStateModule,
+    ErrorsInterceptorsModule,
     MetaStateModule,
     ProductsStateModule,
   ],

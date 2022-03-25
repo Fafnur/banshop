@@ -40,6 +40,7 @@
     "core-utils-operators": "libs/core/utils/operators",
     "core-utils-types": "libs/core/utils/types",
     "core-window-service": "libs/core/window/service",
+    "errors-interceptors": "libs/errors/interceptors",
     "errors-not-found-page": "libs/errors/not-found/page",
     "errors-pages": "libs/errors/pages",
     "errors-server-error-page": "libs/errors/server-error/page",
