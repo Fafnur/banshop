@@ -3,6 +3,7 @@ import 'zone.js/dist/zone-node';
 
 import { APP_BASE_HREF } from '@angular/common';
 import { ngExpressEngine } from '@nguniversal/express-engine';
+import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
 import * as compression from 'compression';
 import * as express from 'express';
 import { existsSync } from 'fs';
@@ -60,6 +61,14 @@ export function app(): express.Express {
           {
             provide: APP_BASE_HREF,
             useValue: req.baseUrl,
+          },
+          {
+            provide: REQUEST,
+            useValue: req,
+          },
+          {
+            provide: RESPONSE,
+            useValue: res,
           },
         ],
       });
