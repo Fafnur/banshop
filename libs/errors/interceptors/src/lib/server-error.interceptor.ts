@@ -33,6 +33,8 @@ export class ServerErrorInterceptor implements HttpInterceptor {
           if (req?.url) {
             context.reqUrl = req.urlWithParams;
           }
+          // TODO: Need to send on server logger, like as graylog.
+          console.error(context);
 
           void this.navigationService.navigateByUrl(this.navigationService.getPaths().serverError);
         }
