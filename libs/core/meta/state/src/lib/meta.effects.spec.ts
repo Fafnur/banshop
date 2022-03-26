@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { ROUTER_NAVIGATED } from '@ngrx/router-store';
 import { Observable, of } from 'rxjs';
-import { mock, verify } from 'ts-mockito';
+import { deepEqual, mock, verify } from 'ts-mockito';
 
 import { MetaService } from '@banshop/core/meta/service';
 import { providerOf } from '@banshop/core/testing';
@@ -29,7 +29,7 @@ describe('MetaEffects', () => {
     actions$ = of({
       type: ROUTER_NAVIGATED,
       payload: {
-        routerState: null,
+        routerState: { url: '/' },
       },
     });
 
@@ -37,6 +37,6 @@ describe('MetaEffects', () => {
     effects.routerNavigated$.subscribe();
 
     // assert
-    verify(metaServiceMock.update(undefined, undefined)).once();
+    verify(metaServiceMock.update(deepEqual({ url: '/' }), undefined)).once();
   });
 });

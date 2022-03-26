@@ -11,6 +11,8 @@ import { providerOf } from '@banshop/core/testing';
 import { MetaService } from './meta.service';
 
 describe('MetaService', () => {
+  let getProp: <T = HTMLMetaElement>(prop: string) => T | null;
+
   let service: MetaService;
   let routerMock: Router;
   let environmentServiceMock: EnvironmentService;
@@ -49,6 +51,8 @@ describe('MetaService', () => {
 
     service = TestBed.inject(MetaService);
     document = TestBed.inject(DOCUMENT);
+
+    getProp = <T = HTMLMetaElement>(prop: string) => document.getElementById(prop) as T | null;
   });
 
   it('should create', () => {
@@ -59,21 +63,17 @@ describe('MetaService', () => {
     service.update();
 
     expect(document.title).toBe(`${META_CONFIG_DEFAULT.title} | ${ENVIRONMENTS_DEFAULT.brand}`);
-    expect((document.getElementById('canonical') as HTMLLinkElement)?.href).toBe('http://localhost/');
-    expect((document.getElementById('meta-description') as HTMLMetaElement)?.content).toBe(META_CONFIG_DEFAULT.description);
-    expect((document.getElementById('meta-keywords') as HTMLMetaElement)?.content).toBe(META_CONFIG_DEFAULT.keywords);
-    expect((document.getElementById('meta-og:title') as HTMLMetaElement)?.content).toBe(
-      `${META_CONFIG_OG_DEFAULT.title} | ${ENVIRONMENTS_DEFAULT.brand}`
-    );
-    expect((document.getElementById('meta-og:description') as HTMLMetaElement)?.content).toBe(META_CONFIG_OG_DEFAULT.description);
-    expect((document.getElementById('meta-og:type') as HTMLMetaElement)?.content).toBe(META_CONFIG_OG_DEFAULT.type);
-    expect((document.getElementById('meta-og:locale') as HTMLMetaElement)?.content).toBe('ru-RU');
-    expect((document.getElementById('meta-og:site_name') as HTMLMetaElement)?.content).toBe(ENVIRONMENTS_DEFAULT.brand);
-    expect((document.getElementById('meta-og:image') as HTMLMetaElement)?.content).toBe(
-      `${ENVIRONMENTS_DEFAULT.appHost}${META_CONFIG_OG_DEFAULT.image}`
-    );
-    expect((document.getElementById('meta-og:image:type') as HTMLMetaElement)?.content).toBe(META_CONFIG_OG_DEFAULT.imageType);
-    expect((document.getElementById('meta-og:image:width') as HTMLMetaElement)?.content).toBe(META_CONFIG_OG_DEFAULT.imageWidth);
-    expect((document.getElementById('meta-og:image:height') as HTMLMetaElement)?.content).toBe(META_CONFIG_OG_DEFAULT.imageHeight);
+    expect(getProp<HTMLLinkElement>('canonical')?.href).toBe('http://localhost/');
+    expect(getProp('meta-description')?.content).toBe(META_CONFIG_DEFAULT.description);
+    expect(getProp('meta-keywords')?.content).toBe(META_CONFIG_DEFAULT.keywords);
+    expect(getProp('meta-og:title')?.content).toBe(`${META_CONFIG_OG_DEFAULT.title} | ${ENVIRONMENTS_DEFAULT.brand}`);
+    expect(getProp('meta-og:description')?.content).toBe(META_CONFIG_OG_DEFAULT.description);
+    expect(getProp('meta-og:type')?.content).toBe(META_CONFIG_OG_DEFAULT.type);
+    expect(getProp('meta-og:locale')?.content).toBe('ru-RU');
+    expect(getProp('meta-og:site_name')?.content).toBe(ENVIRONMENTS_DEFAULT.brand);
+    expect(getProp('meta-og:image')?.content).toBe(`${ENVIRONMENTS_DEFAULT.appHost}${META_CONFIG_OG_DEFAULT.image}`);
+    expect(getProp('meta-og:image:type')?.content).toBe(META_CONFIG_OG_DEFAULT.imageType);
+    expect(getProp('meta-og:image:width')?.content).toBe(META_CONFIG_OG_DEFAULT.imageWidth);
+    expect(getProp('meta-og:image:height')?.content).toBe(META_CONFIG_OG_DEFAULT.imageHeight);
   });
 });
