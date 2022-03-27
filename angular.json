@@ -1,7 +1,6 @@
 {
   "version": 2,
   "projects": {
-    "cart-api": "libs/cart/api",
     "cart-common": "libs/cart/common",
     "cart-page": "libs/cart/page",
     "cart-state": "libs/cart/state",

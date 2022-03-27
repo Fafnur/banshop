@@ -15,7 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@banshop/cart/api": ["libs/cart/api/src/index.ts"],
       "@banshop/cart/common": ["libs/cart/common/src/index.ts"],
       "@banshop/cart/page": ["libs/cart/page/src/index.ts"],
       "@banshop/cart/state": ["libs/cart/state/src/index.ts"],
