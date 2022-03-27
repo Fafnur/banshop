@@ -35,6 +35,6 @@ export const META_CONFIG_OG_DEFAULT: MetaConfigOg = {
   type: 'website',
   image: '/assets/images/site.jpg',
   imageType: 'image/jpeg',
-  imageWidth: '600',
-  imageHeight: '284',
+  imageWidth: '1200',
+  imageHeight: '600',
 };
