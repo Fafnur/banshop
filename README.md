@@ -1,105 +1,62 @@
-
-
 # Banshop
 
-This project was generated using [Nx](https://nx.dev).
+Репозиторий для цикла статей - «Сайт визитка на Angular»
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+![Web](./docs/web.gif)
 
-🔎 **Smart, Fast and Extensible Build System**
+В статьях будет представлен процесс разработки приложения, который будет начинаться с определения предметной области и заканчиваться тестированием приложения.
 
-## Quick Start & Documentation
+Приложение будет разработано на 3 платформы
 
-[Nx Documentation](https://nx.dev/angular)
+- handset
+- tablet
+- web
 
-[10-minute video showing all Nx features](https://nx.dev/getting-started/intro)
+![Handset](./docs/handset.gif)
 
-[Interactive Tutorial](https://nx.dev/tutorial/01-create-application)
+## Процесс разработки
 
-## Adding capabilities to your workspace
+В первой статье вкратце описан процесс создания нового Angular приложения.
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+Вторая статья посвящена описанию "core" модулям, которые будут использоваться в библиотеке.
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+Третья статья расскажет о принципах создания UI KIT общих компонентов, которые будут использоваться в приложении. Примеры компонент из ui-kit: сетка, контейнер, карусель, базовый лейаут приложения, а также еще несколько директив для задания стилей компонентам.
 
-Below are our core plugins:
+Четвертая статья посвящена разработке модуля продуктов. В статье будет описан процесс создания state, загрузки данных из внешнего источника (google sheets), а также созданы компоненты для отображения полученного списка товаров.
 
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
-- [React](https://reactjs.org)
-  - `ng add @nrwl/react`
-- Web (no framework frontends)
-  - `ng add @nrwl/web`
-- [Nest](https://nestjs.com)
-  - `ng add @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `ng add @nrwl/express`
-- [Node](https://nodejs.org)
-  - `ng add @nrwl/node`
+В пятой статье показана реализация модуля корзины. В статье также приведена реализация state корзины, в частности сохранение выбранных товаров, их отображение и изменение.
 
-There are also many [community plugins](https://nx.dev/community) you could add.
+Шастая статья реализовывает страницу оформления заказа, которая содержит форму с данными о клиенте, а также списком выбранных товаров.
 
-## Generate an application
+Седьмая статья реализует чат службы поддержки, но без реальной интеграции с внешним провайдером, так как это выходит за рамки статьи.
 
-Run `ng g @nrwl/angular:app my-app` to generate an application.
+Восьмая статья посвящена созданию страниц ошибок, а также настройке и генерации локализации.
 
-> You can use any of the plugins above to generate applications as well.
+Девятая статья посвящена настройке локализации в Angular приложении.
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+Десятая статья посвящена базовой SEO настройки приложения, которая добавляет карту сайта, мета теги и robots.
 
-## Generate a library
+Одиннадцатая статья направлена на обзор реализации Server Side Rendiring'а с помощью NodeJS, частности express. В статье будет приведена реализация сервера вместе с корректными настройками prerender'а.
 
-Run `ng g @nrwl/angular:lib my-lib` to generate a library.
+Двенадцатая статья посвящена тестированию приложения.
 
-> You can also use any of the plugins above to generate libraries as well.
+В последней статье произведен обзор проделанной работы, в котором будут ссылки на исходники и демо приложение.
 
-Libraries are shareable across libraries and applications. They can be imported from `@banshop/mylib`.
+## Ссылки
 
-## Development server
+В данный цикл войдут следующие статьи, которые будут посвящены следующим модулям:
 
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng g component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
-
-
-
-
-
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+0. Введение.
+1. Создание приложения.
+2. Core модули для приложения.
+3. Создание UI KIT.
+4. Реализация модуля товаров.
+5. Реализация модуля корзины.
+6. Реализация модуля заказа.
+7. Реализация модуля чата.
+8. Страницы ошибок
+9. Локализация.
+10. Настройка SEO
+11. Настройка SSR
+12. Тестирование.
+13. Заключение
