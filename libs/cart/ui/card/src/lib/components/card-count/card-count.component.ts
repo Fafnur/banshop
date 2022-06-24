@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { takeUntil, tap } from 'rxjs';
 
 import { CartProduct } from '@banshop/cart/common';
@@ -17,12 +17,12 @@ import { isNotNullOrUndefined } from '@banshop/core/utils/operators';
 export class CardCountComponent implements OnInit {
   @Input() cartProduct!: CartProduct;
 
-  control!: FormControl;
+  control!: UntypedFormControl;
 
   constructor(private readonly cartFacade: CartFacade, private readonly destroy$: DestroyService) {}
 
   ngOnInit(): void {
-    this.control = new FormControl(this.cartProduct.count);
+    this.control = new UntypedFormControl(this.cartProduct.count);
 
     this.control.valueChanges
       .pipe(

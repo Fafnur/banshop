@@ -1,7 +1,6 @@
 import { Breakpoints } from '@angular/cdk/layout';
 import { Injectable } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { MatDialogConfig } from '@angular/material/dialog/dialog-config';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 import { LayoutService } from '@banshop/core/layout/service';
 import { Product } from '@banshop/products/common';

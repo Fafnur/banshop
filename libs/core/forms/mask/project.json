@@ -1,6 +1,6 @@
 {
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/core/forms/mask",
   "sourceRoot": "libs/core/forms/mask/src",
   "prefix": "banshop",
   "targets": {
@@ -8,7 +8,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/core/forms/mask"],
       "options": {
-        "jestConfig": "libs/core/forms/mask/jest.config.js",
+        "jestConfig": "libs/core/forms/mask/jest.config.ts",
         "passWithNoTests": true
       }
     },

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { CartFacade } from '@banshop/cart/state';
@@ -15,7 +15,7 @@ import { Product } from '@banshop/products/common';
 export class CartAddDialogComponent {
   added = false;
 
-  form!: FormGroup;
+  form!: UntypedFormGroup;
 
   constructor(
     private readonly cartFacade: CartFacade,
@@ -36,7 +36,7 @@ export class CartAddDialogComponent {
     }
   }
 
-  onCreatedForm(form: FormGroup): void {
+  onCreatedForm(form: UntypedFormGroup): void {
     this.form = form;
   }
 }

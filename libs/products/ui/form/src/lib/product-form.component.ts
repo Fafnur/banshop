@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 
 import { Product, ProductField } from '@banshop/products/common';
 
@@ -11,17 +11,17 @@ import { Product, ProductField } from '@banshop/products/common';
 })
 export class ProductFormComponent implements OnInit {
   @Input() product!: Product;
-  @Output() created = new EventEmitter<FormGroup>();
+  @Output() created = new EventEmitter<UntypedFormGroup>();
 
   readonly fields = ProductField;
 
-  form!: FormGroup;
+  form!: UntypedFormGroup;
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      productId: new FormControl(this.product.id, [Validators.required]),
-      size: new FormControl(null, [Validators.required]),
-      count: new FormControl(1, [Validators.required]),
+    this.form = new UntypedFormGroup({
+      productId: new UntypedFormControl(this.product.id, [Validators.required]),
+      size: new UntypedFormControl(null, [Validators.required]),
+      count: new UntypedFormControl(1, [Validators.required]),
     });
 
     this.created.emit(this.form);

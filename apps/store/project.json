@@ -1,6 +1,6 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "root": "apps/store",
   "sourceRoot": "apps/store/src",
   "prefix": "banshop",
   "i18n": {
@@ -104,7 +104,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/store"],
       "options": {
-        "jestConfig": "apps/store/jest.config.js",
+        "jestConfig": "apps/store/jest.config.ts",
         "passWithNoTests": true
       }
     },

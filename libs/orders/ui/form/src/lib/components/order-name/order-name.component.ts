@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'banshop-order-name',
@@ -8,5 +8,5 @@ import { FormControl } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OrderNameComponent {
-  @Input() control!: FormControl;
+  @Input() control!: UntypedFormControl;
 }

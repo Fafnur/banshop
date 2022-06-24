@@ -1,6 +1,6 @@
 {
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/core/navigation/service",
   "sourceRoot": "libs/core/navigation/service/src",
   "prefix": "banshop",
   "targets": {
@@ -8,7 +8,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/core/navigation/service"],
       "options": {
-        "jestConfig": "libs/core/navigation/service/jest.config.js",
+        "jestConfig": "libs/core/navigation/service/jest.config.ts",
         "passWithNoTests": true
       }
     },

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -16,7 +16,7 @@ import { ProductFacade } from '@banshop/products/state';
 export class ProductPortletComponent implements OnInit {
   product$!: Observable<Product>;
 
-  readonly control = new FormControl(null, [Validators.required]);
+  readonly control = new UntypedFormControl(null, [Validators.required]);
 
   constructor(private readonly activatedRoute: ActivatedRoute, private readonly productFacade: ProductFacade) {}
 

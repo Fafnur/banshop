@@ -1,6 +1,6 @@
 {
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/russian/localization",
   "sourceRoot": "libs/russian/localization/src",
   "prefix": "banshop",
   "targets": {
@@ -8,7 +8,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/russian/localization"],
       "options": {
-        "jestConfig": "libs/russian/localization/jest.config.js",
+        "jestConfig": "libs/russian/localization/jest.config.ts",
         "passWithNoTests": true
       }
     },

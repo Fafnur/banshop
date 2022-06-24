@@ -1,6 +1,6 @@
 {
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/errors/not-found/page",
   "sourceRoot": "libs/errors/not-found/page/src",
   "prefix": "banshop",
   "targets": {
@@ -8,7 +8,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/errors/not-found/page"],
       "options": {
-        "jestConfig": "libs/errors/not-found/page/jest.config.js",
+        "jestConfig": "libs/errors/not-found/page/jest.config.ts",
         "passWithNoTests": true
       }
     },

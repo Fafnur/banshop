@@ -1,6 +1,6 @@
 {
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/core/hammer",
   "sourceRoot": "libs/core/hammer/src",
   "prefix": "banshop",
   "targets": {
@@ -8,7 +8,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/core/hammer"],
       "options": {
-        "jestConfig": "libs/core/hammer/jest.config.js",
+        "jestConfig": "libs/core/hammer/jest.config.ts",
         "passWithNoTests": true
       }
     },

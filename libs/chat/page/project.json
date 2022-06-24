@@ -1,6 +1,6 @@
 {
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/chat/page",
   "sourceRoot": "libs/chat/page/src",
   "prefix": "banshop",
   "targets": {
@@ -8,7 +8,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/chat/page"],
       "options": {
-        "jestConfig": "libs/chat/page/jest.config.js",
+        "jestConfig": "libs/chat/page/jest.config.ts",
         "passWithNoTests": true
       }
     },

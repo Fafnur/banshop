@@ -1,6 +1,6 @@
 {
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/core/storage/memory",
   "sourceRoot": "libs/core/storage/memory/src",
   "prefix": "banshop",
   "targets": {
@@ -8,7 +8,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/core/storage/memory"],
       "options": {
-        "jestConfig": "libs/core/storage/memory/jest.config.js",
+        "jestConfig": "libs/core/storage/memory/jest.config.ts",
         "passWithNoTests": true
       }
     },

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { debounceTime, take, takeUntil, tap } from 'rxjs';
 
 import { NavigationService } from '@banshop/core/navigation/service';
@@ -19,7 +19,7 @@ import { OrderNotifyService } from '@banshop/orders/ui/notify';
 export class OrderFormComponent implements OnInit {
   readonly fields = CustomerField;
 
-  form!: FormGroup;
+  form!: UntypedFormGroup;
   submitted = false;
 
   constructor(
@@ -31,13 +31,13 @@ export class OrderFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      [CustomerField.Name]: new FormControl(null, [Validators.required]),
-      [CustomerField.Phone]: new FormControl(null, [Validators.required]),
-      [CustomerField.Email]: new FormControl(null, [Validators.required, Validators.email]),
-      [CustomerField.City]: new FormControl(null, [Validators.required]),
-      [CustomerField.Address]: new FormControl(null, [Validators.required]),
-      [CustomerField.Postcode]: new FormControl(null, [Validators.required]),
+    this.form = new UntypedFormGroup({
+      [CustomerField.Name]: new UntypedFormControl(null, [Validators.required]),
+      [CustomerField.Phone]: new UntypedFormControl(null, [Validators.required]),
+      [CustomerField.Email]: new UntypedFormControl(null, [Validators.required, Validators.email]),
+      [CustomerField.City]: new UntypedFormControl(null, [Validators.required]),
+      [CustomerField.Address]: new UntypedFormControl(null, [Validators.required]),
+      [CustomerField.Postcode]: new UntypedFormControl(null, [Validators.required]),
     });
 
     this.orderFacade.customer$

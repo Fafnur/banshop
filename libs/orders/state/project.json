@@ -1,6 +1,6 @@
 {
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/orders/state",
   "sourceRoot": "libs/orders/state/src",
   "prefix": "banshop",
   "targets": {
@@ -8,7 +8,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/orders/state"],
       "options": {
-        "jestConfig": "libs/orders/state/jest.config.js",
+        "jestConfig": "libs/orders/state/jest.config.ts",
         "passWithNoTests": true
       }
     },

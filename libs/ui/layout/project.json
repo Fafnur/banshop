@@ -1,6 +1,6 @@
 {
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/ui/layout",
   "sourceRoot": "libs/ui/layout/src",
   "prefix": "banshop",
   "targets": {
@@ -8,7 +8,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/ui/layout"],
       "options": {
-        "jestConfig": "libs/ui/layout/jest.config.js",
+        "jestConfig": "libs/ui/layout/jest.config.ts",
         "passWithNoTests": true
       }
     },

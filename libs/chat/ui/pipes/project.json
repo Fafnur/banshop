@@ -1,6 +1,6 @@
 {
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "libs/chat/ui/pipes",
   "sourceRoot": "libs/chat/ui/pipes/src",
   "prefix": "banshop",
   "targets": {
@@ -8,7 +8,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/chat/ui/pipes"],
       "options": {
-        "jestConfig": "libs/chat/ui/pipes/jest.config.js",
+        "jestConfig": "libs/chat/ui/pipes/jest.config.ts",
         "passWithNoTests": true
       }
     },

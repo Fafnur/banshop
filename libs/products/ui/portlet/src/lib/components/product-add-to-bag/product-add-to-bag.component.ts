@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 import { CartFacade } from '@banshop/cart/state';
 import { Product } from '@banshop/products/common';
@@ -14,7 +14,7 @@ import { ProductAddToBagService } from './product-add-to-bag.service';
 })
 export class ProductAddToBagComponent {
   @Input() product!: Product;
-  @Input() control!: FormControl;
+  @Input() control!: UntypedFormControl;
 
   constructor(private readonly cartFacade: CartFacade, private readonly productAddToBagService: ProductAddToBagService) {}
 

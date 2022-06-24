@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'banshop-product-sizes',
@@ -9,7 +9,7 @@ import { FormControl } from '@angular/forms';
 })
 export class ProductSizesComponent {
   @Input() sizes!: number[];
-  @Input() control!: FormControl;
+  @Input() control!: UntypedFormControl;
 
   active!: number;
 

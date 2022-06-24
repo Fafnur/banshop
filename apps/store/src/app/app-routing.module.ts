@@ -51,7 +51,7 @@ const routes: Routes = [
     ProductGuardsModule,
     RouterModule.forRoot(routes, {
       anchorScrolling: 'enabled',
-      initialNavigation: 'enabled',
+      initialNavigation: 'enabledBlocking',
       scrollPositionRestoration: 'enabled',
     }),
   ],

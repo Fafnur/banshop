@@ -4,7 +4,7 @@ export enum ProductKeys {
   Products = 'products',
 }
 
-export const PRODUCTS_META = makeStateKey('products');
+export const PRODUCTS_META = makeStateKey<Product[]>('products');
 
 export interface Product {
   id: number;

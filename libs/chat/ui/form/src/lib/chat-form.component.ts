@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { takeUntil, tap } from 'rxjs';
 
 import { ChatFacade } from '@banshop/chat/state';
@@ -13,8 +13,8 @@ import { DestroyService } from '@banshop/core/utils/destroy';
   providers: [DestroyService],
 })
 export class ChatFormComponent implements OnInit {
-  readonly form = new FormGroup({
-    message: new FormControl(null),
+  readonly form = new UntypedFormGroup({
+    message: new UntypedFormControl(null),
   });
 
   submitted = false;
